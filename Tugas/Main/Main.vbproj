@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51586FB6-1FEF-4AD2-BB3F-1DC523D776FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Main.My.MyApplication</StartupObject>
+    <RootNamespace>Main</RootNamespace>
+    <AssemblyName>Main</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Main.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Main.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrFakturPenjualan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrFakturPenjualan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrLaporanKadaluarsa.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrLaporanKadaluarsa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrLaporanMutasi.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrLaporanMutasi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrDaftarPelanggan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrDaftarPelanggan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrLaporanPembeliann.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrLaporanPembeliann.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrLaporanPenjualan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrLaporanPenjualan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrLaporanPenyesuaian.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrLaporanPenyesuaian.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrLaporanPersediaan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrLaporanPersediaan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrDaftarSupplier.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrDaftarSupplier.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrNotaPesananPembelian.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrNotaPesananPembelian.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrNotaReturPembelian.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrNotaReturPembelian.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrCariBarang.Designer.vb">
+      <DependentUpon>FrCariBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCariPembelian.Designer.vb">
+      <DependentUpon>FrCariPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCariPenjualan.Designer.vb">
+      <DependentUpon>FrCariPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCariPelanggan.Designer.vb">
+      <DependentUpon>FrCariPelanggan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariPelanggan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCariPenyesuaian.Designer.vb">
+      <DependentUpon>FrCariPenyesuaian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariPenyesuaian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCariPesananPembelian.Designer.vb">
+      <DependentUpon>FrCariPesananPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariPesananPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCariReturPembelian.Designer.vb">
+      <DependentUpon>FrCariReturPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariReturPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCariSupplier.Designer.vb">
+      <DependentUpon>FrCariSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDaftarBarang.Designer.vb">
+      <DependentUpon>FrDaftarBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDaftarBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDaftarPelanggan.Designer.vb">
+      <DependentUpon>FrDaftarPelanggan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDaftarPelanggan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDaftarPembelian.Designer.vb">
+      <DependentUpon>FrDaftarPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDaftarPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDaftarPenjualan.Designer.vb">
+      <DependentUpon>FrDaftarPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDaftarPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDaftarPenyesuaian.Designer.vb">
+      <DependentUpon>FrDaftarPenyesuaian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDaftarPenyesuaian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDaftarPesananPembelian.Designer.vb">
+      <DependentUpon>FrDaftarPesananPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDaftarPesananPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDaftarReturPembelian.Designer.vb">
+      <DependentUpon>FrDaftarReturPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDaftarReturPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDaftarSupplier.Designer.vb">
+      <DependentUpon>FrDaftarSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDaftarSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrGudangBelakang%28G%29.Designer.vb">
+      <DependentUpon>FrGudangBelakang%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrGudangBelakang%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrGudangDepan%28G%29.Designer.vb">
+      <DependentUpon>FrGudangDepan%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrGudangDepan%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPenjualan%28G%29.Designer.vb">
+      <DependentUpon>FrLaporanPenjualan%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPenjualan%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPenyesuaian%28G%29.Designer.vb">
+      <DependentUpon>FrLaporanPenyesuaian%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPenyesuaian%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanKadaluarsa%28G%29.Designer.vb">
+      <DependentUpon>FrLaporanKadaluarsa%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanKadaluarsa%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanMutasi%28G%29.Designer.vb">
+      <DependentUpon>FrLaporanMutasi%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanMutasi%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPembelian%28G%29.Designer.vb">
+      <DependentUpon>FrLaporanPembelian%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPembelian%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPersediaan%28G%29.Designer.vb">
+      <DependentUpon>FrLaporanPersediaan%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPersediaan%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPesananPembelian%28G%29.Designer.vb">
+      <DependentUpon>FrLaporanPesananPembelian%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPesananPembelian%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanReturPembelian%28G%29.Designer.vb">
+      <DependentUpon>FrLaporanReturPembelian%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanReturPembelian%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrMainMenu.Designer.vb">
+      <DependentUpon>FrMainMenu.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrMutasi%28G%29.Designer.vb">
+      <DependentUpon>FrMutasi%28G%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrMutasi%28G%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDataPelanggan.Designer.vb">
+      <DependentUpon>FrDataPelanggan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDataPelanggan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDataPembelian.Designer.vb">
+      <DependentUpon>FrDataPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDataPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDataPenjualan.Designer.vb">
+      <DependentUpon>FrDataPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDataPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDataPenyesuaian.Designer.vb">
+      <DependentUpon>FrDataPenyesuaian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDataPenyesuaian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDataBarang.Designer.vb">
+      <DependentUpon>FrDataBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDataBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDataPesananPembelian.Designer.vb">
+      <DependentUpon>FrDataPesananPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDataPesananPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDataReturPembelian.Designer.vb">
+      <DependentUpon>FrDataReturPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDataReturPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrDataSupplier.Designer.vb">
+      <DependentUpon>FrDataSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrDataSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global.vb" />
+    <Compile Include="GlobalAB.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrFakturPenjualan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrFakturPenjualan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrLaporanKadaluarsa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrLaporanKadaluarsa.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrLaporanMutasi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrLaporanMutasi.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrDaftarPelanggan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrDaftarPelanggan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrLaporanPembeliann.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrLaporanPembeliann.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrLaporanPenjualan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrLaporanPenjualan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrLaporanPenyesuaian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrLaporanPenyesuaian.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrLaporanPersediaan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrLaporanPersediaan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrDaftarSupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrDaftarSupplier.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrNotaPesananPembelian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrNotaPesananPembelian.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrNotaReturPembelian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrNotaReturPembelian.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCariBarang.resx">
+      <DependentUpon>FrCariBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCariPelanggan.resx">
+      <DependentUpon>FrCariPelanggan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCariPembelian.resx">
+      <DependentUpon>FrCariPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCariPenjualan.resx">
+      <DependentUpon>FrCariPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCariPenyesuaian.resx">
+      <DependentUpon>FrCariPenyesuaian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCariPesananPembelian.resx">
+      <DependentUpon>FrCariPesananPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCariReturPembelian.resx">
+      <DependentUpon>FrCariReturPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCariSupplier.resx">
+      <DependentUpon>FrCariSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDaftarBarang.resx">
+      <DependentUpon>FrDaftarBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDaftarPelanggan.resx">
+      <DependentUpon>FrDaftarPelanggan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDaftarPembelian.resx">
+      <DependentUpon>FrDaftarPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDaftarPenjualan.resx">
+      <DependentUpon>FrDaftarPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDaftarPenyesuaian.resx">
+      <DependentUpon>FrDaftarPenyesuaian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDaftarPesananPembelian.resx">
+      <DependentUpon>FrDaftarPesananPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDaftarReturPembelian.resx">
+      <DependentUpon>FrDaftarReturPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDaftarSupplier.resx">
+      <DependentUpon>FrDaftarSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrGudangBelakang%28G%29.resx">
+      <DependentUpon>FrGudangBelakang%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrGudangDepan%28G%29.resx">
+      <DependentUpon>FrGudangDepan%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPenjualan%28G%29.resx">
+      <DependentUpon>FrLaporanPenjualan%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPenyesuaian%28G%29.resx">
+      <DependentUpon>FrLaporanPenyesuaian%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanKadaluarsa%28G%29.resx">
+      <DependentUpon>FrLaporanKadaluarsa%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanMutasi%28G%29.resx">
+      <DependentUpon>FrLaporanMutasi%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPembelian%28G%29.resx">
+      <DependentUpon>FrLaporanPembelian%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPersediaan%28G%29.resx">
+      <DependentUpon>FrLaporanPersediaan%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPesananPembelian%28G%29.resx">
+      <DependentUpon>FrLaporanPesananPembelian%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanReturPembelian%28G%29.resx">
+      <DependentUpon>FrLaporanReturPembelian%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrMainMenu.resx">
+      <DependentUpon>FrMainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrMutasi%28G%29.resx">
+      <DependentUpon>FrMutasi%28G%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDataPelanggan.resx">
+      <DependentUpon>FrDataPelanggan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDataPembelian.resx">
+      <DependentUpon>FrDataPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDataPenjualan.resx">
+      <DependentUpon>FrDataPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDataPenyesuaian.resx">
+      <DependentUpon>FrDataPenyesuaian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDataBarang.resx">
+      <DependentUpon>FrDataBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDataPesananPembelian.resx">
+      <DependentUpon>FrDataPesananPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDataReturPembelian.resx">
+      <DependentUpon>FrDataReturPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrDataSupplier.resx">
+      <DependentUpon>FrDataSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
