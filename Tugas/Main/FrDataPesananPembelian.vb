@@ -15,14 +15,6 @@ Public Class FrDataPesananPembelian
 
     End Sub
 
-    'Sub hitung_jenis()
-    '    Dim jenis_barang = 0
-    '    For i = 0 To dgvData.Columns.Count - 1
-    '        jenis_barang += 1
-    '    Next
-    '    txttotal.Text = jenis_barang
-    'End Sub
-
     Function belumAdaKodenya() As Boolean
         Dim jlh = 0
         For i As Integer = 0 To dgvData.Rows.Count - 1
@@ -31,6 +23,14 @@ Public Class FrDataPesananPembelian
             End If
         Next
         Return (jlh = 0)
+    End Function
+
+    Function checkPKNoPesanan(pk As String) As Boolean
+        Call koneksi()
+        query = "Select count(*) from tbPPB_H where no_ppb = @no_ppb"
+        cmd = New SqlCommand(query, conn)
+        cmd.Parameters.Add("@no_ppb", SqlDbType.VarChar).Value = txtnopesananpembelian.Text
+        Return cmd.ExecuteScalar
     End Function
 
     Sub buat_kode()
@@ -66,12 +66,13 @@ Public Class FrDataPesananPembelian
         dtpt.Value = Date.Today
         txtnopesananpembelian.Enabled = False
         txttotal.Text = "0"
+        txttotal.Enabled = False
 
     End Sub
 
     Private Sub btnsbar_Click(sender As Object, e As EventArgs) Handles btnsbar.Click
 
-        'FrCariBarang.Tag = "Pesanan"
+        FrCariBarang.Tag = "Pesanan"
         FrCariBarang.ShowDialog()
 
     End Sub
@@ -97,44 +98,100 @@ Public Class FrDataPesananPembelian
     End Sub
 
     Private Sub btnsimpan_Click(sender As Object, e As EventArgs) Handles btnsimpan.Click
-
-        If dr Is Nothing Then
-            If String.IsNullOrWhiteSpace(txtkodesupplier.Text) = True Then
-                MessageBox.Show("Supplier harus dipilih terlebih dahulu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If Not checkPKNoPesanan(txtnopesananpembelian.Text) Then
+            If txtkodesupplier.Text.Trim = "" Or txtnamasupplier.Text.Trim = "" Or dgvData.Rows.Count <= 0 Then
+                MsgBox("Data tidak lengkap", MsgBoxStyle.Exclamation, "Warning") 'jika ada yang belum diisi maka tampilkan warning
             Else
-                If dgvData.Rows.Count = 0 Then
-                    MessageBox.Show("Anda belum memasukkan Data Pesanan Product", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Else
-                    load_data_1pk("tbPPB_H")
-                    dr = ds.Tables("tbPPB_H").Rows.Find(txtnopesananpembelian.Text)
-                    dr = ds.Tables("tbPPB_H").NewRow
-                    dr(0) = txtnopesananpembelian.Text
-                    dr(1) = dtpt.Value
-                    dr(2) = txtkodesupplier.Text
-                    dr(3) = txtnamasupplier.Text
-                    dr(4) = txttotal.Text
-                    ds.Tables("tbPPB_H").Rows.Add(dr)
-                    update_data("tbPPB_H")
+                If (MessageBox.Show($"Apakah Anda Yakin ingin menyimpan data pesanan ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                    'simpan header
+                    query = "INSERT INTO tbPPB_H VALUES (@no_ppb, @tanggal, @kode_s,@nama_s @jenis_b)"
+                    cmd = New SqlCommand(query, conn)
+                    With cmd.Parameters
+                        .Add("@no_ppb", SqlDbType.Char).Value = txtnopesananpembelian.Text.Trim
+                        .Add("@tanggal", SqlDbType.DateTime).Value = dtpt.Value
+                        .Add("@kode_s", SqlDbType.Char).Value = txtkodesupplier.Text.Trim
+                        .Add("@nama_s", SqlDbType.VarChar).Value = txtnamasupplier.Text.Trim
+                        .Add("@jenis_b", SqlDbType.Int).Value = CInt(txttotal.Text.Trim)
+                    End With
+                    cmd.ExecuteNonQuery()
 
-                    load_data_1pk("tbPPB_D")
-                    For i As Integer = 0 To dgvData.Rows.Count - 1
-                        dr = ds.Tables("tbPPB_D").NewRow
-                        dr(0) = txtnopesananpembelian.Text
-                        dr(1) = dgvData.Item(0, i).Value
-                        dr(2) = dgvData.Item(1, i).Value
-                        dr(3) = dgvData.Item(2, i).Value
-                        dr(4) = dgvData.Item(3, i).Value
-                        ds.Tables("tbPPB_D").Rows.Add(dr)
-                        update_data("tbPPB_D")
-
+                    'simpan detail 
+                    For i = 0 To dgvData.Rows.Count - 1
+                        query = "INSERT INTO tbPPB_D VALUES (@no_ppb, @kode_b, @nama_b, @jumlah, @satuan)"
+                        cmd = New SqlCommand(query, conn)
+                        With cmd.Parameters
+                            .Add("@no_ppb", SqlDbType.VarChar).Value = txtnopesananpembelian.Text.Trim
+                            .Add("@kode_b", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(0).Value.ToString
+                            .Add("@nama_b", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(1).Value.ToString
+                            .Add("@jumlah", SqlDbType.Int).Value = CInt(dgvData.Rows(i).Cells(2).Value.ToString)
+                            .Add("@satuan", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(3).Value.ToString
+                        End With
+                        cmd.ExecuteNonQuery()
                     Next
+                    MsgBox("Data pesanan pembelian berhasil disimpan", MsgBoxStyle.Information)
+                End If
+            End If
+        Else
+            If txtkodesupplier.Text.Trim = "" Or txtnamasupplier.Text.Trim = "" Or dgvData.Rows.Count <= 0 Then
+                MsgBox("Data tidak lengkap", MsgBoxStyle.Exclamation, "Warning") 'jika ada yang belum diisi maka tampilkan warning
+            Else
+                If (MessageBox.Show($"Apakah Anda Yakin ingin mengubah data pesanan ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+                    'ubah header
+                    query = "Update tbPPB_H Set kode_s = @kode_s, nama_s = @nama_s, jenis_b = @jenis_b where no_ppb = @no_ppb"
 
-                    MessageBox.Show("Pesanan " & txtnopesananpembelian.Text & " berhasil disimpan", "Simpan Pesanan Pembelian", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    cmd = New SqlCommand(query, conn)
+                    With cmd.Parameters
+                        .Add("@no_ppb", SqlDbType.Char).Value = txtnopesananpembelian.Text.Trim
+                        .Add("@kode_s", SqlDbType.VarChar).Value = txtkodesupplier.Text
+                        .Add("@nama_s", SqlDbType.VarChar).Value = txtnamasupplier.Text
+                        .Add("@jenis_b", SqlDbType.Int).Value = CInt(txttotal.Text)
+                    End With
+                    cmd.ExecuteNonQuery()
+
+                    'ubah detail 
+                    For i = 0 To dgvData.Rows.Count - 1
+                        load_data_2pk("tbPPB_D")
+                        Dim cari(5) As String
+                        cari(0) = txtnopesananpembelian.Text
+                        cari(1) = dgvData.Rows(i).Cells(0).Value.ToString
+                        cari(2) = dgvData.Rows(i).Cells(1).Value.ToString
+                        cari(3) = dgvData.Rows(i).Cells(2).Value.ToString
+                        cari(4) = dgvData.Rows(i).Cells(3).Value.ToString
+                        cari(5) = dgvData.Rows(i).Cells(4).Value.ToString
+                        dr = ds.Tables("tbPPB_D").Rows.Find(cari)
+
+                        If dr Is Nothing Then
+                            load_data_2pk("tbPPB_D")
+                            dr = ds.Tables("tbPPB_D").NewRow
+                            dr(0) = txtnopesananpembelian.Text.Trim
+                            dr(1) = dgvData.Rows(i).Cells(0).Value.ToString
+                            dr(2) = dgvData.Rows(i).Cells(3).Value.ToString
+                            dr(3) = dgvData.Rows(i).Cells(4).Value.ToString
+                            dr(4) = dgvData.Rows(i).Cells(5).Value.ToString
+
+                            ds.Tables("tbPPB_D").Rows.Add(dr)
+                            update_data("tbPPB_D")
+                        Else
+                            query = "Update tbPPB_D Set kode_b = @kode_b, nama_b = @nama_b jumlah = @jumlah, satuan = @satuan Where no_ppb = @no_ppb"
+                            cmd = New SqlCommand(query, conn)
+                            With cmd.Parameters
+                                .Add("@No_Pesanan", SqlDbType.Char).Value = txtnopesananpembelian.Text.Trim
+                                .Add("@kode_b", SqlDbType.Char).Value = dgvData.Rows(i).Cells(0).Value.ToString
+                                .Add("@nama_b", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(3).Value.ToString
+                                .Add("@jumlah", SqlDbType.VarChar).Value = CInt(dgvData.Rows(i).Cells(4).Value.ToString)
+                                .Add("@satuan", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(5).Value.ToString
+                            End With
+                            cmd.ExecuteNonQuery()
+                        End If
+                    Next
+                    MsgBox("Data pesanan pembelian berhasil diubah", MsgBoxStyle.Information)
                 End If
             End If
         End If
 
     End Sub
+
+
 
     'Private Function btntambah_Click(sender As Object, e As EventArgs) As DialogResult Handles btntambah.Click
 
@@ -181,5 +238,44 @@ Public Class FrDataPesananPembelian
             txttotal.Text = dgvData.RowCount
 
         End If
+    End Sub
+
+    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
+        FrCariPesananPembelian.Tag = "Pesanan"
+        FrCariPesananPembelian.ShowDialog()
+    End Sub
+
+    Private Sub txtnopesananpembelian_TextChanged(sender As Object, e As EventArgs) Handles txtnopesananpembelian.TextChanged
+        dgvData.Rows.Clear()
+        query = $"Select kode_b, nama_b, jumlah, satuan from tbPPB_D Where no_ppb = '{txtnopesananpembelian.Text}'"
+        cmd = New SqlCommand(query, conn)
+        datareader = cmd.ExecuteReader
+        If datareader.HasRows Then
+            While datareader.Read
+                dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(3))
+            End While
+        End If
+        datareader.Close()
+    End Sub
+
+    Private Sub dgvData_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvData.CellContentClick
+        Dim baris = dgvData.CurrentCell.RowIndex
+
+        txtkodebarang.Text = dgvData.Item(0, baris).Value
+        txtnamabarang.Text = dgvData.Item(1, baris).Value
+        nud.Value = dgvData.Item(2, baris).Value
+        query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{txtkodebarang.Text}'"
+        cmd = New SqlCommand(query, conn)
+        datareader = cmd.ExecuteReader
+        If datareader.HasRows Then
+            While datareader.Read
+                cbbsatuan.Items.Clear()
+                cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
+                cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
+                cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
+            End While
+        End If
+        datareader.Close()
+        cbbsatuan.Text = dgvData.Item(3, baris).Value
     End Sub
 End Class

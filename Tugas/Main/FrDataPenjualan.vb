@@ -68,7 +68,9 @@ Public Class FrDataPenjualan
         dtpt.Value = Date.Today
         dtpkadaluarsa.Enabled = False
         txttotal.Text = "0"
-
+        txtsubtotal.Enabled = False
+        txttotal.Enabled = False
+        txtstok.Enabled = False
 
     End Sub
 
@@ -79,6 +81,7 @@ Public Class FrDataPenjualan
     End Sub
 
     Private Sub btncaribarang_Click(sender As Object, e As EventArgs) Handles btncaribarang.Click
+        FrCariBarang.Tag = "Penjualan"
         FrCariBarang.ShowDialog()
     End Sub
 
@@ -190,5 +193,9 @@ Public Class FrDataPenjualan
     Private Sub txtharga_TextChanged(sender As Object, e As EventArgs) Handles txtharga.TextChanged
         hitung_subtotal()
 
+    End Sub
+
+    Private Sub btncarifaktur_Click(sender As Object, e As EventArgs) Handles btncarifaktur.Click
+        FrCariPenjualan.ShowDialog()
     End Sub
 End Class

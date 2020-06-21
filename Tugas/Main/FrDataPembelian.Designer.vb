@@ -24,7 +24,6 @@ Partial Class FrDataPembelian
     Private Sub InitializeComponent()
         Me.btncetak = New System.Windows.Forms.Button()
         Me.btnhapus = New System.Windows.Forms.Button()
-        Me.btnedit = New System.Windows.Forms.Button()
         Me.btntambah = New System.Windows.Forms.Button()
         Me.btncaribarang = New System.Windows.Forms.Button()
         Me.txtnamabarang = New System.Windows.Forms.TextBox()
@@ -34,7 +33,7 @@ Partial Class FrDataPembelian
         Me.lblnbarang = New System.Windows.Forms.Label()
         Me.labelkbarang = New System.Windows.Forms.Label()
         Me.dgvData = New System.Windows.Forms.DataGridView()
-        Me.dtppembelian = New System.Windows.Forms.DateTimePicker()
+        Me.dtpt = New System.Windows.Forms.DateTimePicker()
         Me.txtnamasupplier = New System.Windows.Forms.TextBox()
         Me.txtkodesupplier = New System.Windows.Forms.TextBox()
         Me.txtnopembelian = New System.Windows.Forms.TextBox()
@@ -48,7 +47,7 @@ Partial Class FrDataPembelian
         Me.btnsimpan = New System.Windows.Forms.Button()
         Me.txtharga = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btntotal = New System.Windows.Forms.TextBox()
+        Me.txttotal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtsubtotal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -83,19 +82,9 @@ Partial Class FrDataPembelian
         Me.btnhapus.Text = "Hapus"
         Me.btnhapus.UseVisualStyleBackColor = True
         '
-        'btnedit
-        '
-        Me.btnedit.Location = New System.Drawing.Point(202, 343)
-        Me.btnedit.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnedit.Name = "btnedit"
-        Me.btnedit.Size = New System.Drawing.Size(63, 23)
-        Me.btnedit.TabIndex = 46
-        Me.btnedit.Text = "Ubah"
-        Me.btnedit.UseVisualStyleBackColor = True
-        '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(121, 343)
+        Me.btntambah.Location = New System.Drawing.Point(210, 343)
         Me.btntambah.Margin = New System.Windows.Forms.Padding(2)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(63, 23)
@@ -183,13 +172,13 @@ Partial Class FrDataPembelian
         Me.dgvData.Size = New System.Drawing.Size(335, 203)
         Me.dgvData.TabIndex = 35
         '
-        'dtppembelian
+        'dtpt
         '
-        Me.dtppembelian.Location = New System.Drawing.Point(149, 89)
-        Me.dtppembelian.Margin = New System.Windows.Forms.Padding(2)
-        Me.dtppembelian.Name = "dtppembelian"
-        Me.dtppembelian.Size = New System.Drawing.Size(200, 20)
-        Me.dtppembelian.TabIndex = 33
+        Me.dtpt.Location = New System.Drawing.Point(149, 89)
+        Me.dtpt.Margin = New System.Windows.Forms.Padding(2)
+        Me.dtpt.Name = "dtpt"
+        Me.dtpt.Size = New System.Drawing.Size(200, 20)
+        Me.dtpt.TabIndex = 33
         '
         'txtnamasupplier
         '
@@ -311,13 +300,13 @@ Partial Class FrDataPembelian
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Harga"
         '
-        'btntotal
+        'txttotal
         '
-        Me.btntotal.Location = New System.Drawing.Point(562, 346)
-        Me.btntotal.Margin = New System.Windows.Forms.Padding(2)
-        Me.btntotal.Name = "btntotal"
-        Me.btntotal.Size = New System.Drawing.Size(143, 20)
-        Me.btntotal.TabIndex = 55
+        Me.txttotal.Location = New System.Drawing.Point(562, 346)
+        Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txttotal.Name = "txttotal"
+        Me.txttotal.Size = New System.Drawing.Size(143, 20)
+        Me.txttotal.TabIndex = 55
         '
         'Label3
         '
@@ -425,7 +414,7 @@ Partial Class FrDataPembelian
         Me.Controls.Add(Me.cbbsatuan)
         Me.Controls.Add(Me.txtsubtotal)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.btntotal)
+        Me.Controls.Add(Me.txttotal)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtharga)
         Me.Controls.Add(Me.Label2)
@@ -434,7 +423,6 @@ Partial Class FrDataPembelian
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btncetak)
         Me.Controls.Add(Me.btnhapus)
-        Me.Controls.Add(Me.btnedit)
         Me.Controls.Add(Me.btntambah)
         Me.Controls.Add(Me.btncaribarang)
         Me.Controls.Add(Me.txtnamabarang)
@@ -444,7 +432,7 @@ Partial Class FrDataPembelian
         Me.Controls.Add(Me.lblnbarang)
         Me.Controls.Add(Me.labelkbarang)
         Me.Controls.Add(Me.dgvData)
-        Me.Controls.Add(Me.dtppembelian)
+        Me.Controls.Add(Me.dtpt)
         Me.Controls.Add(Me.txtnamasupplier)
         Me.Controls.Add(Me.txtkodesupplier)
         Me.Controls.Add(Me.txtnopembelian)
@@ -465,7 +453,6 @@ Partial Class FrDataPembelian
 
     Friend WithEvents btncetak As Button
     Friend WithEvents btnhapus As Button
-    Friend WithEvents btnedit As Button
     Friend WithEvents btntambah As Button
     Friend WithEvents btncaribarang As Button
     Friend WithEvents lblharga As Label
@@ -473,7 +460,7 @@ Partial Class FrDataPembelian
     Friend WithEvents lblnbarang As Label
     Friend WithEvents labelkbarang As Label
     Friend WithEvents dgvData As DataGridView
-    Friend WithEvents dtppembelian As DateTimePicker
+    Friend WithEvents dtpt As DateTimePicker
     Friend WithEvents LabelKodeSupp As Label
     Friend WithEvents LabelNamaSupp As Label
     Friend WithEvents LabelTanggal As Label
@@ -482,7 +469,7 @@ Partial Class FrDataPembelian
     Friend WithEvents Label1 As Label
     Friend WithEvents btnsimpan As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents btntotal As TextBox
+    Friend WithEvents txttotal As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label

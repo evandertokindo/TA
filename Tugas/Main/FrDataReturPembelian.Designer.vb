@@ -44,7 +44,6 @@ Partial Class FrDataReturPembelian
         Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.btntambah = New System.Windows.Forms.Button()
         Me.btnhapus = New System.Windows.Forms.Button()
-        Me.btnubah = New System.Windows.Forms.Button()
         Me.btncetak = New System.Windows.Forms.Button()
         Me.btnsimpan = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -55,6 +54,8 @@ Partial Class FrDataReturPembelian
         Me.txttotal = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.nud = New System.Windows.Forms.NumericUpDown()
+        Me.txtsubtotal = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -242,12 +243,12 @@ Partial Class FrDataReturPembelian
         Me.dgvData.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvData.Name = "dgvData"
         Me.dgvData.RowTemplate.Height = 28
-        Me.dgvData.Size = New System.Drawing.Size(291, 171)
+        Me.dgvData.Size = New System.Drawing.Size(291, 190)
         Me.dgvData.TabIndex = 42
         '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(96, 318)
+        Me.btntambah.Location = New System.Drawing.Point(176, 318)
         Me.btntambah.Margin = New System.Windows.Forms.Padding(2)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(76, 24)
@@ -265,19 +266,9 @@ Partial Class FrDataReturPembelian
         Me.btnhapus.Text = "Hapus"
         Me.btnhapus.UseVisualStyleBackColor = True
         '
-        'btnubah
-        '
-        Me.btnubah.Location = New System.Drawing.Point(176, 318)
-        Me.btnubah.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnubah.Name = "btnubah"
-        Me.btnubah.Size = New System.Drawing.Size(76, 24)
-        Me.btnubah.TabIndex = 45
-        Me.btnubah.Text = "Ubah"
-        Me.btnubah.UseVisualStyleBackColor = True
-        '
         'btncetak
         '
-        Me.btncetak.Location = New System.Drawing.Point(578, 318)
+        Me.btncetak.Location = New System.Drawing.Point(579, 330)
         Me.btncetak.Margin = New System.Windows.Forms.Padding(2)
         Me.btncetak.Name = "btncetak"
         Me.btncetak.Size = New System.Drawing.Size(76, 24)
@@ -287,7 +278,7 @@ Partial Class FrDataReturPembelian
         '
         'btnsimpan
         '
-        Me.btnsimpan.Location = New System.Drawing.Point(489, 318)
+        Me.btnsimpan.Location = New System.Drawing.Point(490, 330)
         Me.btnsimpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsimpan.Name = "btnsimpan"
         Me.btnsimpan.Size = New System.Drawing.Size(76, 24)
@@ -326,7 +317,7 @@ Partial Class FrDataReturPembelian
         '
         'dtpkadaluarsa
         '
-        Me.dtpkadaluarsa.Location = New System.Drawing.Point(131, 259)
+        Me.dtpkadaluarsa.Location = New System.Drawing.Point(132, 278)
         Me.dtpkadaluarsa.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpkadaluarsa.Name = "dtpkadaluarsa"
         Me.dtpkadaluarsa.Size = New System.Drawing.Size(203, 20)
@@ -335,7 +326,7 @@ Partial Class FrDataReturPembelian
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(24, 262)
+        Me.Label11.Location = New System.Drawing.Point(25, 281)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(60, 13)
@@ -344,7 +335,7 @@ Partial Class FrDataReturPembelian
         '
         'txttotal
         '
-        Me.txttotal.Location = New System.Drawing.Point(452, 290)
+        Me.txttotal.Location = New System.Drawing.Point(452, 306)
         Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txttotal.Name = "txttotal"
         Me.txttotal.Size = New System.Drawing.Size(203, 20)
@@ -353,7 +344,7 @@ Partial Class FrDataReturPembelian
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(377, 293)
+        Me.Label13.Location = New System.Drawing.Point(377, 309)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(31, 13)
@@ -367,11 +358,31 @@ Partial Class FrDataReturPembelian
         Me.nud.Size = New System.Drawing.Size(201, 20)
         Me.nud.TabIndex = 55
         '
+        'txtsubtotal
+        '
+        Me.txtsubtotal.Location = New System.Drawing.Point(132, 252)
+        Me.txtsubtotal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtsubtotal.Name = "txtsubtotal"
+        Me.txtsubtotal.Size = New System.Drawing.Size(203, 20)
+        Me.txtsubtotal.TabIndex = 57
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(25, 256)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(53, 13)
+        Me.Label14.TabIndex = 56
+        Me.Label14.Text = "Sub Total"
+        '
         'FrDataReturPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(681, 353)
+        Me.ClientSize = New System.Drawing.Size(681, 365)
+        Me.Controls.Add(Me.txtsubtotal)
+        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.nud)
         Me.Controls.Add(Me.txttotal)
         Me.Controls.Add(Me.Label13)
@@ -382,7 +393,6 @@ Partial Class FrDataReturPembelian
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.btnsimpan)
         Me.Controls.Add(Me.btncetak)
-        Me.Controls.Add(Me.btnubah)
         Me.Controls.Add(Me.btnhapus)
         Me.Controls.Add(Me.btntambah)
         Me.Controls.Add(Me.dgvData)
@@ -437,7 +447,6 @@ Partial Class FrDataReturPembelian
     Friend WithEvents dgvData As DataGridView
     Friend WithEvents btntambah As Button
     Friend WithEvents btnhapus As Button
-    Friend WithEvents btnubah As Button
     Friend WithEvents btncetak As Button
     Friend WithEvents btnsimpan As Button
     Friend WithEvents Label12 As Label
@@ -448,4 +457,6 @@ Partial Class FrDataReturPembelian
     Friend WithEvents txttotal As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents nud As NumericUpDown
+    Friend WithEvents txtsubtotal As TextBox
+    Friend WithEvents Label14 As Label
 End Class

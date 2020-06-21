@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrDataPenjualan
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrDataPenjualan
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -43,7 +43,6 @@ Partial Class FrDataPenjualan
         Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.btncetak = New System.Windows.Forms.Button()
         Me.btntambah = New System.Windows.Forms.Button()
-        Me.btnubah = New System.Windows.Forms.Button()
         Me.btnhapus = New System.Windows.Forms.Button()
         Me.btnsimpan = New System.Windows.Forms.Button()
         Me.txtharga = New System.Windows.Forms.TextBox()
@@ -59,7 +58,6 @@ Partial Class FrDataPenjualan
         Me.nud = New System.Windows.Forms.NumericUpDown()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtstok = New System.Windows.Forms.TextBox()
-        Me.txtjumlahkonversi = New System.Windows.Forms.TextBox()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -254,23 +252,13 @@ Partial Class FrDataPenjualan
         '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(113, 351)
+        Me.btntambah.Location = New System.Drawing.Point(187, 350)
         Me.btntambah.Margin = New System.Windows.Forms.Padding(2)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(59, 24)
         Me.btntambah.TabIndex = 24
         Me.btntambah.Text = "Tambah"
         Me.btntambah.UseVisualStyleBackColor = True
-        '
-        'btnubah
-        '
-        Me.btnubah.Location = New System.Drawing.Point(183, 351)
-        Me.btnubah.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnubah.Name = "btnubah"
-        Me.btnubah.Size = New System.Drawing.Size(61, 24)
-        Me.btnubah.TabIndex = 25
-        Me.btnubah.Text = "Ubah"
-        Me.btnubah.UseVisualStyleBackColor = True
         '
         'btnhapus
         '
@@ -330,16 +318,16 @@ Partial Class FrDataPenjualan
         '
         'txttotal
         '
-        Me.txttotal.Location = New System.Drawing.Point(440, 354)
+        Me.txttotal.Location = New System.Drawing.Point(484, 354)
         Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txttotal.Name = "txttotal"
-        Me.txttotal.Size = New System.Drawing.Size(208, 20)
+        Me.txttotal.Size = New System.Drawing.Size(164, 20)
         Me.txttotal.TabIndex = 33
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(353, 354)
+        Me.Label13.Location = New System.Drawing.Point(434, 357)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(31, 13)
@@ -353,7 +341,7 @@ Partial Class FrDataPenjualan
         Me.cbbsatuan.FormattingEnabled = True
         Me.cbbsatuan.Location = New System.Drawing.Point(113, 223)
         Me.cbbsatuan.Name = "cbbsatuan"
-        Me.cbbsatuan.Size = New System.Drawing.Size(94, 21)
+        Me.cbbsatuan.Size = New System.Drawing.Size(207, 21)
         Me.cbbsatuan.TabIndex = 34
         '
         'btncarifaktur
@@ -410,20 +398,11 @@ Partial Class FrDataPenjualan
         Me.txtstok.Size = New System.Drawing.Size(82, 20)
         Me.txtstok.TabIndex = 40
         '
-        'txtjumlahkonversi
-        '
-        Me.txtjumlahkonversi.Location = New System.Drawing.Point(238, 223)
-        Me.txtjumlahkonversi.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtjumlahkonversi.Name = "txtjumlahkonversi"
-        Me.txtjumlahkonversi.Size = New System.Drawing.Size(82, 20)
-        Me.txtjumlahkonversi.TabIndex = 41
-        '
         'FrDataPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(691, 413)
-        Me.Controls.Add(Me.txtjumlahkonversi)
         Me.Controls.Add(Me.txtstok)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.nud)
@@ -439,7 +418,6 @@ Partial Class FrDataPenjualan
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnsimpan)
         Me.Controls.Add(Me.btnhapus)
-        Me.Controls.Add(Me.btnubah)
         Me.Controls.Add(Me.btntambah)
         Me.Controls.Add(Me.btncetak)
         Me.Controls.Add(Me.dgvData)
@@ -492,7 +470,6 @@ Partial Class FrDataPenjualan
     Friend WithEvents dgvData As DataGridView
     Friend WithEvents btncetak As Button
     Friend WithEvents btntambah As Button
-    Friend WithEvents btnubah As Button
     Friend WithEvents btnhapus As Button
     Friend WithEvents btnsimpan As Button
     Friend WithEvents txtharga As TextBox
@@ -508,5 +485,4 @@ Partial Class FrDataPenjualan
     Friend WithEvents nud As NumericUpDown
     Friend WithEvents Label15 As Label
     Friend WithEvents txtstok As TextBox
-    Friend WithEvents txtjumlahkonversi As TextBox
 End Class

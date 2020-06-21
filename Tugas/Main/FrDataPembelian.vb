@@ -53,7 +53,20 @@ Public Class FrDataPembelian
         koneksi()
         buat_kode()
         tabel()
-
+        txtnopembelian.Enabled = False
+        txtnopesananpembelian.Enabled = False
+        txtkodesupplier.Enabled = False
+        txtnamasupplier.Enabled = False
+        txtkodebarang.Enabled = False
+        txtkodebarang.Enabled = False
+        dtpt.Value = Date.Today
+        dtpt.Enabled = False
+        If txtnopesananpembelian.Text = "" Then
+            btncaribarang.Enabled = False
+        End If
+        txtsubtotal.Enabled = False
+        txtnamabarang.Enabled = False
+        txttotal.Enabled = False
 
     End Sub
 
@@ -66,7 +79,7 @@ Public Class FrDataPembelian
 
     Private Sub btncaribarang_Click(sender As Object, e As EventArgs) Handles btncaribarang.Click
 
-        'FrCariBarang.Tag = "Pembelian"
+        FrCariBarang.Tag = "Pembelian"
         FrCariBarang.Show()
 
     End Sub
@@ -106,4 +119,15 @@ Public Class FrDataPembelian
         Return MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Function
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        FrCariPesananPembelian.Tag = "Pembelian"
+        FrCariPesananPembelian.ShowDialog()
+    End Sub
+
+    Private Sub txtnopesananpembelian_TextChanged(sender As Object, e As EventArgs) Handles txtnopesananpembelian.TextChanged
+        If txtnopesananpembelian.Text <> "" Then
+            btncaribarang.Enabled = True
+        End If
+    End Sub
 End Class

@@ -25,10 +25,10 @@ Partial Class FrCariReturPembelian
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.btncari = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -55,13 +55,13 @@ Partial Class FrCariReturPembelian
         Me.TextBox1.Size = New System.Drawing.Size(243, 20)
         Me.TextBox1.TabIndex = 2
         '
-        'DataGridView1
+        'dgvData
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 100)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(449, 150)
-        Me.DataGridView1.TabIndex = 3
+        Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvData.Location = New System.Drawing.Point(16, 100)
+        Me.dgvData.Name = "dgvData"
+        Me.dgvData.Size = New System.Drawing.Size(449, 150)
+        Me.dgvData.TabIndex = 3
         '
         'btncari
         '
@@ -88,13 +88,13 @@ Partial Class FrCariReturPembelian
         Me.ClientSize = New System.Drawing.Size(477, 262)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btncari)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvData)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FrCariReturPembelian"
         Me.Text = "FrCariReturPembelian"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -103,7 +103,7 @@ Partial Class FrCariReturPembelian
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvData As DataGridView
     Friend WithEvents btncari As Button
     Friend WithEvents Label2 As Label
 End Class

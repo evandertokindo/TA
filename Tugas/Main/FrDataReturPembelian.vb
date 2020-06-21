@@ -3,18 +3,18 @@
 Public Class FrDataReturPembelian
 
     Sub tabel()
-        dgvData.ColumnCount = 6
+        dgvData.ColumnCount = 7
         dgvData.Columns(0).HeaderText = "Kode Barang"
         dgvData.Columns(1).HeaderText = "Nama Barang"
         dgvData.Columns(2).HeaderText = "Jumlah"
         dgvData.Columns(3).HeaderText = "Satuan"
         dgvData.Columns(4).HeaderText = "Harga Beli"
-        dgvData.Columns(5).HeaderText = "Kadaluarsa"
+        dgvData.Columns(5).HeaderText = "Sub Total"
+        dgvData.Columns(6).HeaderText = "Kadaluarsa"
         dgvData.ReadOnly = True
         dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgvData.RowHeadersVisible = False
         dgvData.AllowUserToAddRows = False
-
     End Sub
 
     Function belumAdaKodenya() As Boolean
@@ -43,7 +43,6 @@ Public Class FrDataReturPembelian
         End If
         datareader.Close()
         txtnoreturpembelian.Text = urut
-        conn.Close()
     End Sub
 
     Private Sub FrDataReturPembelian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -51,15 +50,15 @@ Public Class FrDataReturPembelian
         koneksi()
         buat_kode()
         tabel()
-        'txtnoreturpembelian.Enabled = False
-        'txtkodebarang.Enabled = False
-        'txtnamabarang.Enabled = False
-        'txtkodesupplier.Enabled = False
-        'txtnamasupplier.Enabled = False
-        'txthargabeli.Enabled = False
-        'dtpt.Enabled = False
-        'dtpt.Value = Date.Today
-        'dtpkadaluarsa.Enabled = False
+        txtnoreturpembelian.Enabled = False
+        txtkodebarang.Enabled = False
+        txtnamabarang.Enabled = False
+        txtkodesupplier.Enabled = False
+        txtnamasupplier.Enabled = False
+        txthargabeli.Enabled = False
+        dtpt.Enabled = False
+        dtpt.Value = Date.Today
+        dtpkadaluarsa.Enabled = False
         txttotal.Text = "0"
     End Sub
 
@@ -88,14 +87,14 @@ Public Class FrDataReturPembelian
             Return MessageBox.Show("Pesanan Produk" & txtkodebarang.Text & " Sudah ada Di List. Harap Hapus Terlebih Dahulu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
-        dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txthargabeli.Text, dtpkadaluarsa.Value)
+        dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txthargabeli.Text, txtsubtotal.Text, dtpkadaluarsa.Value)
         Return MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Function
 
     Private Sub btncaribarang_Click(sender As Object, e As EventArgs) Handles btncaribarang.Click
 
-        'FrCariBarang.Tag = "Retur"
+        FrCariBarang.Tag = "Retur"
         FrCariBarang.ShowDialog()
 
     End Sub
@@ -122,17 +121,19 @@ Public Class FrDataReturPembelian
 
                     load_data_1pk("tbR_D")
                     For i As Integer = 0 To dgvData.Rows.Count - 1
-                        dr = ds.Tables("tbR_D").NewRow
-                        dr(0) = txtnoreturpembelian.Text
-                        dr(1) = dgvData.Item(0, i).Value
-                        dr(2) = dgvData.Item(1, i).Value
-                        dr(3) = dgvData.Item(2, i).Value
-                        dr(4) = dgvData.Item(3, i).Value
-                        dr(5) = dgvData.Item(4, i).Value
-                        dr(6) = dgvData.Item(5, i).Value
-                        ds.Tables("tbR_D").Rows.Add(dr)
-                        update_data("tbR_D")
-
+                        If txtnoreturpembelian.Text = dr(0) And dgvData.Item(0, i) <> dr(1) Then
+                            dr = ds.Tables("tbR_D").NewRow
+                            dr(0) = txtnoreturpembelian.Text
+                            dr(1) = dgvData.Item(0, i).Value
+                            dr(2) = dgvData.Item(1, i).Value
+                            dr(3) = dgvData.Item(2, i).Value
+                            dr(4) = dgvData.Item(3, i).Value
+                            dr(5) = dgvData.Item(4, i).Value
+                            dr(6) = dgvData.Item(5, i).Value
+                            dr(7) = dgvData.Item(6, i).Value
+                            ds.Tables("tbR_D").Rows.Add(dr)
+                            update_data("tbR_D")
+                        End If
                     Next
 
                     MessageBox.Show("Data Retur " & txtnoreturpembelian.Text & " berhasil disimpan", "Simpan Data Retur", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -153,5 +154,13 @@ Public Class FrDataReturPembelian
                 'txttotal.Text = dgvData.Rows.Count
             End If
         End If
+    End Sub
+
+    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
+        FrCariReturPembelian.ShowDialog()
+    End Sub
+
+    Private Sub txtnoreturpembelian_TextChanged(sender As Object, e As EventArgs) Handles txtnoreturpembelian.TextChanged
+
     End Sub
 End Class

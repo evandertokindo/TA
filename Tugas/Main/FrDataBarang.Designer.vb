@@ -33,7 +33,7 @@ Partial Class FrDataBarang
         Me.txtkodebarang = New System.Windows.Forms.TextBox()
         Me.txthargaecer = New System.Windows.Forms.TextBox()
         Me.txthargagrosir = New System.Windows.Forms.TextBox()
-        Me.btnsimpan = New System.Windows.Forms.Button()
+        Me.btnsimpandetail = New System.Windows.Forms.Button()
         Me.btncari = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cbbbesar = New System.Windows.Forms.ComboBox()
@@ -87,7 +87,7 @@ Partial Class FrDataBarang
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(333, 35)
+        Me.Label4.Location = New System.Drawing.Point(19, 184)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
@@ -97,7 +97,7 @@ Partial Class FrDataBarang
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(333, 118)
+        Me.Label6.Location = New System.Drawing.Point(19, 214)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(102, 13)
@@ -107,7 +107,7 @@ Partial Class FrDataBarang
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(333, 60)
+        Me.Label7.Location = New System.Drawing.Point(333, 183)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(61, 13)
@@ -117,7 +117,7 @@ Partial Class FrDataBarang
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(333, 90)
+        Me.Label8.Location = New System.Drawing.Point(333, 213)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(66, 13)
@@ -126,7 +126,7 @@ Partial Class FrDataBarang
         '
         'dtpkadaluarsa
         '
-        Me.dtpkadaluarsa.Location = New System.Drawing.Point(463, 114)
+        Me.dtpkadaluarsa.Location = New System.Drawing.Point(130, 211)
         Me.dtpkadaluarsa.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpkadaluarsa.Name = "dtpkadaluarsa"
         Me.dtpkadaluarsa.Size = New System.Drawing.Size(169, 20)
@@ -142,7 +142,7 @@ Partial Class FrDataBarang
         '
         'txthargaecer
         '
-        Me.txthargaecer.Location = New System.Drawing.Point(463, 58)
+        Me.txthargaecer.Location = New System.Drawing.Point(463, 181)
         Me.txthargaecer.Margin = New System.Windows.Forms.Padding(2)
         Me.txthargaecer.Name = "txthargaecer"
         Me.txthargaecer.Size = New System.Drawing.Size(169, 20)
@@ -150,21 +150,21 @@ Partial Class FrDataBarang
         '
         'txthargagrosir
         '
-        Me.txthargagrosir.Location = New System.Drawing.Point(463, 88)
+        Me.txthargagrosir.Location = New System.Drawing.Point(463, 211)
         Me.txthargagrosir.Margin = New System.Windows.Forms.Padding(2)
         Me.txthargagrosir.Name = "txthargagrosir"
         Me.txthargagrosir.Size = New System.Drawing.Size(169, 20)
         Me.txthargagrosir.TabIndex = 23
         '
-        'btnsimpan
+        'btnsimpandetail
         '
-        Me.btnsimpan.Location = New System.Drawing.Point(498, 236)
-        Me.btnsimpan.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnsimpan.Name = "btnsimpan"
-        Me.btnsimpan.Size = New System.Drawing.Size(66, 28)
-        Me.btnsimpan.TabIndex = 25
-        Me.btnsimpan.Text = "Simpan"
-        Me.btnsimpan.UseVisualStyleBackColor = True
+        Me.btnsimpandetail.Location = New System.Drawing.Point(489, 238)
+        Me.btnsimpandetail.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnsimpandetail.Name = "btnsimpandetail"
+        Me.btnsimpandetail.Size = New System.Drawing.Size(66, 28)
+        Me.btnsimpandetail.TabIndex = 25
+        Me.btnsimpandetail.Text = "Simpan"
+        Me.btnsimpandetail.UseVisualStyleBackColor = True
         '
         'btncari
         '
@@ -202,7 +202,7 @@ Partial Class FrDataBarang
         Me.cbbsedang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbbsedang.FormattingEnabled = True
         Me.cbbsedang.Items.AddRange(New Object() {"-", "Papan"})
-        Me.cbbsedang.Location = New System.Drawing.Point(129, 144)
+        Me.cbbsedang.Location = New System.Drawing.Point(447, 29)
         Me.cbbsedang.Margin = New System.Windows.Forms.Padding(2)
         Me.cbbsedang.Name = "cbbsedang"
         Me.cbbsedang.Size = New System.Drawing.Size(185, 21)
@@ -211,7 +211,7 @@ Partial Class FrDataBarang
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(15, 145)
+        Me.Label11.Location = New System.Drawing.Point(333, 32)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(81, 13)
@@ -223,7 +223,7 @@ Partial Class FrDataBarang
         Me.cbbkecil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbbkecil.FormattingEnabled = True
         Me.cbbkecil.Items.AddRange(New Object() {"-", "Butir", "Botol", "Bungkus", "Pcs"})
-        Me.cbbkecil.Location = New System.Drawing.Point(129, 200)
+        Me.cbbkecil.Location = New System.Drawing.Point(447, 87)
         Me.cbbkecil.Margin = New System.Windows.Forms.Padding(2)
         Me.cbbkecil.Name = "cbbkecil"
         Me.cbbkecil.Size = New System.Drawing.Size(185, 21)
@@ -232,7 +232,7 @@ Partial Class FrDataBarang
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(15, 201)
+        Me.Label12.Location = New System.Drawing.Point(333, 88)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(67, 13)
@@ -252,7 +252,7 @@ Partial Class FrDataBarang
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(15, 174)
+        Me.Label14.Location = New System.Drawing.Point(333, 61)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(89, 13)
@@ -262,7 +262,7 @@ Partial Class FrDataBarang
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(333, 6)
+        Me.Label15.Location = New System.Drawing.Point(8, 157)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(97, 13)
@@ -271,7 +271,7 @@ Partial Class FrDataBarang
         '
         'btnubah
         '
-        Me.btnubah.Location = New System.Drawing.Point(575, 236)
+        Me.btnubah.Location = New System.Drawing.Point(566, 238)
         Me.btnubah.Margin = New System.Windows.Forms.Padding(2)
         Me.btnubah.Name = "btnubah"
         Me.btnubah.Size = New System.Drawing.Size(66, 28)
@@ -282,7 +282,7 @@ Partial Class FrDataBarang
         'lblsatuan
         '
         Me.lblsatuan.AutoSize = True
-        Me.lblsatuan.Location = New System.Drawing.Point(568, 35)
+        Me.lblsatuan.Location = New System.Drawing.Point(219, 183)
         Me.lblsatuan.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblsatuan.Name = "lblsatuan"
         Me.lblsatuan.Size = New System.Drawing.Size(0, 13)
@@ -305,17 +305,17 @@ Partial Class FrDataBarang
         '
         'nudkecil
         '
-        Me.nudkecil.Location = New System.Drawing.Point(130, 172)
+        Me.nudkecil.Location = New System.Drawing.Point(448, 59)
         Me.nudkecil.Name = "nudkecil"
         Me.nudkecil.Size = New System.Drawing.Size(184, 20)
         Me.nudkecil.TabIndex = 31
         '
         'txtjumlah
         '
-        Me.txtjumlah.Location = New System.Drawing.Point(463, 32)
+        Me.txtjumlah.Location = New System.Drawing.Point(128, 181)
         Me.txtjumlah.Margin = New System.Windows.Forms.Padding(2)
         Me.txtjumlah.Name = "txtjumlah"
-        Me.txtjumlah.Size = New System.Drawing.Size(101, 20)
+        Me.txtjumlah.Size = New System.Drawing.Size(78, 20)
         Me.txtjumlah.TabIndex = 21
         '
         'FrDataBarang
@@ -337,7 +337,7 @@ Partial Class FrDataBarang
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.btnubah)
         Me.Controls.Add(Me.btncari)
-        Me.Controls.Add(Me.btnsimpan)
+        Me.Controls.Add(Me.btnsimpandetail)
         Me.Controls.Add(Me.txthargagrosir)
         Me.Controls.Add(Me.txthargaecer)
         Me.Controls.Add(Me.txtjumlah)
@@ -372,7 +372,7 @@ Partial Class FrDataBarang
     Friend WithEvents txtkodebarang As TextBox
     Friend WithEvents txthargaecer As TextBox
     Friend WithEvents txthargagrosir As TextBox
-    Friend WithEvents btnsimpan As Button
+    Friend WithEvents btnsimpandetail As Button
     Friend WithEvents btncari As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents cbbbesar As ComboBox

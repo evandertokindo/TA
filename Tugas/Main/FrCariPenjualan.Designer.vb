@@ -26,9 +26,9 @@ Partial Class FrCariPenjualan
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btncari = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -66,13 +66,13 @@ Partial Class FrCariPenjualan
         Me.btncari.Text = "Cari"
         Me.btncari.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgvData
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 96)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(448, 156)
-        Me.DataGridView1.TabIndex = 5
+        Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvData.Location = New System.Drawing.Point(12, 96)
+        Me.dgvData.Name = "dgvData"
+        Me.dgvData.Size = New System.Drawing.Size(448, 156)
+        Me.dgvData.TabIndex = 5
         '
         'TextBox1
         '
@@ -81,20 +81,20 @@ Partial Class FrCariPenjualan
         Me.TextBox1.Size = New System.Drawing.Size(237, 20)
         Me.TextBox1.TabIndex = 6
         '
-        'FrDaftarPenjualan
+        'FrCariPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(477, 262)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvData)
         Me.Controls.Add(Me.btncari)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "FrDaftarPenjualan"
+        Me.Name = "FrCariPenjualan"
         Me.Text = "FrDaftarPenjualan"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -104,6 +104,6 @@ Partial Class FrCariPenjualan
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btncari As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvData As DataGridView
     Friend WithEvents TextBox1 As TextBox
 End Class

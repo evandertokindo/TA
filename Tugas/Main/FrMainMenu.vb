@@ -2,11 +2,6 @@
 Imports System.Data.SqlClient
 Public Class FrMainMenu
 
-    Private Sub FrMainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-    End Sub
-
     Private Sub TrPesananPembelian_Click(sender As Object, e As EventArgs) Handles TrPesananPembelian.Click
 
         FrDataPesananPembelian.Show()
@@ -31,24 +26,6 @@ Public Class FrMainMenu
 
     End Sub
 
-    Private Sub GGudangDepan_Click(sender As Object, e As EventArgs) 
-
-        FrGudangDepan.Show()
-
-    End Sub
-
-    Private Sub GGudangBelakang_Click(sender As Object, e As EventArgs) 
-
-        FrGudangBelakang.Show()
-
-    End Sub
-
-    Private Sub GMutasi_Click(sender As Object, e As EventArgs) 
-
-        FrMutasi.Show()
-
-    End Sub
-
     Private Sub GPenyesuaian_Click(sender As Object, e As EventArgs) Handles GPenyesuaian.Click
 
         FrDataPenyesuaian.Show()
@@ -63,37 +40,31 @@ Public Class FrMainMenu
 
     Private Sub LPembelian_Click(sender As Object, e As EventArgs) Handles LPembelian.Click
 
-        FrLaporanPembelian.Show()
+        FrDaftarPembelian.Show()
 
     End Sub
 
     Private Sub LPenjualan_Click(sender As Object, e As EventArgs) Handles LPenjualan.Click
 
-        FrLaporanPenjualan.Show()
+        FrDaftarPenjualan.Show()
 
     End Sub
 
-    Private Sub LMutasi_Click(sender As Object, e As EventArgs) 
+    'Private Sub LKadaluarsa_Click(sender As Object, e As EventArgs) Handles LKadaluarsa.Click
 
-        FrLaporanMutasi.Show()
+    '    Frdaftarkada.Show()
 
-    End Sub
-
-    Private Sub LKadaluarsa_Click(sender As Object, e As EventArgs) Handles LKadaluarsa.Click
-
-        FrLaporanKadaluarsa.Show()
-
-    End Sub
+    'End Sub
 
     Private Sub LPenyesuaian_Click(sender As Object, e As EventArgs) Handles LPenyesuaian.Click
 
-        FrLaporanPenyesuaian.Show()
+        FrDaftarPenyesuaian.Show()
 
     End Sub
 
     Private Sub LPersediaan_Click(sender As Object, e As EventArgs) Handles LPersediaan.Click
 
-        FrLaporanPersediaan.Show()
+        FrDaftarBarang.Show()
 
     End Sub
 

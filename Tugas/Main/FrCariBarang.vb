@@ -2,190 +2,145 @@
 
 Public Class FrCariBarang
 
-    Sub barang()
-        dgvData.ColumnCount = 12
+    'Sub barang()
+    '    dgvData.ColumnCount = 12
+    '    dgvData.Columns(0).HeaderText = "Kode Barang"
+    '    dgvData.Columns(1).HeaderText = "Nama Barang"
+    '    dgvData.Columns(2).HeaderText = "Satuan Besar"
+    '    dgvData.Columns(3).HeaderText = "Konversi Ke Sedang"
+    '    dgvData.Columns(4).HeaderText = "Satuan Sedang"
+    '    dgvData.Columns(5).HeaderText = "Konversi Ke Kecil"
+    '    dgvData.Columns(6).HeaderText = "Satuan Kecil"
+    '    dgvData.Columns(7).HeaderText = "Jumlah"
+    '    dgvData.Columns(8).HeaderText = "Satuan"
+    '    dgvData.Columns(9).HeaderText = "Harga Ecer"
+    '    dgvData.Columns(10).HeaderText = "Harga Grosir"
+    '    dgvData.Columns(11).HeaderText = "Kadaluarsa"
+    '    dgvData.ReadOnly = True
+    '    dgvData.AllowUserToAddRows = False
+    '    dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    '    dgvData.RowHeadersVisible = False
+    'End Sub
+
+    Sub baru()
+
+        dgvData.ColumnCount = 5
         dgvData.Columns(0).HeaderText = "Kode Barang"
         dgvData.Columns(1).HeaderText = "Nama Barang"
-        dgvData.Columns(2).HeaderText = "Satuan Besar"
-        dgvData.Columns(3).HeaderText = "Konversi Ke Sedang"
-        dgvData.Columns(4).HeaderText = "Satuan Sedang"
-        dgvData.Columns(5).HeaderText = "Konversi Ke Kecil"
-        dgvData.Columns(6).HeaderText = "Satuan Kecil"
-        dgvData.Columns(7).HeaderText = "Jumlah"
-        dgvData.Columns(8).HeaderText = "Satuan"
-        dgvData.Columns(9).HeaderText = "Harga Ecer"
-        dgvData.Columns(10).HeaderText = "Harga Grosir"
-        dgvData.Columns(11).HeaderText = "Kadaluarsa"
+        dgvData.Columns(2).HeaderText = "Jumlah"
+        dgvData.Columns(3).HeaderText = "Satuan"
+        dgvData.Columns(4).HeaderText = "Kadaluarsa"
         dgvData.ReadOnly = True
         dgvData.AllowUserToAddRows = False
         dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgvData.RowHeadersVisible = False
+
     End Sub
 
-    'Sub barang()
+    Sub pesanan()
 
-    '    dgvData.ColumnCount = 4
-    '    dgvData.Columns(0).HeaderText = "Kode Barang"
-    '    dgvData.Columns(1).HeaderText = "Nama Barang"
-    '    dgvData.Columns(2).HeaderText = "No. Telepon"
-    '    dgvData.Columns(3).HeaderText = "Alamat"
-    '    dgvData.ReadOnly = True
-    '    dgvData.AllowUserToAddRows = False
-    '    dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    '    dgvData.RowHeadersVisible = False
+        dgvData.ColumnCount = 5
+        dgvData.Columns(0).HeaderText = "Kode Barang"
+        dgvData.Columns(1).HeaderText = "Nama Barang"
+        dgvData.Columns(2).HeaderText = "Jumlah"
+        dgvData.Columns(3).HeaderText = "Satuan"
+        dgvData.Columns(4).HeaderText = "Kadaluarsa"
+        dgvData.ReadOnly = True
+        dgvData.AllowUserToAddRows = False
+        dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvData.RowHeadersVisible = False
 
-    'End Sub
+    End Sub
 
-    'Sub pesanan()
+    Sub pembelian()
 
-    '    dgvData.ColumnCount = 4
-    '    dgvData.Columns(0).HeaderText = "Kode Barang"
-    '    dgvData.Columns(1).HeaderText = "Nama Barang"
-    '    dgvData.Columns(2).HeaderText = "No. Telepon"
-    '    dgvData.Columns(3).HeaderText = "Alamat"
-    '    dgvData.ReadOnly = True
-    '    dgvData.AllowUserToAddRows = False
-    '    dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    '    dgvData.RowHeadersVisible = False
+        dgvData.ColumnCount = 5
+        dgvData.Columns(0).HeaderText = "Kode Barang"
+        dgvData.Columns(1).HeaderText = "Nama Barang"
+        dgvData.Columns(2).HeaderText = "Jumlah"
+        dgvData.Columns(3).HeaderText = "Satuan"
+        dgvData.Columns(4).HeaderText = "Kadaluarsa"
+        dgvData.ReadOnly = True
+        dgvData.AllowUserToAddRows = False
+        dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvData.RowHeadersVisible = False
 
-    'End Sub
+    End Sub
 
-    'Sub pembelian()
+    Sub penjualan()
 
-    '    dgvData.ColumnCount = 4
-    '    dgvData.Columns(0).HeaderText = "Kode Barang"
-    '    dgvData.Columns(1).HeaderText = "Nama Barang"
-    '    dgvData.Columns(2).HeaderText = "No. Telepon"
-    '    dgvData.Columns(3).HeaderText = "Alamat"
-    '    dgvData.ReadOnly = True
-    '    dgvData.AllowUserToAddRows = False
-    '    dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    '    dgvData.RowHeadersVisible = False
+        dgvData.ColumnCount = 5
+        dgvData.Columns(0).HeaderText = "Kode Barang"
+        dgvData.Columns(1).HeaderText = "Nama Barang"
+        dgvData.Columns(2).HeaderText = "Jumlah"
+        dgvData.Columns(3).HeaderText = "Satuan"
+        dgvData.Columns(4).HeaderText = "Kadaluarsa"
+        dgvData.ReadOnly = True
+        dgvData.AllowUserToAddRows = False
+        dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvData.RowHeadersVisible = False
 
-    'End Sub
+    End Sub
 
-    'Sub penjualan()
+    Sub retur()
 
-    '    dgvData.ColumnCount = 4
-    '    dgvData.Columns(0).HeaderText = "Kode Barang"
-    '    dgvData.Columns(1).HeaderText = "Nama Barang"
-    '    dgvData.Columns(2).HeaderText = "No. Telepon"
-    '    dgvData.Columns(3).HeaderText = "Alamat"
-    '    dgvData.ReadOnly = True
-    '    dgvData.AllowUserToAddRows = False
-    '    dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    '    dgvData.RowHeadersVisible = False
+        dgvData.ColumnCount = 5
+        dgvData.Columns(0).HeaderText = "Kode Barang"
+        dgvData.Columns(1).HeaderText = "Nama Barang"
+        dgvData.Columns(2).HeaderText = "Jumlah"
+        dgvData.Columns(3).HeaderText = "Satuan"
+        dgvData.Columns(4).HeaderText = "Kadaluarsa"
+        dgvData.ReadOnly = True
+        dgvData.AllowUserToAddRows = False
+        dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvData.RowHeadersVisible = False
 
-    'End Sub
+    End Sub
 
-    'Sub retur()
+    Sub penyesuaian()
 
-    '    dgvData.ColumnCount = 4
-    '    dgvData.Columns(0).HeaderText = "Kode Barang"
-    '    dgvData.Columns(1).HeaderText = "Nama Barang"
-    '    dgvData.Columns(2).HeaderText = "No. Telepon"
-    '    dgvData.Columns(3).HeaderText = "Alamat"
-    '    dgvData.ReadOnly = True
-    '    dgvData.AllowUserToAddRows = False
-    '    dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    '    dgvData.RowHeadersVisible = False
+        dgvData.ColumnCount = 5
+        dgvData.Columns(0).HeaderText = "Kode Barang"
+        dgvData.Columns(1).HeaderText = "Nama Barang"
+        dgvData.Columns(2).HeaderText = "Jumlah"
+        dgvData.Columns(3).HeaderText = "Satuan"
+        dgvData.Columns(4).HeaderText = "Kadaluarsa"
+        dgvData.ReadOnly = True
+        dgvData.AllowUserToAddRows = False
+        dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvData.RowHeadersVisible = False
 
-    'End Sub
-
-    'Sub penyesuaian()
-
-    '    dgvData.ColumnCount = 4
-    '    dgvData.Columns(0).HeaderText = "Kode Barang"
-    '    dgvData.Columns(1).HeaderText = "Nama Barang"
-    '    dgvData.Columns(2).HeaderText = "No. Telepon"
-    '    dgvData.Columns(3).HeaderText = "Alamat"
-    '    dgvData.ReadOnly = True
-    '    dgvData.AllowUserToAddRows = False
-    '    dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    '    dgvData.RowHeadersVisible = False
-
-    'End Sub
+    End Sub
 
     Private Sub FrCariBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
         dgvData.Rows.Clear()
-        barang()
-        query = "Select bh.kode_b, bh.nama_b, bh.satuan_besar, bh.konversi_sedang, bh.satuan_sedang, bh.konversi_kecil, bh.satuan_kecil, bd.jumlah, bd.satuan, bd.harga_ecer, bd.harga_grosir, bd.kadaluarsa From tbB_H bh inner join tbB_D bd On bh.kode_b = bd.kode_b"
+
+        If Me.Tag = "Pesanan" Then
+            pesanan()
+            query = $"Select bd.kode_b, bh.nama_b, bd.jumlah, bd.satuan, bd.kadaluarsa from tbB_H bh inner join tbB_D bd on bh.kode_b = bd.kode_b"
+        ElseIf Me.Tag = "Pembelian" Then
+            pembelian()
+            query = $"Select ppbd.kode_b, bh.nama_b, ppbd.jumlah, ppbd.satuan, bd.kadaluarsa from tbPPB_H ppbh inner join tbPPB_D ppbd on ppbh.no_ppb = ppbd.no_ppb inner join tbB_D bd on bd.kode_b = ppbd.kode_b inner join tbB_H bh on bh.kode_b = bd.kode_b where ppbd.no_ppb ='{FrDataPembelian.txtnopesananpembelian.Text}'"
+        ElseIf Me.Tag = "Penjualan" Then
+            penjualan()
+            query = $"Select pjd.kode_b, bh.nama_b, pjd.jumlah, pjd.satuan, pjd.kadaluarsa from tbPJ_H pjh inner join tbPJ_D pjd on pjh.no_pj = pjd.no_pj inner join tbB_D bd on bd.kode_b = pjd.kode_b inner join tbB_H bh on bh.kode_b = bd.kode_b where pjd.no_pj ='{FrDataPenjualan.txtnofaktur.Text}'"
+        ElseIf Me.Tag = "Retur" Then
+            retur()
+            query = $"Select rd.kode_b, bh.nama_b, rd.jumlah, rd.satuan, rd.kadaluarsa from tbR_H rh inner join tbR_D rd on rh.no_r = rd.no_r inner join tbB_D bd on bd.kode_b = rd.kode_b inner join tbB_H bh on bh.kode_b = bd.kode_b where rd.no_r ='{FrDataReturPembelian.txtnoreturpembelian.Text}'"
+            cmd = New SqlCommand(query, conn)
+        ElseIf Me.Tag = "Penyesuaian" Then
+            penyesuaian()
+            query = $"Select pyd.kode_b, bh.nama_b, pyd.jumlah, pyd.satuan, pyd.kadaluarsa from tbPY_H pyh inner join tbPY_D pyd on pyh.no_py = pyd.no_py inner join tbB_D bd on bd.kode_b = pyd.kode_b inner join tbB_H bh on bh.kode_b = bd.kode_b where pyd.no_py ='{FrDataReturPembelian.txtnoreturpembelian.Text}'"
+        End If
         cmd = New SqlCommand(query, conn)
         datareader = cmd.ExecuteReader
         If datareader.HasRows Then
-            While datareader.Read()
-                dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(3), datareader(4), datareader(5), datareader(6), datareader(7), datareader(8), datareader(9), datareader(10), datareader(11))
+            While datareader.Read
+                dgvData.Rows.Add(datareader.Item(0), datareader.Item(1), datareader.Item(2), datareader.Item(3), datareader.Item(4))
             End While
         End If
-
-        'If Me.Tag = "Barang" Then
-        '    barang()
-        '    query = "Select * from tbP"
-        '    cmd = New SqlCommand(query, conn)
-        '    datareader = cmd.ExecuteReader
-        '    If datareader.HasRows Then
-        '        While datareader.Read
-        '            dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(3))
-        '        End While
-        '    End If
-        '    datareader.Close()
-        'ElseIf Me.Tag = "Pesanan" Then
-        '    pesanan()
-        '    query = "Select * from tbP"
-        '    cmd = New SqlCommand(query, conn)
-        '    datareader = cmd.ExecuteReader
-        '    If datareader.HasRows Then
-        '        While datareader.Read
-        '            dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(3))
-        '        End While
-        '    End If
-        '    datareader.Close()
-        'ElseIf Me.Tag = "Pembelian" Then
-        '    pembelian()
-        '    query = "Select * from tbP"
-        '    cmd = New SqlCommand(query, conn)
-        '    datareader = cmd.ExecuteReader
-        '    If datareader.HasRows Then
-        '        While datareader.Read
-        '            dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(3))
-        '        End While
-        '    End If
-        '    datareader.Close()
-        'ElseIf Me.Tag = "Penjualan" Then
-        '    penjualan()
-        '    query = "Select * from tbP"
-        '    cmd = New SqlCommand(query, conn)
-        '    datareader = cmd.ExecuteReader
-        '    If datareader.HasRows Then
-        '        While datareader.Read
-        '            dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(3))
-        '        End While
-        '    End If
-        '    datareader.Close()
-        'ElseIf Me.Tag = "Retur" Then
-        '    retur()
-        '    query = "Select * from tbP"
-        '    cmd = New SqlCommand(query, conn)
-        '    datareader = cmd.ExecuteReader
-        '    If datareader.HasRows Then
-        '        While datareader.Read
-        '            dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(3))
-        '        End While
-        '    End If
-        '    datareader.Close()
-        'ElseIf Me.Tag = "Penyesuaian" Then
-        '    penyesuaian()
-        '    query = "Select * from tbP"
-        '    cmd = New SqlCommand(query, conn)
-        '    datareader = cmd.ExecuteReader
-        '    If datareader.HasRows Then
-        '        While datareader.Read
-        '            dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(4))
-        '        End While
-        '    End If
-        '    datareader.Close()
-        'End If
+        datareader.Close()
 
     End Sub
 
@@ -193,138 +148,37 @@ Public Class FrCariBarang
         Dim baris As Integer
 
         baris = dgvData.CurrentCell.RowIndex
-        'If Me.Tag = "Barang" Then
-        '    FrDataBarang.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        '    FrDataBarang.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        '    FrDataBarang.txthargaecer.Text = dgvData.Item(2, baris).Value
-        '    FrDataBarang.txthargagrosir.Text = dgvData.Item(3, baris).Value
-        'ElseIf Me.Tag = "Pesanan" Then
-        '    FrDataPesananPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        '    FrDataPesananPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        '    'FrDataPesananPembelian.txtjumlah.Text = dgvData.Item(2, baris).Value
-        '    'FrDataPesananPembelian.cbbsatuan.Text = dgvData.Item(3, baris).Value
-        'ElseIf Me.Tag = "Retur" Then
-        '    FrDataReturPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        '    FrDataReturPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        '    'FrDataReturPembelian.txtkodebarang.Text = dgvData.Item(2, baris).Value
-        'ElseIf Me.Tag = "Penjualan" Then
-        '    FrDataPenjualan.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        '    FrDataPenjualan.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        'ElseIf Me.Tag = "Pembelian" Then
-        '    FrDataPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        '    FrDataPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        'End If
+        If Me.Tag = "Pesanan" Then
+            FrDataPesananPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
+            FrDataPesananPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
+            FrDataPesananPembelian.nud.Value = dgvData.Item(2, baris).Value
+            query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{FrDataPesananPembelian.txtkodebarang.Text}'"
+            cmd = New SqlCommand(query, conn)
+            datareader = cmd.ExecuteReader
+            If datareader.HasRows Then
+                While datareader.Read
+                    FrDataPesananPembelian.cbbsatuan.Items.Clear()
+                    FrDataPesananPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
+                    FrDataPesananPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
+                    FrDataPesananPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
+                End While
+            End If
+            datareader.Close()
+            FrDataPesananPembelian.cbbsatuan.Text = dgvData.Item(3, baris).Value
 
-        Dim f1 As FrDataBarang = FrDataBarang
-        f1.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        f1.txtnamabarang.Text = dgvData.Item(1, baris).Value
-
-        Dim f2 As FrDataPesananPembelian = FrDataPesananPembelian
-        f2.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        f2.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        datareader.Close()
-        query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{f2.txtkodebarang.Text}'"
-        cmd = New SqlCommand(query, conn)
-        datareader = cmd.ExecuteReader
-        If datareader.HasRows Then
-            While datareader.Read
-                f2.cbbsatuan.Items.Clear()
-                f2.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
-                f2.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
-                f2.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
-            End While
+        ElseIf Me.Tag = "Retur" Then
+            FrDataReturPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
+            FrDataReturPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
+        ElseIf Me.Tag = "Penjualan" Then
+            FrDataPenjualan.txtkodebarang.Text = dgvData.Item(0, baris).Value
+            FrDataPenjualan.txtnamabarang.Text = dgvData.Item(1, baris).Value
+        ElseIf Me.Tag = "Pembelian" Then
+            FrDataPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
+            FrDataPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
         End If
-        datareader.Close()
-        'f2.cbbsatuan.Text = dgvData.Item(8, baris).Value
-
-        'Dim f3 As FrDataPembelian = FrDataPembelian
-        'f3.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        'f3.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        'query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{f3.txtkodebarang.Text}'"
-        'cmd = New SqlCommand(query, conn)
-        'datareader = cmd.ExecuteReader
-        'If datareader.HasRows Then
-        '    While datareader.Read
-        '        f3.cbbsatuan.Items.Clear()
-        '        f3.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
-        '        f3.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
-        '        f3.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
-        '    End While
-        'End If
-        'datareader.Close()
-
-        Dim f4 As FrDataPenjualan = FrDataPenjualan
-        f4.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        f4.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        'f4.stock = CInt(dgvData.Item(7, baris).Value)
-        f4.txtharga.Text = dgvData.Item(9, baris).Value
-
-        datareader.Close()
-        query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{f4.txtkodebarang.Text}'"
-        cmd = New SqlCommand(query, conn)
-        datareader = cmd.ExecuteReader
-        If datareader.HasRows Then
-            While datareader.Read
-                f4.cbbsatuan.Items.Clear()
-                f4.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
-                f4.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
-                f4.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
-            End While
-        End If
-        datareader.Close()
-        f4.txtstok.Text = dgvData.Item(7, baris).Value
-
-        'If f4.cbbsatuan.Text = dgvData.Item(2, baris).Value Then
-        '    f4.txtstok.Text = dgvData.Item(3, baris).Value
-        'ElseIf f4.cbbsatuan.Text = dgvData.Item(4, baris).Value Then
-        '    f4.txtstok.Text = dgvData.Item(5, baris).Value
-        'ElseIf f4.cbbsatuan.Text = dgvData.Item(6, baris).Value Then
-        '    f4.txtstok.Text = dgvData.Item(7, baris).Value
-        'End If
-        'f4.cbbsatuan.Text = dgvData.Item(8, baris).Value
-
-
-        Dim f5 As FrDataPenyesuaian = FrDataPenyesuaian
-        f5.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        f5.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        f5.txtjumlahsistem.Text = dgvData.Item(7, baris).Value
-
-        'datareader.Close()
-        'query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{f5.txtkodebarang.Text}'"
-        'cmd = New SqlCommand(query, conn)
-        'datareader = cmd.ExecuteReader
-        'If datareader.HasRows Then
-        '    While datareader.Read
-        '        f5.cbbsatuan.Items.Clear()
-        '        f5.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
-        '        f5.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
-        '        f5.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
-        '    End While
-        'End If
-        'datareader.Close()
-        'f5.cbbsatuan.Text = dgvData.Item(8, baris).Value
-
-        Dim f6 As FrDataReturPembelian = FrDataReturPembelian
-        f6.txtkodebarang.Text = dgvData.Item(0, baris).Value
-        f6.txtnamabarang.Text = dgvData.Item(1, baris).Value
-        datareader.Close()
-        query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{f4.txtkodebarang.Text}'"
-        cmd = New SqlCommand(query, conn)
-        datareader = cmd.ExecuteReader
-        If datareader.HasRows Then
-            While datareader.Read
-                f6.cbbsatuan.Items.Clear()
-                f6.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
-                f6.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
-                f6.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
-            End While
-        End If
-        datareader.Close()
-        f6.cbbsatuan.Text = dgvData.Item(8, baris).Value
-        f6.txthargabeli.Text = dgvData.Item(9, baris).Value
-        f6.dtpkadaluarsa.Value = dgvData.Item(11, baris).Value
 
         Me.Close()
 
     End Sub
+
 End Class

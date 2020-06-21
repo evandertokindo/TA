@@ -45,7 +45,6 @@ Partial Class FrDataPenyesuaian
         Me.btnclear = New System.Windows.Forms.Button()
         Me.btncaripenyesuaian = New System.Windows.Forms.Button()
         Me.btnsimpan = New System.Windows.Forms.Button()
-        Me.btnhapus = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cbbsatuansistem = New System.Windows.Forms.ComboBox()
         Me.nudfisik = New System.Windows.Forms.NumericUpDown()
@@ -53,6 +52,8 @@ Partial Class FrDataPenyesuaian
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtsatuan = New System.Windows.Forms.TextBox()
+        Me.txttotal = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudfisik, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -152,7 +153,7 @@ Partial Class FrDataPenyesuaian
         '
         'btnedit
         '
-        Me.btnedit.Location = New System.Drawing.Point(519, 205)
+        Me.btnedit.Location = New System.Drawing.Point(519, 195)
         Me.btnedit.Margin = New System.Windows.Forms.Padding(2)
         Me.btnedit.Name = "btnedit"
         Me.btnedit.Size = New System.Drawing.Size(58, 21)
@@ -162,7 +163,7 @@ Partial Class FrDataPenyesuaian
         '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(379, 205)
+        Me.btntambah.Location = New System.Drawing.Point(442, 195)
         Me.btntambah.Margin = New System.Windows.Forms.Padding(2)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(58, 21)
@@ -245,7 +246,7 @@ Partial Class FrDataPenyesuaian
         '
         'btnclear
         '
-        Me.btnclear.Location = New System.Drawing.Point(442, 423)
+        Me.btnclear.Location = New System.Drawing.Point(442, 456)
         Me.btnclear.Margin = New System.Windows.Forms.Padding(2)
         Me.btnclear.Name = "btnclear"
         Me.btnclear.Size = New System.Drawing.Size(66, 21)
@@ -264,23 +265,13 @@ Partial Class FrDataPenyesuaian
         '
         'btnsimpan
         '
-        Me.btnsimpan.Location = New System.Drawing.Point(519, 423)
+        Me.btnsimpan.Location = New System.Drawing.Point(519, 456)
         Me.btnsimpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsimpan.Name = "btnsimpan"
         Me.btnsimpan.Size = New System.Drawing.Size(58, 21)
         Me.btnsimpan.TabIndex = 23
         Me.btnsimpan.Text = "Simpan"
         Me.btnsimpan.UseVisualStyleBackColor = True
-        '
-        'btnhapus
-        '
-        Me.btnhapus.Location = New System.Drawing.Point(450, 205)
-        Me.btnhapus.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnhapus.Name = "btnhapus"
-        Me.btnhapus.Size = New System.Drawing.Size(58, 21)
-        Me.btnhapus.TabIndex = 24
-        Me.btnhapus.Text = "Hapus"
-        Me.btnhapus.UseVisualStyleBackColor = True
         '
         'Label10
         '
@@ -344,11 +335,31 @@ Partial Class FrDataPenyesuaian
         Me.txtsatuan.Size = New System.Drawing.Size(182, 20)
         Me.txtsatuan.TabIndex = 31
         '
+        'txttotal
+        '
+        Me.txttotal.Location = New System.Drawing.Point(395, 430)
+        Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txttotal.Name = "txttotal"
+        Me.txttotal.Size = New System.Drawing.Size(182, 20)
+        Me.txttotal.TabIndex = 33
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(315, 431)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(68, 13)
+        Me.Label13.TabIndex = 32
+        Me.Label13.Text = "Total Barang"
+        '
         'FrDataPenyesuaian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(594, 455)
+        Me.ClientSize = New System.Drawing.Size(594, 489)
+        Me.Controls.Add(Me.txttotal)
+        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtsatuan)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.dtpkadaluarsa)
@@ -356,7 +367,6 @@ Partial Class FrDataPenyesuaian
         Me.Controls.Add(Me.nudfisik)
         Me.Controls.Add(Me.cbbsatuansistem)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.btnhapus)
         Me.Controls.Add(Me.btnsimpan)
         Me.Controls.Add(Me.btncaripenyesuaian)
         Me.Controls.Add(Me.btnclear)
@@ -413,7 +423,6 @@ Partial Class FrDataPenyesuaian
     Friend WithEvents btnclear As Button
     Friend WithEvents btncaripenyesuaian As Button
     Friend WithEvents btnsimpan As Button
-    Friend WithEvents btnhapus As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents cbbsatuansistem As ComboBox
     Friend WithEvents nudfisik As NumericUpDown
@@ -421,4 +430,6 @@ Partial Class FrDataPenyesuaian
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents txtsatuan As TextBox
+    Friend WithEvents txttotal As TextBox
+    Friend WithEvents Label13 As Label
 End Class

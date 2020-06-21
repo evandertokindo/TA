@@ -34,11 +34,11 @@ Public Class FrDataPenyesuaian
         Dim htg As Long
         Dim urut As String
 
-        cmd = New SqlCommand("select nota_faktur from tbN where nota_faktur in(select max(nota_faktur) from tbN) order by nota_faktur", conn)
+        cmd = New SqlCommand("select no_py from tbPY_H where no_py in(select max(no_py) from tbPY_H) order by no_py", conn)
         datareader = cmd.ExecuteReader
         datareader.Read()
         If datareader.HasRows Then
-            htg = Strings.Right(datareader("nota_faktur"), 4) + 1
+            htg = Strings.Right(datareader("no_py"), 4) + 1
             urut = "NFR" + Strings.Right("000" & htg, 4)
         Else
             urut = "NFR" & "000" & +1
@@ -103,7 +103,7 @@ Public Class FrDataPenyesuaian
 
     End Function
 
-    Private Sub btnhapus_Click(sender As Object, e As EventArgs) Handles btnhapus.Click
+    Private Sub btnhapus_Click(sender As Object, e As EventArgs)
         If dgvData.Rows.Count = 0 Then
             MessageBox.Show("Anda belum memasukkan Data Pesanan Product", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
@@ -118,7 +118,7 @@ Public Class FrDataPenyesuaian
 
     Private Sub btncaribarang_Click(sender As Object, e As EventArgs) Handles btncaribarang.Click
 
-        'FrCariBarang.Tag = "Penyesuaian"
+        FrCariBarang.Tag = "Penyesuaian"
         FrCariBarang.ShowDialog()
 
     End Sub
