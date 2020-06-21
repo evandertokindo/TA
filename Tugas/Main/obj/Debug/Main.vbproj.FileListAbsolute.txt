@@ -213,3 +213,4 @@ D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrDataReturPembelian.resources
 D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrDataSupplier.resources
 D:\evander\TA_\Tugas\Main\obj\Debug\Main.Resources.resources
 D:\evander\TA_\Tugas\Main\obj\Debug\Main.vbproj.GenerateResource.Cache
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrDataPesananPenjualan.resources

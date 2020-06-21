@@ -151,13 +151,12 @@ Public Class FrDataPesananPembelian
                     'ubah detail 
                     For i = 0 To dgvData.Rows.Count - 1
                         load_data_2pk("tbPPB_D")
-                        Dim cari(5) As String
+                        Dim cari(1) As String
                         cari(0) = txtnopesananpembelian.Text
                         cari(1) = dgvData.Rows(i).Cells(0).Value.ToString
-                        cari(2) = dgvData.Rows(i).Cells(1).Value.ToString
-                        cari(3) = dgvData.Rows(i).Cells(2).Value.ToString
-                        cari(4) = dgvData.Rows(i).Cells(3).Value.ToString
-                        cari(5) = dgvData.Rows(i).Cells(4).Value.ToString
+                        'cari(2) = dgvData.Rows(i).Cells(1).Value.ToString
+                        'cari(3) = dgvData.Rows(i).Cells(2).Value.ToString
+                        'cari(4) = dgvData.Rows(i).Cells(3).Value.ToString
                         dr = ds.Tables("tbPPB_D").Rows.Find(cari)
 
                         If dr Is Nothing Then
@@ -165,21 +164,21 @@ Public Class FrDataPesananPembelian
                             dr = ds.Tables("tbPPB_D").NewRow
                             dr(0) = txtnopesananpembelian.Text.Trim
                             dr(1) = dgvData.Rows(i).Cells(0).Value.ToString
-                            dr(2) = dgvData.Rows(i).Cells(3).Value.ToString
-                            dr(3) = dgvData.Rows(i).Cells(4).Value.ToString
-                            dr(4) = dgvData.Rows(i).Cells(5).Value.ToString
+                            dr(2) = dgvData.Rows(i).Cells(1).Value.ToString
+                            dr(3) = dgvData.Rows(i).Cells(2).Value.ToString
+                            dr(4) = dgvData.Rows(i).Cells(3).Value.ToString
 
                             ds.Tables("tbPPB_D").Rows.Add(dr)
                             update_data("tbPPB_D")
                         Else
-                            query = "Update tbPPB_D Set kode_b = @kode_b, nama_b = @nama_b jumlah = @jumlah, satuan = @satuan Where no_ppb = @no_ppb"
+                            query = "Update tbPPB_D Set jumlah = @jumlah, satuan = @satuan Where no_ppb = @no_ppb"
                             cmd = New SqlCommand(query, conn)
                             With cmd.Parameters
-                                .Add("@No_Pesanan", SqlDbType.Char).Value = txtnopesananpembelian.Text.Trim
+                                .Add("@no_ppb", SqlDbType.Char).Value = txtnopesananpembelian.Text.Trim
                                 .Add("@kode_b", SqlDbType.Char).Value = dgvData.Rows(i).Cells(0).Value.ToString
-                                .Add("@nama_b", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(3).Value.ToString
-                                .Add("@jumlah", SqlDbType.VarChar).Value = CInt(dgvData.Rows(i).Cells(4).Value.ToString)
-                                .Add("@satuan", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(5).Value.ToString
+                                .Add("@nama_b", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(1).Value.ToString
+                                .Add("@jumlah", SqlDbType.VarChar).Value = CInt(dgvData.Rows(i).Cells(2).Value.ToString)
+                                .Add("@satuan", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(3).Value.ToString
                             End With
                             cmd.ExecuteNonQuery()
                         End If
