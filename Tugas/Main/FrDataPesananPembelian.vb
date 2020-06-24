@@ -15,6 +15,18 @@ Public Class FrDataPesananPembelian
 
     End Sub
 
+    Sub bersih()
+        txtkodebarang.Clear()
+        txtnamabarang.Clear()
+        txtkodesupplier.Clear()
+        txtnamasupplier.Clear()
+        nud.Value = "0"
+        txttotal.Clear()
+        cbbsatuan.Items.Clear()
+        dtpt.Value = Date.Today
+        buat_kode()
+    End Sub
+
     Function belumAdaKodenya() As Boolean
         Dim jlh = 0
         For i As Integer = 0 To dgvData.Rows.Count - 1
@@ -67,20 +79,14 @@ Public Class FrDataPesananPembelian
         txtnopesananpembelian.Enabled = False
         txttotal.Text = "0"
         txttotal.Enabled = False
+        txtstatus.Enabled = False
 
     End Sub
 
     Private Sub btnsbar_Click(sender As Object, e As EventArgs) Handles btnsbar.Click
 
-        FrCariBarang.Tag = "Pesanan"
+        FrCariBarang.Tag = "PesananPembelian"
         FrCariBarang.ShowDialog()
-
-    End Sub
-
-    Private Sub btnsearchs_Click(sender As Object, e As EventArgs) Handles btnsearchs.Click
-
-        FrCariSupplier.Tag = "Pesanan"
-        FrCariSupplier.ShowDialog()
 
     End Sub
 
@@ -93,6 +99,10 @@ Public Class FrDataPesananPembelian
                 dgvData.Rows.RemoveAt(baris)
                 MessageBox.Show("Produk berhasil dihapus", "Hapus Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txttotal.Text = dgvData.Rows.Count
+                txtkodebarang.Clear()
+                txtnamabarang.Clear()
+                nud.Value = 0
+                cbbsatuan.Items.Clear()
             End If
         End If
     End Sub
@@ -104,14 +114,15 @@ Public Class FrDataPesananPembelian
             Else
                 If (MessageBox.Show($"Apakah Anda Yakin ingin menyimpan data pesanan ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
                     'simpan header
-                    query = "INSERT INTO tbPPB_H VALUES (@no_ppb, @tanggal, @kode_s,@nama_s @jenis_b)"
+                    query = "INSERT INTO tbPPB_H VALUES (@no_ppb, @tanggal, @kode_s,@nama_s, @jenis_b, @status_ppb)"
                     cmd = New SqlCommand(query, conn)
                     With cmd.Parameters
                         .Add("@no_ppb", SqlDbType.Char).Value = txtnopesananpembelian.Text.Trim
-                        .Add("@tanggal", SqlDbType.DateTime).Value = dtpt.Value
+                        .Add("@tanggal", SqlDbType.Date).Value = dtpt.Value
                         .Add("@kode_s", SqlDbType.Char).Value = txtkodesupplier.Text.Trim
                         .Add("@nama_s", SqlDbType.VarChar).Value = txtnamasupplier.Text.Trim
-                        .Add("@jenis_b", SqlDbType.Int).Value = CInt(txttotal.Text.Trim)
+                        .Add("@jenis_b", SqlDbType.Int).Value = CInt(txttotal.Text)
+                        .Add("@status_ppb", SqlDbType.VarChar).Value = txtstatus.Text.Trim
                     End With
                     cmd.ExecuteNonQuery()
 
@@ -129,6 +140,7 @@ Public Class FrDataPesananPembelian
                         cmd.ExecuteNonQuery()
                     Next
                     MsgBox("Data pesanan pembelian berhasil disimpan", MsgBoxStyle.Information)
+                    bersih()
                 End If
             End If
         Else
@@ -141,7 +153,7 @@ Public Class FrDataPesananPembelian
 
                     cmd = New SqlCommand(query, conn)
                     With cmd.Parameters
-                        .Add("@no_ppb", SqlDbType.Char).Value = txtnopesananpembelian.Text.Trim
+                        .Add("@no_ppb", SqlDbType.VarChar).Value = txtnopesananpembelian.Text.Trim
                         .Add("@kode_s", SqlDbType.VarChar).Value = txtkodesupplier.Text
                         .Add("@nama_s", SqlDbType.VarChar).Value = txtnamasupplier.Text
                         .Add("@jenis_b", SqlDbType.Int).Value = CInt(txttotal.Text)
@@ -174,10 +186,10 @@ Public Class FrDataPesananPembelian
                             query = "Update tbPPB_D Set jumlah = @jumlah, satuan = @satuan Where no_ppb = @no_ppb"
                             cmd = New SqlCommand(query, conn)
                             With cmd.Parameters
-                                .Add("@no_ppb", SqlDbType.Char).Value = txtnopesananpembelian.Text.Trim
-                                .Add("@kode_b", SqlDbType.Char).Value = dgvData.Rows(i).Cells(0).Value.ToString
+                                .Add("@no_ppb", SqlDbType.VarChar).Value = txtnopesananpembelian.Text.Trim
+                                .Add("@kode_b", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(0).Value.ToString
                                 .Add("@nama_b", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(1).Value.ToString
-                                .Add("@jumlah", SqlDbType.VarChar).Value = CInt(dgvData.Rows(i).Cells(2).Value.ToString)
+                                .Add("@jumlah", SqlDbType.Int).Value = CInt(dgvData.Rows(i).Cells(2).Value.ToString)
                                 .Add("@satuan", SqlDbType.VarChar).Value = dgvData.Rows(i).Cells(3).Value.ToString
                             End With
                             cmd.ExecuteNonQuery()
@@ -233,14 +245,17 @@ Public Class FrDataPesananPembelian
         Else
             dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text)
             MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'hitung_jenis()
-            txttotal.Text = dgvData.RowCount
 
+            txttotal.Text = dgvData.RowCount
+            txtkodebarang.Clear()
+            txtnamabarang.Clear()
+            nud.Value = 0
+            cbbsatuan.Items.Clear()
         End If
     End Sub
 
     Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
-        FrCariPesananPembelian.Tag = "Pesanan"
+        FrCariPesananPembelian.Tag = "PesananPembelian"
         FrCariPesananPembelian.ShowDialog()
     End Sub
 
@@ -276,5 +291,20 @@ Public Class FrDataPesananPembelian
         End If
         datareader.Close()
         cbbsatuan.Text = dgvData.Item(3, baris).Value
+    End Sub
+
+    Private Sub btnsearchs_Click(sender As Object, e As EventArgs) Handles btnsearchs.Click
+        FrCariSupplier.Tag = "Pesanan"
+        FrCariSupplier.ShowDialog()
+    End Sub
+
+    Private Sub txtkodebarang_TextChanged(sender As Object, e As EventArgs) Handles txtkodebarang.TextChanged
+
+    End Sub
+
+    Private Sub ckbproses_CheckedChanged(sender As Object, e As EventArgs) Handles ckbproses.CheckedChanged
+        If ckbproses.Checked Then
+            txtstatus.Text = "Diproses"
+        End If
     End Sub
 End Class

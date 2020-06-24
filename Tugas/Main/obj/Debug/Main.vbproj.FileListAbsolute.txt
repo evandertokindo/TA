@@ -214,3 +214,9 @@ D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrDataSupplier.resources
 D:\evander\TA_\Tugas\Main\obj\Debug\Main.Resources.resources
 D:\evander\TA_\Tugas\Main\obj\Debug\Main.vbproj.GenerateResource.Cache
 D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrDataPesananPenjualan.resources
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrCariPesananPenjualan.resources
+D:\evander\TA_\Tugas\Main\bin\Debug\AxShockwaveFlashObjects.dll
+D:\evander\TA_\Tugas\Main\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\evander\TA_\Tugas\Main\bin\Debug\ShockwaveFlashObjects.dll
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.vbproj.Main.exe.config
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrCr.resources

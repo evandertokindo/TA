@@ -23,11 +23,11 @@ Partial Class FrCariPesananPembelian
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.btncari = New System.Windows.Forms.Button()
         Me.dgvData = New System.Windows.Forms.DataGridView()
+        Me.btncari = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -39,15 +39,6 @@ Partial Class FrCariPesananPembelian
         Me.Label1.Size = New System.Drawing.Size(122, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Cari Pesanan Pembelian"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 32)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Cari dengan"
         '
         'ComboBox1
         '
@@ -64,15 +55,6 @@ Partial Class FrCariPesananPembelian
         Me.TextBox1.Size = New System.Drawing.Size(242, 20)
         Me.TextBox1.TabIndex = 3
         '
-        'btncari
-        '
-        Me.btncari.Location = New System.Drawing.Point(404, 57)
-        Me.btncari.Name = "btncari"
-        Me.btncari.Size = New System.Drawing.Size(61, 23)
-        Me.btncari.TabIndex = 4
-        Me.btncari.Text = "Cari"
-        Me.btncari.UseVisualStyleBackColor = True
-        '
         'dgvData
         '
         Me.dgvData.AllowUserToAddRows = False
@@ -83,6 +65,24 @@ Partial Class FrCariPesananPembelian
         Me.dgvData.ReadOnly = True
         Me.dgvData.Size = New System.Drawing.Size(450, 150)
         Me.dgvData.TabIndex = 5
+        '
+        'btncari
+        '
+        Me.btncari.Location = New System.Drawing.Point(404, 57)
+        Me.btncari.Name = "btncari"
+        Me.btncari.Size = New System.Drawing.Size(61, 23)
+        Me.btncari.TabIndex = 4
+        Me.btncari.Text = "Cari"
+        Me.btncari.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 32)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(64, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Cari dengan"
         '
         'FrCariPesananPembelian
         '
@@ -104,9 +104,9 @@ Partial Class FrCariPesananPembelian
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents btncari As Button
     Friend WithEvents dgvData As DataGridView
+    Friend WithEvents btncari As Button
+    Friend WithEvents Label2 As Label
 End Class

@@ -27,6 +27,19 @@ Public Class FrDataReturPembelian
         Return (jlh = 0)
     End Function
 
+    Sub bersih()
+        txtkodebarang.Clear()
+        txtnamabarang.Clear()
+        txtkodesupplier.Clear()
+        txtnamasupplier.Clear()
+        nud.Value = "0"
+        txttotal.Clear()
+        cbbsatuan.Items.Clear()
+        dtpkadaluarsa.Value = Date.Today
+        dtpt.Value = Date.Today
+        buat_kode()
+    End Sub
+
     Sub buat_kode()
         Call koneksi()
         Dim htg As Long
@@ -90,6 +103,14 @@ Public Class FrDataReturPembelian
         dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txthargabeli.Text, txtsubtotal.Text, dtpkadaluarsa.Value)
         Return MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+        txtkodebarang.Clear()
+        txtnamabarang.Clear()
+        nud.Value = "0"
+        cbbsatuan.Items.Clear()
+        txthargabeli.Clear()
+        txtsubtotal.Clear()
+        dtpkadaluarsa.Value = Date.Today
+
     End Function
 
     Private Sub btncaribarang_Click(sender As Object, e As EventArgs) Handles btncaribarang.Click
@@ -151,7 +172,15 @@ Public Class FrDataReturPembelian
             If MessageBox.Show("Apakah anda yakin mau menghapus Produk " & dgvData.Item(0, baris).Value & "?", "Hapus Pesanan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 dgvData.Rows.RemoveAt(baris)
                 MessageBox.Show("Produk berhasil dihapus", "Hapus Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                'txttotal.Text = dgvData.Rows.Count
+
+
+                txtkodebarang.Clear()
+                txtnamabarang.Clear()
+                nud.Value = "0"
+                cbbsatuan.Items.Clear()
+                txthargabeli.Clear()
+                txtsubtotal.Clear()
+                dtpkadaluarsa.Value = Date.Today
             End If
         End If
     End Sub

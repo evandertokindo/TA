@@ -25,7 +25,6 @@ Partial Class FrCariPenjualan
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btncari = New System.Windows.Forms.Button()
         Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,15 +56,6 @@ Partial Class FrCariPenjualan
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Cari dengan"
         '
-        'btncari
-        '
-        Me.btncari.Location = New System.Drawing.Point(398, 57)
-        Me.btncari.Name = "btncari"
-        Me.btncari.Size = New System.Drawing.Size(62, 23)
-        Me.btncari.TabIndex = 4
-        Me.btncari.Text = "Cari"
-        Me.btncari.UseVisualStyleBackColor = True
-        '
         'dgvData
         '
         Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -78,7 +68,7 @@ Partial Class FrCariPenjualan
         '
         Me.TextBox1.Location = New System.Drawing.Point(142, 58)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(237, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(318, 20)
         Me.TextBox1.TabIndex = 6
         '
         'FrCariPenjualan
@@ -88,7 +78,6 @@ Partial Class FrCariPenjualan
         Me.ClientSize = New System.Drawing.Size(477, 262)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.dgvData)
-        Me.Controls.Add(Me.btncari)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label1)
@@ -103,7 +92,6 @@ Partial Class FrCariPenjualan
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents btncari As Button
     Friend WithEvents dgvData As DataGridView
     Friend WithEvents TextBox1 As TextBox
 End Class

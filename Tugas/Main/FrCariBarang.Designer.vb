@@ -25,7 +25,6 @@ Partial Class FrCariBarang
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.btncari = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,15 +58,6 @@ Partial Class FrCariBarang
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 2
         '
-        'btncari
-        '
-        Me.btncari.Location = New System.Drawing.Point(401, 53)
-        Me.btncari.Name = "btncari"
-        Me.btncari.Size = New System.Drawing.Size(58, 23)
-        Me.btncari.TabIndex = 4
-        Me.btncari.Text = "Cari"
-        Me.btncari.UseVisualStyleBackColor = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -81,7 +71,7 @@ Partial Class FrCariBarang
         '
         Me.TextBox1.Location = New System.Drawing.Point(142, 54)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(246, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(317, 20)
         Me.TextBox1.TabIndex = 6
         '
         'FrCariBarang
@@ -91,7 +81,6 @@ Partial Class FrCariBarang
         Me.ClientSize = New System.Drawing.Size(477, 262)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btncari)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.dgvData)
         Me.Controls.Add(Me.Label1)
@@ -105,7 +94,6 @@ Partial Class FrCariBarang
 
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents btncari As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBox1 As TextBox
     Public WithEvents dgvData As DataGridView

@@ -443,7 +443,7 @@ Partial Class FrDataPembelian
         Me.Controls.Add(Me.Labeldatasupp)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrDataPembelian"
-        Me.Text = "FrPembelian"
+        Me.Text = "FrDataPembelian"
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -483,8 +483,8 @@ Partial Class FrDataPembelian
     Public WithEvents txtnopesananpembelian As TextBox
     Public WithEvents txtharga As TextBox
     Public WithEvents txtsubtotal As TextBox
-    Public WithEvents cbbsatuan As ComboBox
-    Friend WithEvents dtpkadaluarsa As DateTimePicker
     Friend WithEvents Label7 As Label
     Friend WithEvents nud As NumericUpDown
+    Friend WithEvents cbbsatuan As ComboBox
+    Friend WithEvents dtpkadaluarsa As DateTimePicker
 End Class

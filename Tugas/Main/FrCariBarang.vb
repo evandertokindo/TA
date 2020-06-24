@@ -116,18 +116,26 @@ Public Class FrCariBarang
         koneksi()
         dgvData.Rows.Clear()
 
-        If Me.Tag = "Pesanan" Then
+        If Me.Tag = "PesananPembelian" Then
             pesanan()
             query = $"Select bd.kode_b, bh.nama_b, bd.jumlah, bd.satuan, bd.kadaluarsa from tbB_H bh inner join tbB_D bd on bh.kode_b = bd.kode_b"
+
+        ElseIf Me.Tag = "PesananPenjualan" Then
+            pesanan()
+            query = "Select bd.kode_b, bh.nama_b, bd.jumlah, bd.satuan, bd.kadaluarsa from tbB_H bh inner join tbB_D bd On bh.kode_b = bd.kode_b"
+
         ElseIf Me.Tag = "Pembelian" Then
             pembelian()
-            query = $"Select ppbd.kode_b, bh.nama_b, ppbd.jumlah, ppbd.satuan, bd.kadaluarsa from tbPPB_H ppbh inner join tbPPB_D ppbd on ppbh.no_ppb = ppbd.no_ppb inner join tbB_D bd on bd.kode_b = ppbd.kode_b inner join tbB_H bh on bh.kode_b = bd.kode_b where ppbd.no_ppb ='{FrDataPembelian.txtnopesananpembelian.Text}'"
+            query = $"Select ppbd.kode_b, bh.nama_b, ppbd.jumlah, ppbd.satuan, bd.kadaluarsa from tbPPB_H ppbh inner join tbPPB_D ppbd On ppbh.no_ppb = ppbd.no_ppb inner join tbB_D bd On bd.kode_b = ppbd.kode_b inner join tbB_H bh On bh.kode_b = bd.kode_b where ppbd.no_ppb ='{FrDataPembelian.txtnopesananpembelian.Text}'"
+
         ElseIf Me.Tag = "Penjualan" Then
             penjualan()
-            query = $"Select pjd.kode_b, bh.nama_b, pjd.jumlah, pjd.satuan, pjd.kadaluarsa from tbPJ_H pjh inner join tbPJ_D pjd on pjh.no_pj = pjd.no_pj inner join tbB_D bd on bd.kode_b = pjd.kode_b inner join tbB_H bh on bh.kode_b = bd.kode_b where pjd.no_pj ='{FrDataPenjualan.txtnofaktur.Text}'"
+            query = $"Select ppjd.kode_b, bh.nama_b, ppjd.jumlah, ppjd.satuan, ppjd.kadaluarsa from tbPPJ_H ppjh inner join tbPPJ_D ppjd on ppjh.no_ppj = ppjd.no_ppj inner join tbB_D bd on bd.kode_b = ppjd.kode_b inner join tbB_H bh on bh.kode_b = bd.kode_b where ppjd.no_ppj ='{FrDataPenjualan.txtnopesananpenjualan.Text}'"
+
         ElseIf Me.Tag = "Retur" Then
             retur()
             query = $"Select rd.kode_b, bh.nama_b, rd.jumlah, rd.satuan, rd.kadaluarsa from tbR_H rh inner join tbR_D rd on rh.no_r = rd.no_r inner join tbB_D bd on bd.kode_b = rd.kode_b inner join tbB_H bh on bh.kode_b = bd.kode_b where rd.no_r ='{FrDataReturPembelian.txtnoreturpembelian.Text}'"
+
             cmd = New SqlCommand(query, conn)
         ElseIf Me.Tag = "Penyesuaian" Then
             penyesuaian()
@@ -148,7 +156,7 @@ Public Class FrCariBarang
         Dim baris As Integer
 
         baris = dgvData.CurrentCell.RowIndex
-        If Me.Tag = "Pesanan" Then
+        If Me.Tag = "PesananPembelian" Then
             FrDataPesananPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
             FrDataPesananPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
             FrDataPesananPembelian.nud.Value = dgvData.Item(2, baris).Value
@@ -164,17 +172,62 @@ Public Class FrCariBarang
                 End While
             End If
             datareader.Close()
-            FrDataPesananPembelian.cbbsatuan.Text = dgvData.Item(3, baris).Value
+
+        ElseIf Me.Tag = "PesananPenjualan" Then
+            FrDataPesananPenjualan.txtkodebarang.Text = dgvData.Item(0, baris).Value
+            FrDataPesananPenjualan.txtnamabarang.Text = dgvData.Item(1, baris).Value
+            query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{FrDataPesananPenjualan.txtkodebarang.Text}'"
+            cmd = New SqlCommand(query, conn)
+            datareader = cmd.ExecuteReader
+            If datareader.HasRows Then
+                While datareader.Read
+                    FrDataPesananPenjualan.cbbsatuan.Items.Clear()
+                    FrDataPesananPenjualan.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
+                    FrDataPesananPenjualan.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
+                    FrDataPesananPenjualan.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
+                End While
+            End If
+            datareader.Close()
+            FrDataPesananPenjualan.dtpkadaluarsa.Value = dgvData.Item(4, baris).Value
 
         ElseIf Me.Tag = "Retur" Then
             FrDataReturPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
             FrDataReturPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
+
         ElseIf Me.Tag = "Penjualan" Then
             FrDataPenjualan.txtkodebarang.Text = dgvData.Item(0, baris).Value
             FrDataPenjualan.txtnamabarang.Text = dgvData.Item(1, baris).Value
+            FrDataPenjualan.txtstok.Text = dgvData.Item(2, baris).Value
+            query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{FrDataPembelian.txtkodebarang.Text}'"
+            cmd = New SqlCommand(query, conn)
+            datareader = cmd.ExecuteReader
+            If datareader.HasRows Then
+                While datareader.Read
+                    FrDataPembelian.cbbsatuan.Items.Clear()
+                    FrDataPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
+                    FrDataPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
+                    FrDataPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
+                End While
+            End If
+            datareader.Close()
+            FrDataPembelian.cbbsatuan.Text = dgvData.Item(3, baris).Value
+
         ElseIf Me.Tag = "Pembelian" Then
             FrDataPembelian.txtkodebarang.Text = dgvData.Item(0, baris).Value
             FrDataPembelian.txtnamabarang.Text = dgvData.Item(1, baris).Value
+            query = $"Select bh.satuan_besar, bh.satuan_sedang, bh.satuan_kecil from tbB_H bh inner join tbB_D bd  on bh.kode_b = bd.kode_b where bh.kode_b = '{FrDataPembelian.txtkodebarang.Text}'"
+            cmd = New SqlCommand(query, conn)
+            datareader = cmd.ExecuteReader
+            If datareader.HasRows Then
+                While datareader.Read
+                    FrDataPembelian.cbbsatuan.Items.Clear()
+                    FrDataPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_besar"))
+                    FrDataPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_sedang"))
+                    FrDataPembelian.cbbsatuan.Items.Add(datareader.Item("satuan_kecil"))
+                End While
+            End If
+            datareader.Close()
+            FrDataPembelian.cbbsatuan.Text = dgvData.Item(3, baris).Value
         End If
 
         Me.Close()

@@ -31,7 +31,6 @@ Partial Class FrDataPenjualan
         Me.txtnofaktur = New System.Windows.Forms.TextBox()
         Me.txtkodepelanggan = New System.Windows.Forms.TextBox()
         Me.txtnamapelanggan = New System.Windows.Forms.TextBox()
-        Me.btncaripelanggan = New System.Windows.Forms.Button()
         Me.dtpt = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -56,8 +55,11 @@ Partial Class FrDataPenjualan
         Me.dtpkadaluarsa = New System.Windows.Forms.DateTimePicker()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.nud = New System.Windows.Forms.NumericUpDown()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.btncarinopesananpenjualan = New System.Windows.Forms.Button()
+        Me.txtnopesananpenjualan = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.txtstok = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -85,7 +87,7 @@ Partial Class FrDataPenjualan
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(26, 63)
+        Me.Label3.Location = New System.Drawing.Point(25, 91)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(46, 13)
@@ -95,7 +97,7 @@ Partial Class FrDataPenjualan
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(342, 38)
+        Me.Label4.Location = New System.Drawing.Point(375, 38)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 13)
@@ -105,7 +107,7 @@ Partial Class FrDataPenjualan
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(342, 65)
+        Me.Label5.Location = New System.Drawing.Point(375, 65)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(89, 13)
@@ -115,7 +117,7 @@ Partial Class FrDataPenjualan
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(8, 108)
+        Me.Label6.Location = New System.Drawing.Point(8, 117)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(110, 13)
@@ -124,44 +126,34 @@ Partial Class FrDataPenjualan
         '
         'txtnofaktur
         '
-        Me.txtnofaktur.Location = New System.Drawing.Point(121, 34)
+        Me.txtnofaktur.Location = New System.Drawing.Point(146, 34)
         Me.txtnofaktur.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnofaktur.Name = "txtnofaktur"
-        Me.txtnofaktur.Size = New System.Drawing.Size(125, 20)
+        Me.txtnofaktur.Size = New System.Drawing.Size(135, 20)
         Me.txtnofaktur.TabIndex = 6
         '
         'txtkodepelanggan
         '
-        Me.txtkodepelanggan.Location = New System.Drawing.Point(437, 36)
+        Me.txtkodepelanggan.Location = New System.Drawing.Point(470, 36)
         Me.txtkodepelanggan.Margin = New System.Windows.Forms.Padding(2)
         Me.txtkodepelanggan.Name = "txtkodepelanggan"
-        Me.txtkodepelanggan.Size = New System.Drawing.Size(124, 20)
+        Me.txtkodepelanggan.Size = New System.Drawing.Size(210, 20)
         Me.txtkodepelanggan.TabIndex = 7
         '
         'txtnamapelanggan
         '
-        Me.txtnamapelanggan.Location = New System.Drawing.Point(437, 63)
+        Me.txtnamapelanggan.Location = New System.Drawing.Point(470, 63)
         Me.txtnamapelanggan.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnamapelanggan.Name = "txtnamapelanggan"
         Me.txtnamapelanggan.Size = New System.Drawing.Size(211, 20)
         Me.txtnamapelanggan.TabIndex = 8
         '
-        'btncaripelanggan
-        '
-        Me.btncaripelanggan.Location = New System.Drawing.Point(571, 32)
-        Me.btncaripelanggan.Margin = New System.Windows.Forms.Padding(2)
-        Me.btncaripelanggan.Name = "btncaripelanggan"
-        Me.btncaripelanggan.Size = New System.Drawing.Size(76, 24)
-        Me.btncaripelanggan.TabIndex = 11
-        Me.btncaripelanggan.Text = "Search"
-        Me.btncaripelanggan.UseVisualStyleBackColor = True
-        '
         'dtpt
         '
-        Me.dtpt.Location = New System.Drawing.Point(121, 60)
+        Me.dtpt.Location = New System.Drawing.Point(146, 88)
         Me.dtpt.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpt.Name = "dtpt"
-        Me.dtpt.Size = New System.Drawing.Size(200, 20)
+        Me.dtpt.Size = New System.Drawing.Size(197, 20)
         Me.dtpt.TabIndex = 12
         '
         'Label7
@@ -233,7 +225,7 @@ Partial Class FrDataPenjualan
         'dgvData
         '
         Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvData.Location = New System.Drawing.Point(345, 133)
+        Me.dgvData.Location = New System.Drawing.Point(378, 133)
         Me.dgvData.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvData.Name = "dgvData"
         Me.dgvData.RowTemplate.Height = 28
@@ -242,7 +234,7 @@ Partial Class FrDataPenjualan
         '
         'btncetak
         '
-        Me.btncetak.Location = New System.Drawing.Point(571, 382)
+        Me.btncetak.Location = New System.Drawing.Point(604, 382)
         Me.btncetak.Margin = New System.Windows.Forms.Padding(2)
         Me.btncetak.Name = "btncetak"
         Me.btncetak.Size = New System.Drawing.Size(76, 24)
@@ -272,7 +264,7 @@ Partial Class FrDataPenjualan
         '
         'btnsimpan
         '
-        Me.btnsimpan.Location = New System.Drawing.Point(484, 382)
+        Me.btnsimpan.Location = New System.Drawing.Point(517, 382)
         Me.btnsimpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsimpan.Name = "btnsimpan"
         Me.btnsimpan.Size = New System.Drawing.Size(76, 24)
@@ -318,7 +310,7 @@ Partial Class FrDataPenjualan
         '
         'txttotal
         '
-        Me.txttotal.Location = New System.Drawing.Point(484, 354)
+        Me.txttotal.Location = New System.Drawing.Point(517, 354)
         Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txttotal.Name = "txttotal"
         Me.txttotal.Size = New System.Drawing.Size(164, 20)
@@ -327,7 +319,7 @@ Partial Class FrDataPenjualan
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(434, 357)
+        Me.Label13.Location = New System.Drawing.Point(467, 357)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(31, 13)
@@ -346,7 +338,7 @@ Partial Class FrDataPenjualan
         '
         'btncarifaktur
         '
-        Me.btncarifaktur.Location = New System.Drawing.Point(262, 30)
+        Me.btncarifaktur.Location = New System.Drawing.Point(285, 31)
         Me.btncarifaktur.Margin = New System.Windows.Forms.Padding(2)
         Me.btncarifaktur.Name = "btncarifaktur"
         Me.btncarifaktur.Size = New System.Drawing.Size(58, 24)
@@ -380,6 +372,42 @@ Partial Class FrDataPenjualan
         Me.nud.Size = New System.Drawing.Size(59, 20)
         Me.nud.TabIndex = 38
         '
+        'btncarinopesananpenjualan
+        '
+        Me.btncarinopesananpenjualan.Location = New System.Drawing.Point(285, 58)
+        Me.btncarinopesananpenjualan.Margin = New System.Windows.Forms.Padding(2)
+        Me.btncarinopesananpenjualan.Name = "btncarinopesananpenjualan"
+        Me.btncarinopesananpenjualan.Size = New System.Drawing.Size(58, 24)
+        Me.btncarinopesananpenjualan.TabIndex = 43
+        Me.btncarinopesananpenjualan.Text = "Search"
+        Me.btncarinopesananpenjualan.UseVisualStyleBackColor = True
+        '
+        'txtnopesananpenjualan
+        '
+        Me.txtnopesananpenjualan.Location = New System.Drawing.Point(146, 63)
+        Me.txtnopesananpenjualan.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtnopesananpenjualan.Name = "txtnopesananpenjualan"
+        Me.txtnopesananpenjualan.Size = New System.Drawing.Size(135, 20)
+        Me.txtnopesananpenjualan.TabIndex = 42
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(26, 65)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(116, 13)
+        Me.Label16.TabIndex = 41
+        Me.Label16.Text = "No Pesanan Penjualan"
+        '
+        'txtstok
+        '
+        Me.txtstok.Location = New System.Drawing.Point(239, 194)
+        Me.txtstok.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtstok.Name = "txtstok"
+        Me.txtstok.Size = New System.Drawing.Size(82, 20)
+        Me.txtstok.TabIndex = 40
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -390,19 +418,14 @@ Partial Class FrDataPenjualan
         Me.Label15.TabIndex = 39
         Me.Label15.Text = "Stok"
         '
-        'txtstok
-        '
-        Me.txtstok.Location = New System.Drawing.Point(239, 194)
-        Me.txtstok.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtstok.Name = "txtstok"
-        Me.txtstok.Size = New System.Drawing.Size(82, 20)
-        Me.txtstok.TabIndex = 40
-        '
         'FrDataPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(691, 413)
+        Me.Controls.Add(Me.btncarinopesananpenjualan)
+        Me.Controls.Add(Me.txtnopesananpenjualan)
+        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.txtstok)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.nud)
@@ -429,7 +452,6 @@ Partial Class FrDataPenjualan
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.dtpt)
-        Me.Controls.Add(Me.btncaripelanggan)
         Me.Controls.Add(Me.txtnamapelanggan)
         Me.Controls.Add(Me.txtkodepelanggan)
         Me.Controls.Add(Me.txtnofaktur)
@@ -456,9 +478,6 @@ Partial Class FrDataPenjualan
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents txtnofaktur As TextBox
-    Friend WithEvents txtkodepelanggan As TextBox
-    Friend WithEvents txtnamapelanggan As TextBox
-    Friend WithEvents btncaripelanggan As Button
     Friend WithEvents dtpt As DateTimePicker
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
@@ -483,6 +502,11 @@ Partial Class FrDataPenjualan
     Friend WithEvents dtpkadaluarsa As DateTimePicker
     Friend WithEvents Label14 As Label
     Friend WithEvents nud As NumericUpDown
-    Friend WithEvents Label15 As Label
+    Friend WithEvents btncarinopesananpenjualan As Button
+    Friend WithEvents txtnopesananpenjualan As TextBox
+    Friend WithEvents Label16 As Label
     Friend WithEvents txtstok As TextBox
+    Friend WithEvents Label15 As Label
+    Public WithEvents txtkodepelanggan As TextBox
+    Public WithEvents txtnamapelanggan As TextBox
 End Class

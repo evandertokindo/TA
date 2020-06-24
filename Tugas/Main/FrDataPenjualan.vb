@@ -23,12 +23,6 @@ Public Class FrDataPenjualan
         conn.Close()
     End Sub
 
-    Sub hitung_subtotal()
-        Dim hitung As Decimal
-        hitung = nud.Value * txtharga.Text
-        txtsubtotal.Text = hitung
-    End Sub
-
     Sub tabel()
         dgvData.ColumnCount = 7
         dgvData.Columns(0).HeaderText = "Kode Barang"
@@ -44,6 +38,20 @@ Public Class FrDataPenjualan
         dgvData.AllowUserToAddRows = False
     End Sub
 
+    Sub bersih()
+        txtnopesananpenjualan.Clear()
+        txtkodebarang.Clear()
+        txtnamabarang.Clear()
+        txtkodepelanggan.Clear()
+        txtnamapelanggan.Clear()
+        nud.Value = "0"
+        txttotal.Clear()
+        cbbsatuan.Items.Clear()
+        dtpt.Value = Date.Today
+        dtpkadaluarsa.Value = Date.Today
+        buat_kode()
+    End Sub
+
     Function belumAdaKodenya() As Boolean
         Dim jlh = 0
         For i As Integer = 0 To dgvData.Rows.Count - 1
@@ -53,6 +61,12 @@ Public Class FrDataPenjualan
         Next
         Return (jlh = 0)
     End Function
+
+    Sub hitung_subtotal()
+        Dim hitung As Decimal
+        hitung = nud.Value * txtharga.Text
+        txtsubtotal.Text = hitung
+    End Sub
 
     Private Sub FrPenjualan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = FrMainMenu
@@ -69,14 +83,10 @@ Public Class FrDataPenjualan
         dtpkadaluarsa.Enabled = False
         txttotal.Text = "0"
         txtsubtotal.Enabled = False
+        txtsubtotal.Text = "0"
         txttotal.Enabled = False
         txtstok.Enabled = False
-
-    End Sub
-
-    Private Sub btncaripelanggan_Click(sender As Object, e As EventArgs) Handles btncaripelanggan.Click
-        FrCariPelanggan.Tag = "Penjualan"
-        FrCariPelanggan.ShowDialog()
+        txtnopesananpenjualan.Enabled = False
 
     End Sub
 
@@ -141,7 +151,31 @@ Public Class FrDataPenjualan
     End Sub
 
     Private Sub txtkodebarang_TextChanged(sender As Object, e As EventArgs) Handles txtkodebarang.TextChanged
-
+        If txtkodepelanggan.Text = "" Then
+            txtharga.Text = ""
+        Else
+            If txtkodepelanggan.Text = "PEL001" Then
+                query = $"Select harga_ecer from tbB_D Where kode_b = '{txtkodebarang.Text}'"
+                cmd = New SqlCommand(query, conn)
+                datareader = cmd.ExecuteReader
+                If datareader.HasRows Then
+                    While datareader.Read
+                        txtharga.Text = datareader.Item("harga_ecer")
+                    End While
+                End If
+                datareader.Close()
+            Else
+                query = $"Select harga_grosir from tbB_D Where kode_b = '{txtkodebarang.Text}'"
+                cmd = New SqlCommand(query, conn)
+                datareader = cmd.ExecuteReader
+                If datareader.HasRows Then
+                    While datareader.Read
+                        txtharga.Text = datareader.Item("harga_grosir")
+                    End While
+                End If
+                datareader.Close()
+            End If
+        End If
     End Sub
 
     Dim jumlahIsValid As Boolean
@@ -156,7 +190,9 @@ Public Class FrDataPenjualan
             jumlahIsValid = True
         End If
 
-        hitung_subtotal()
+        If String.IsNullOrWhiteSpace(txtharga.Text) = False Then
+            hitung_subtotal()
+        End If
 
     End Sub
 
@@ -184,6 +220,15 @@ Public Class FrDataPenjualan
         dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txtharga.Text, txtsubtotal.Text, dtpkadaluarsa.Value)
         Return MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+
+        txtkodebarang.Clear()
+        txtnamabarang.Clear()
+        nud.Value = "0"
+        cbbsatuan.Items.Clear()
+        txtharga.Clear()
+        txtsubtotal.Clear()
+        dtpkadaluarsa.Value = Date.Today
+
     End Function
 
     Private Sub cbbsatuan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbsatuan.SelectedIndexChanged
@@ -197,5 +242,50 @@ Public Class FrDataPenjualan
 
     Private Sub btncarifaktur_Click(sender As Object, e As EventArgs) Handles btncarifaktur.Click
         FrCariPenjualan.ShowDialog()
+    End Sub
+
+    Private Sub btncarinopesananpenjualan_Click(sender As Object, e As EventArgs) Handles btncarinopesananpenjualan.Click
+        FrCariPesananPenjualan.Tag = "Penjualan"
+        FrCariPesananPenjualan.ShowDialog()
+    End Sub
+
+    Private Sub txtkodepelanggan_TextChanged(sender As Object, e As EventArgs) Handles txtkodepelanggan.TextChanged
+        'If txtkodepelanggan.Text = "" Then
+        '    txtharga.Text = ""
+        'Else
+        '    datareader.Close()
+        '    If txtkodepelanggan.Text = "PEL001" Then
+        '        query = $"Select harga_ecer from tbB_D Where kode_b = '{txtkodebarang.Text}'"
+        '        cmd = New SqlCommand(query, conn)
+        '        datareader = cmd.ExecuteReader
+        '        If datareader.HasRows Then
+        '            While datareader.Read
+        '                txtharga.Text = datareader.Item("harga_ecer")
+        '            End While
+        '        End If
+        '        datareader.Close()
+        '    Else
+        '        query = $"Select harga_grosir from tbB_D Where kode_b = '{txtkodebarang.Text}'"
+        '        cmd = New SqlCommand(query, conn)
+        '        datareader = cmd.ExecuteReader
+        '        If datareader.HasRows Then
+        '            While datareader.Read
+        '                txtharga.Text = datareader.Item("harga_grosir")
+        '            End While
+        '        End If
+        '        datareader.Close()
+        '    End If
+        'End If
+    End Sub
+
+    Private Sub txtnopesananpenjualan_TextChanged(sender As Object, e As EventArgs) Handles txtnopesananpenjualan.TextChanged
+        If txtnopesananpenjualan.Text <> "" Then
+            txtkodebarang.Clear()
+            txtnamabarang.Clear()
+            nud.Value = "0"
+            dtpkadaluarsa.Value = Date.Today
+            txtharga.Text = "0"
+            txtsubtotal.Clear()
+        End If
     End Sub
 End Class

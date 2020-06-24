@@ -32,7 +32,6 @@ Partial Class FrDataPesananPembelian
         Me.txtnamasupplier = New System.Windows.Forms.TextBox()
         Me.DirectorySearcher1 = New System.DirectoryServices.DirectorySearcher()
         Me.dtpt = New System.Windows.Forms.DateTimePicker()
-        Me.btnsearchs = New System.Windows.Forms.Button()
         Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.labelkbarang = New System.Windows.Forms.Label()
         Me.lblnbarang = New System.Windows.Forms.Label()
@@ -51,6 +50,10 @@ Partial Class FrDataPesananPembelian
         Me.Label3 = New System.Windows.Forms.Label()
         Me.nud = New System.Windows.Forms.NumericUpDown()
         Me.txttotal = New System.Windows.Forms.TextBox()
+        Me.btnsearchs = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ckbproses = New System.Windows.Forms.CheckBox()
+        Me.txtstatus = New System.Windows.Forms.TextBox()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -143,20 +146,10 @@ Partial Class FrDataPesananPembelian
         Me.dtpt.Size = New System.Drawing.Size(230, 20)
         Me.dtpt.TabIndex = 8
         '
-        'btnsearchs
-        '
-        Me.btnsearchs.Location = New System.Drawing.Point(653, 31)
-        Me.btnsearchs.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnsearchs.Name = "btnsearchs"
-        Me.btnsearchs.Size = New System.Drawing.Size(76, 24)
-        Me.btnsearchs.TabIndex = 10
-        Me.btnsearchs.Text = "Search"
-        Me.btnsearchs.UseVisualStyleBackColor = True
-        '
         'dgvData
         '
         Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvData.Location = New System.Drawing.Point(395, 120)
+        Me.dgvData.Location = New System.Drawing.Point(395, 163)
         Me.dgvData.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvData.Name = "dgvData"
         Me.dgvData.RowTemplate.Height = 28
@@ -166,7 +159,7 @@ Partial Class FrDataPesananPembelian
         'labelkbarang
         '
         Me.labelkbarang.AutoSize = True
-        Me.labelkbarang.Location = New System.Drawing.Point(28, 125)
+        Me.labelkbarang.Location = New System.Drawing.Point(28, 168)
         Me.labelkbarang.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelkbarang.Name = "labelkbarang"
         Me.labelkbarang.Size = New System.Drawing.Size(69, 13)
@@ -177,7 +170,7 @@ Partial Class FrDataPesananPembelian
         'lblnbarang
         '
         Me.lblnbarang.AutoSize = True
-        Me.lblnbarang.Location = New System.Drawing.Point(28, 152)
+        Me.lblnbarang.Location = New System.Drawing.Point(28, 195)
         Me.lblnbarang.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnbarang.Name = "lblnbarang"
         Me.lblnbarang.Size = New System.Drawing.Size(72, 13)
@@ -187,7 +180,7 @@ Partial Class FrDataPesananPembelian
         'lblqty
         '
         Me.lblqty.AutoSize = True
-        Me.lblqty.Location = New System.Drawing.Point(28, 180)
+        Me.lblqty.Location = New System.Drawing.Point(28, 223)
         Me.lblqty.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblqty.Name = "lblqty"
         Me.lblqty.Size = New System.Drawing.Size(40, 13)
@@ -196,7 +189,7 @@ Partial Class FrDataPesananPembelian
         '
         'txtkodebarang
         '
-        Me.txtkodebarang.Location = New System.Drawing.Point(110, 122)
+        Me.txtkodebarang.Location = New System.Drawing.Point(110, 165)
         Me.txtkodebarang.Margin = New System.Windows.Forms.Padding(2)
         Me.txtkodebarang.Name = "txtkodebarang"
         Me.txtkodebarang.Size = New System.Drawing.Size(199, 20)
@@ -204,7 +197,7 @@ Partial Class FrDataPesananPembelian
         '
         'txtnamabarang
         '
-        Me.txtnamabarang.Location = New System.Drawing.Point(110, 149)
+        Me.txtnamabarang.Location = New System.Drawing.Point(110, 192)
         Me.txtnamabarang.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnamabarang.Name = "txtnamabarang"
         Me.txtnamabarang.Size = New System.Drawing.Size(262, 20)
@@ -212,7 +205,7 @@ Partial Class FrDataPesananPembelian
         '
         'btnsbar
         '
-        Me.btnsbar.Location = New System.Drawing.Point(320, 120)
+        Me.btnsbar.Location = New System.Drawing.Point(320, 163)
         Me.btnsbar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsbar.Name = "btnsbar"
         Me.btnsbar.Size = New System.Drawing.Size(52, 22)
@@ -222,7 +215,7 @@ Partial Class FrDataPesananPembelian
         '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(230, 262)
+        Me.btntambah.Location = New System.Drawing.Point(230, 305)
         Me.btntambah.Margin = New System.Windows.Forms.Padding(2)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(63, 23)
@@ -232,7 +225,7 @@ Partial Class FrDataPesananPembelian
         '
         'btnhapus
         '
-        Me.btnhapus.Location = New System.Drawing.Point(309, 262)
+        Me.btnhapus.Location = New System.Drawing.Point(309, 305)
         Me.btnhapus.Margin = New System.Windows.Forms.Padding(2)
         Me.btnhapus.Name = "btnhapus"
         Me.btnhapus.Size = New System.Drawing.Size(63, 23)
@@ -242,7 +235,7 @@ Partial Class FrDataPesananPembelian
         '
         'btncetak
         '
-        Me.btncetak.Location = New System.Drawing.Point(666, 327)
+        Me.btncetak.Location = New System.Drawing.Point(666, 370)
         Me.btncetak.Margin = New System.Windows.Forms.Padding(2)
         Me.btncetak.Name = "btncetak"
         Me.btncetak.Size = New System.Drawing.Size(63, 23)
@@ -253,7 +246,7 @@ Partial Class FrDataPesananPembelian
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 94)
+        Me.Label1.Location = New System.Drawing.Point(8, 137)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(157, 13)
@@ -262,7 +255,7 @@ Partial Class FrDataPesananPembelian
         '
         'btnsimpan
         '
-        Me.btnsimpan.Location = New System.Drawing.Point(588, 327)
+        Me.btnsimpan.Location = New System.Drawing.Point(588, 370)
         Me.btnsimpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsimpan.Name = "btnsimpan"
         Me.btnsimpan.Size = New System.Drawing.Size(63, 23)
@@ -273,7 +266,7 @@ Partial Class FrDataPesananPembelian
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 207)
+        Me.Label2.Location = New System.Drawing.Point(28, 250)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 13)
@@ -284,7 +277,7 @@ Partial Class FrDataPesananPembelian
         '
         Me.cbbsatuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbbsatuan.FormattingEnabled = True
-        Me.cbbsatuan.Location = New System.Drawing.Point(110, 203)
+        Me.cbbsatuan.Location = New System.Drawing.Point(110, 246)
         Me.cbbsatuan.Name = "cbbsatuan"
         Me.cbbsatuan.Size = New System.Drawing.Size(262, 21)
         Me.cbbsatuan.TabIndex = 28
@@ -302,7 +295,7 @@ Partial Class FrDataPesananPembelian
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(652, 301)
+        Me.Label3.Location = New System.Drawing.Point(652, 344)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 13)
@@ -311,24 +304,66 @@ Partial Class FrDataPesananPembelian
         '
         'nud
         '
-        Me.nud.Location = New System.Drawing.Point(110, 175)
+        Me.nud.Location = New System.Drawing.Point(110, 218)
         Me.nud.Name = "nud"
         Me.nud.Size = New System.Drawing.Size(262, 20)
         Me.nud.TabIndex = 32
         '
         'txttotal
         '
-        Me.txttotal.Location = New System.Drawing.Point(588, 298)
+        Me.txttotal.Location = New System.Drawing.Point(588, 341)
         Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txttotal.Name = "txttotal"
         Me.txttotal.Size = New System.Drawing.Size(60, 20)
         Me.txttotal.TabIndex = 33
         '
+        'btnsearchs
+        '
+        Me.btnsearchs.Location = New System.Drawing.Point(666, 30)
+        Me.btnsearchs.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnsearchs.Name = "btnsearchs"
+        Me.btnsearchs.Size = New System.Drawing.Size(63, 23)
+        Me.btnsearchs.TabIndex = 34
+        Me.btnsearchs.Text = "Search"
+        Me.btnsearchs.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(19, 91)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 13)
+        Me.Label4.TabIndex = 35
+        Me.Label4.Text = "Status"
+        '
+        'ckbproses
+        '
+        Me.ckbproses.AutoSize = True
+        Me.ckbproses.Location = New System.Drawing.Point(305, 90)
+        Me.ckbproses.Name = "ckbproses"
+        Me.ckbproses.Size = New System.Drawing.Size(67, 17)
+        Me.ckbproses.TabIndex = 36
+        Me.ckbproses.Text = "Diproses"
+        Me.ckbproses.UseVisualStyleBackColor = True
+        '
+        'txtstatus
+        '
+        Me.txtstatus.Location = New System.Drawing.Point(142, 88)
+        Me.txtstatus.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtstatus.Name = "txtstatus"
+        Me.txtstatus.Size = New System.Drawing.Size(158, 20)
+        Me.txtstatus.TabIndex = 37
+        '
         'FrDataPesananPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(744, 361)
+        Me.ClientSize = New System.Drawing.Size(744, 404)
+        Me.Controls.Add(Me.txtstatus)
+        Me.Controls.Add(Me.ckbproses)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.btnsearchs)
         Me.Controls.Add(Me.txttotal)
         Me.Controls.Add(Me.nud)
         Me.Controls.Add(Me.Label3)
@@ -347,7 +382,6 @@ Partial Class FrDataPesananPembelian
         Me.Controls.Add(Me.lblnbarang)
         Me.Controls.Add(Me.labelkbarang)
         Me.Controls.Add(Me.dgvData)
-        Me.Controls.Add(Me.btnsearchs)
         Me.Controls.Add(Me.dtpt)
         Me.Controls.Add(Me.txtnamasupplier)
         Me.Controls.Add(Me.txtkodesupplier)
@@ -374,7 +408,6 @@ Partial Class FrDataPesananPembelian
     Friend WithEvents LabelKodeSupp As Label
     Friend WithEvents DirectorySearcher1 As DirectoryServices.DirectorySearcher
     Friend WithEvents dtpt As DateTimePicker
-    Friend WithEvents btnsearchs As Button
     Friend WithEvents dgvData As DataGridView
     Friend WithEvents labelkbarang As Label
     Friend WithEvents lblnbarang As Label
@@ -396,4 +429,8 @@ Partial Class FrDataPesananPembelian
     Friend WithEvents Label3 As Label
     Friend WithEvents nud As NumericUpDown
     Public WithEvents txttotal As TextBox
+    Friend WithEvents btnsearchs As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ckbproses As CheckBox
+    Public WithEvents txtstatus As TextBox
 End Class

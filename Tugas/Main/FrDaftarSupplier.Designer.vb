@@ -22,19 +22,22 @@ Partial Class FrDaftarSupplier
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btncetak = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'dgvData
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 52)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(475, 169)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvData.AllowUserToAddRows = False
+        Me.dgvData.AllowUserToDeleteRows = False
+        Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvData.Location = New System.Drawing.Point(12, 52)
+        Me.dgvData.Name = "dgvData"
+        Me.dgvData.ReadOnly = True
+        Me.dgvData.Size = New System.Drawing.Size(475, 169)
+        Me.dgvData.TabIndex = 0
         '
         'Label1
         '
@@ -61,16 +64,16 @@ Partial Class FrDaftarSupplier
         Me.ClientSize = New System.Drawing.Size(499, 262)
         Me.Controls.Add(Me.btncetak)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvData)
         Me.Name = "FrDaftarSupplier"
         Me.Text = "FrDaftarSupplier"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvData As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents btncetak As Button
 End Class

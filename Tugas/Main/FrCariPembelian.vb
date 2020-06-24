@@ -36,7 +36,7 @@ Public Class FrCariPembelian
     Private Sub FrCariPembelian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
         tampil_pembelian()
-        query = "Select * from tbPJ_H"
+        query = "Select * from tbPB_H"
         cmd = New SqlCommand(query, conn)
         datareader = cmd.ExecuteReader
         If datareader.HasRows Then

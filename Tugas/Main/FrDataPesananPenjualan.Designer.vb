@@ -38,26 +38,23 @@ Partial Class FrDataPesananPenjualan
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtkodebarang = New System.Windows.Forms.TextBox()
         Me.txtnamabarang = New System.Windows.Forms.TextBox()
         Me.nud = New System.Windows.Forms.NumericUpDown()
         Me.cbbsatuan = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtstok = New System.Windows.Forms.TextBox()
-        Me.txthargasatuan = New System.Windows.Forms.TextBox()
         Me.dtpkadaluarsa = New System.Windows.Forms.DateTimePicker()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btncaribarang = New System.Windows.Forms.Button()
         Me.btntambah = New System.Windows.Forms.Button()
         Me.btnhapus = New System.Windows.Forms.Button()
         Me.dgvData = New System.Windows.Forms.DataGridView()
-        Me.txtsubtotal = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.txttotal = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.btncetak = New System.Windows.Forms.Button()
         Me.btnsimpan = New System.Windows.Forms.Button()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ckbproses = New System.Windows.Forms.CheckBox()
+        Me.txtstatus = New System.Windows.Forms.TextBox()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,7 +71,7 @@ Partial Class FrDataPesananPenjualan
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 110)
+        Me.Label2.Location = New System.Drawing.Point(12, 133)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(155, 13)
         Me.Label2.TabIndex = 1
@@ -165,7 +162,7 @@ Partial Class FrDataPesananPenjualan
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(28, 134)
+        Me.Label7.Location = New System.Drawing.Point(28, 157)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(69, 13)
         Me.Label7.TabIndex = 12
@@ -174,7 +171,7 @@ Partial Class FrDataPesananPenjualan
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(28, 160)
+        Me.Label8.Location = New System.Drawing.Point(28, 183)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(72, 13)
         Me.Label8.TabIndex = 13
@@ -183,7 +180,7 @@ Partial Class FrDataPesananPenjualan
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(28, 186)
+        Me.Label9.Location = New System.Drawing.Point(28, 209)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(40, 13)
         Me.Label9.TabIndex = 14
@@ -192,77 +189,45 @@ Partial Class FrDataPesananPenjualan
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(28, 212)
+        Me.Label10.Location = New System.Drawing.Point(28, 235)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(41, 13)
         Me.Label10.TabIndex = 15
         Me.Label10.Text = "Satuan"
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(28, 240)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(73, 13)
-        Me.Label11.TabIndex = 16
-        Me.Label11.Text = "Harga Satuan"
-        '
         'txtkodebarang
         '
-        Me.txtkodebarang.Location = New System.Drawing.Point(168, 131)
+        Me.txtkodebarang.Location = New System.Drawing.Point(168, 154)
         Me.txtkodebarang.Name = "txtkodebarang"
         Me.txtkodebarang.Size = New System.Drawing.Size(116, 20)
         Me.txtkodebarang.TabIndex = 17
         '
         'txtnamabarang
         '
-        Me.txtnamabarang.Location = New System.Drawing.Point(168, 157)
+        Me.txtnamabarang.Location = New System.Drawing.Point(168, 180)
         Me.txtnamabarang.Name = "txtnamabarang"
         Me.txtnamabarang.Size = New System.Drawing.Size(197, 20)
         Me.txtnamabarang.TabIndex = 18
         '
         'nud
         '
-        Me.nud.Location = New System.Drawing.Point(168, 184)
+        Me.nud.Location = New System.Drawing.Point(168, 207)
         Me.nud.Name = "nud"
-        Me.nud.Size = New System.Drawing.Size(67, 20)
+        Me.nud.Size = New System.Drawing.Size(197, 20)
         Me.nud.TabIndex = 19
         '
         'cbbsatuan
         '
         Me.cbbsatuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbbsatuan.FormattingEnabled = True
-        Me.cbbsatuan.Location = New System.Drawing.Point(168, 210)
+        Me.cbbsatuan.Location = New System.Drawing.Point(168, 233)
         Me.cbbsatuan.Name = "cbbsatuan"
         Me.cbbsatuan.Size = New System.Drawing.Size(197, 21)
         Me.cbbsatuan.TabIndex = 20
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(255, 186)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(29, 13)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "Stok"
-        '
-        'txtstok
-        '
-        Me.txtstok.Location = New System.Drawing.Point(290, 183)
-        Me.txtstok.Name = "txtstok"
-        Me.txtstok.Size = New System.Drawing.Size(75, 20)
-        Me.txtstok.TabIndex = 22
-        '
-        'txthargasatuan
-        '
-        Me.txthargasatuan.Location = New System.Drawing.Point(168, 237)
-        Me.txthargasatuan.Name = "txthargasatuan"
-        Me.txthargasatuan.Size = New System.Drawing.Size(197, 20)
-        Me.txthargasatuan.TabIndex = 23
-        '
         'dtpkadaluarsa
         '
-        Me.dtpkadaluarsa.Location = New System.Drawing.Point(168, 289)
+        Me.dtpkadaluarsa.Location = New System.Drawing.Point(168, 260)
         Me.dtpkadaluarsa.Name = "dtpkadaluarsa"
         Me.dtpkadaluarsa.Size = New System.Drawing.Size(197, 20)
         Me.dtpkadaluarsa.TabIndex = 24
@@ -270,7 +235,7 @@ Partial Class FrDataPesananPenjualan
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(28, 295)
+        Me.Label13.Location = New System.Drawing.Point(28, 266)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(60, 13)
         Me.Label13.TabIndex = 25
@@ -278,7 +243,7 @@ Partial Class FrDataPesananPenjualan
         '
         'btncaribarang
         '
-        Me.btncaribarang.Location = New System.Drawing.Point(290, 131)
+        Me.btncaribarang.Location = New System.Drawing.Point(290, 154)
         Me.btncaribarang.Name = "btncaribarang"
         Me.btncaribarang.Size = New System.Drawing.Size(75, 23)
         Me.btncaribarang.TabIndex = 26
@@ -287,7 +252,7 @@ Partial Class FrDataPesananPenjualan
         '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(209, 315)
+        Me.btntambah.Location = New System.Drawing.Point(209, 308)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(75, 23)
         Me.btntambah.TabIndex = 27
@@ -296,7 +261,7 @@ Partial Class FrDataPesananPenjualan
         '
         'btnhapus
         '
-        Me.btnhapus.Location = New System.Drawing.Point(290, 315)
+        Me.btnhapus.Location = New System.Drawing.Point(290, 308)
         Me.btnhapus.Name = "btnhapus"
         Me.btnhapus.Size = New System.Drawing.Size(75, 23)
         Me.btnhapus.TabIndex = 28
@@ -308,47 +273,22 @@ Partial Class FrDataPesananPenjualan
         Me.dgvData.AllowUserToAddRows = False
         Me.dgvData.AllowUserToDeleteRows = False
         Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvData.Location = New System.Drawing.Point(395, 131)
+        Me.dgvData.Location = New System.Drawing.Point(395, 154)
         Me.dgvData.Name = "dgvData"
         Me.dgvData.ReadOnly = True
         Me.dgvData.Size = New System.Drawing.Size(284, 177)
         Me.dgvData.TabIndex = 29
         '
-        'txtsubtotal
-        '
-        Me.txtsubtotal.Location = New System.Drawing.Point(168, 263)
-        Me.txtsubtotal.Name = "txtsubtotal"
-        Me.txtsubtotal.Size = New System.Drawing.Size(197, 20)
-        Me.txtsubtotal.TabIndex = 31
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(28, 266)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(53, 13)
-        Me.Label14.TabIndex = 30
-        Me.Label14.Text = "Sub Total"
-        '
         'txttotal
         '
-        Me.txttotal.Location = New System.Drawing.Point(482, 318)
+        Me.txttotal.Location = New System.Drawing.Point(523, 341)
         Me.txttotal.Name = "txttotal"
-        Me.txttotal.Size = New System.Drawing.Size(197, 20)
+        Me.txttotal.Size = New System.Drawing.Size(75, 20)
         Me.txttotal.TabIndex = 33
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(445, 321)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(31, 13)
-        Me.Label15.TabIndex = 32
-        Me.Label15.Text = "Total"
         '
         'btncetak
         '
-        Me.btncetak.Location = New System.Drawing.Point(604, 344)
+        Me.btncetak.Location = New System.Drawing.Point(604, 367)
         Me.btncetak.Name = "btncetak"
         Me.btncetak.Size = New System.Drawing.Size(75, 23)
         Me.btncetak.TabIndex = 34
@@ -357,38 +297,70 @@ Partial Class FrDataPesananPenjualan
         '
         'btnsimpan
         '
-        Me.btnsimpan.Location = New System.Drawing.Point(523, 344)
+        Me.btnsimpan.Location = New System.Drawing.Point(523, 367)
         Me.btnsimpan.Name = "btnsimpan"
         Me.btnsimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnsimpan.TabIndex = 35
         Me.btnsimpan.Text = "Simpan"
         Me.btnsimpan.UseVisualStyleBackColor = True
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(601, 344)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(68, 13)
+        Me.Label15.TabIndex = 32
+        Me.Label15.Text = "Jenis Barang"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(28, 96)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(37, 13)
+        Me.Label11.TabIndex = 36
+        Me.Label11.Text = "Status"
+        '
+        'ckbproses
+        '
+        Me.ckbproses.AutoSize = True
+        Me.ckbproses.Location = New System.Drawing.Point(298, 95)
+        Me.ckbproses.Name = "ckbproses"
+        Me.ckbproses.Size = New System.Drawing.Size(67, 17)
+        Me.ckbproses.TabIndex = 37
+        Me.ckbproses.Text = "Diproses"
+        Me.ckbproses.UseVisualStyleBackColor = True
+        '
+        'txtstatus
+        '
+        Me.txtstatus.Location = New System.Drawing.Point(150, 93)
+        Me.txtstatus.Name = "txtstatus"
+        Me.txtstatus.Size = New System.Drawing.Size(134, 20)
+        Me.txtstatus.TabIndex = 38
+        '
         'FrDataPesananPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(691, 383)
+        Me.ClientSize = New System.Drawing.Size(691, 402)
+        Me.Controls.Add(Me.txtstatus)
+        Me.Controls.Add(Me.ckbproses)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnsimpan)
         Me.Controls.Add(Me.btncetak)
         Me.Controls.Add(Me.txttotal)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.txtsubtotal)
-        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.dgvData)
         Me.Controls.Add(Me.btnhapus)
         Me.Controls.Add(Me.btntambah)
         Me.Controls.Add(Me.btncaribarang)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.dtpkadaluarsa)
-        Me.Controls.Add(Me.txthargasatuan)
-        Me.Controls.Add(Me.txtstok)
-        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.cbbsatuan)
         Me.Controls.Add(Me.nud)
         Me.Controls.Add(Me.txtnamabarang)
         Me.Controls.Add(Me.txtkodebarang)
-        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -430,24 +402,21 @@ Partial Class FrDataPesananPenjualan
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents txtkodebarang As TextBox
     Friend WithEvents txtnamabarang As TextBox
     Friend WithEvents nud As NumericUpDown
     Friend WithEvents cbbsatuan As ComboBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents txtstok As TextBox
-    Friend WithEvents txthargasatuan As TextBox
     Friend WithEvents dtpkadaluarsa As DateTimePicker
     Friend WithEvents Label13 As Label
     Friend WithEvents btncaribarang As Button
     Friend WithEvents btntambah As Button
     Friend WithEvents btnhapus As Button
     Friend WithEvents dgvData As DataGridView
-    Friend WithEvents txtsubtotal As TextBox
-    Friend WithEvents Label14 As Label
     Friend WithEvents txttotal As TextBox
-    Friend WithEvents Label15 As Label
     Friend WithEvents btncetak As Button
     Friend WithEvents btnsimpan As Button
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents ckbproses As CheckBox
+    Friend WithEvents txtstatus As TextBox
 End Class

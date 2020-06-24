@@ -47,14 +47,18 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -142,6 +146,14 @@
       <DependentUpon>CrNotaReturPembelian.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrCariBarang.Designer.vb">
       <DependentUpon>FrCariBarang.vb</DependentUpon>
     </Compile>
@@ -178,6 +190,12 @@
     <Compile Include="FrCariPesananPembelian.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrCariPesananPenjualan.Designer.vb">
+      <DependentUpon>FrCariPesananPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCariPesananPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrCariReturPembelian.Designer.vb">
       <DependentUpon>FrCariReturPembelian.vb</DependentUpon>
     </Compile>
@@ -188,6 +206,12 @@
       <DependentUpon>FrCariSupplier.vb</DependentUpon>
     </Compile>
     <Compile Include="FrCariSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCr.Designer.vb">
+      <DependentUpon>FrCr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCr.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrDaftarBarang.Designer.vb">
@@ -380,11 +404,17 @@
     <EmbeddedResource Include="FrCariPesananPembelian.resx">
       <DependentUpon>FrCariPesananPembelian.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrCariPesananPenjualan.resx">
+      <DependentUpon>FrCariPesananPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrCariReturPembelian.resx">
       <DependentUpon>FrCariReturPembelian.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrCariSupplier.resx">
       <DependentUpon>FrCariSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCr.resx">
+      <DependentUpon>FrCr.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrDaftarBarang.resx">
       <DependentUpon>FrDaftarBarang.vb</DependentUpon>
@@ -448,6 +478,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

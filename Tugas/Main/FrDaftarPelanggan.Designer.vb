@@ -23,9 +23,9 @@ Partial Class FrDaftarPelanggan
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvData = New System.Windows.Forms.DataGridView()
         Me.btncetak = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -37,13 +37,16 @@ Partial Class FrDaftarPelanggan
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Daftar Pelanggan"
         '
-        'DataGridView1
+        'dgvData
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 44)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(475, 177)
-        Me.DataGridView1.TabIndex = 2
+        Me.dgvData.AllowUserToAddRows = False
+        Me.dgvData.AllowUserToDeleteRows = False
+        Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvData.Location = New System.Drawing.Point(12, 44)
+        Me.dgvData.Name = "dgvData"
+        Me.dgvData.ReadOnly = True
+        Me.dgvData.Size = New System.Drawing.Size(475, 177)
+        Me.dgvData.TabIndex = 2
         '
         'btncetak
         '
@@ -60,17 +63,17 @@ Partial Class FrDaftarPelanggan
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(499, 262)
         Me.Controls.Add(Me.btncetak)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvData)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FrDaftarPelanggan"
         Me.Text = "FrDaftarPelanggan"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvData As DataGridView
     Friend WithEvents btncetak As Button
 End Class

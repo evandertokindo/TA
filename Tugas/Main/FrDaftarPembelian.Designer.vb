@@ -25,12 +25,11 @@ Partial Class FrDaftarPembelian
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnfilter = New System.Windows.Forms.Button()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.btncetak = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvData = New System.Windows.Forms.DataGridView()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -60,15 +59,6 @@ Partial Class FrDaftarPembelian
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Sampai"
         '
-        'btnfilter
-        '
-        Me.btnfilter.Location = New System.Drawing.Point(412, 31)
-        Me.btnfilter.Name = "btnfilter"
-        Me.btnfilter.Size = New System.Drawing.Size(75, 23)
-        Me.btnfilter.TabIndex = 3
-        Me.btnfilter.Text = "Filter"
-        Me.btnfilter.UseVisualStyleBackColor = True
-        '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Location = New System.Drawing.Point(57, 30)
@@ -92,30 +82,32 @@ Partial Class FrDaftarPembelian
         Me.btncetak.Text = "Cetak"
         Me.btncetak.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgvData
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 71)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(472, 150)
-        Me.DataGridView1.TabIndex = 7
+        Me.dgvData.AllowUserToAddRows = False
+        Me.dgvData.AllowUserToDeleteRows = False
+        Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvData.Location = New System.Drawing.Point(15, 71)
+        Me.dgvData.Name = "dgvData"
+        Me.dgvData.ReadOnly = True
+        Me.dgvData.Size = New System.Drawing.Size(472, 150)
+        Me.dgvData.TabIndex = 7
         '
         'FrDaftarPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(499, 262)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvData)
         Me.Controls.Add(Me.btncetak)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.btnfilter)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FrDaftarPembelian"
         Me.Text = "FrDaftarPembelian"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -124,9 +116,8 @@ Partial Class FrDaftarPembelian
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents btnfilter As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents btncetak As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvData As DataGridView
 End Class

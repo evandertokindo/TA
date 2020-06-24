@@ -2,12 +2,13 @@
 Public Class FrCariPesananPembelian
 
     Sub tampil_pesananpembelian()
-        dgvData.ColumnCount = 5
+        dgvData.ColumnCount = 6
         dgvData.Columns(0).HeaderText = "No Pesanan Pembelian"
         dgvData.Columns(1).HeaderText = "Tanggal"
         dgvData.Columns(2).HeaderText = "Kode Supplier"
         dgvData.Columns(3).HeaderText = "Nama Supplier"
         dgvData.Columns(4).HeaderText = "Jenis Barang"
+        dgvData.Columns(5).HeaderText = "Status Dokumen"
         dgvData.ReadOnly = True
         dgvData.AllowUserToAddRows = False
         dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect

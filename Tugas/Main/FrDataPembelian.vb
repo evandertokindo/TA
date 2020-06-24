@@ -28,6 +28,34 @@ Public Class FrDataPembelian
         Return (jlh = 0)
     End Function
 
+    Sub bersih()
+        txtnopesananpembelian.Clear()
+        txtkodebarang.Clear()
+        txtnamabarang.Clear()
+        txtkodesupplier.Clear()
+        txtnamasupplier.Clear()
+        nud.Value = "0"
+        txttotal.Clear()
+        cbbsatuan.Items.Clear()
+        dtpt.Value = Date.Today
+        dtpkadaluarsa.Value = Date.Today
+        buat_kode()
+    End Sub
+
+    Sub hitung_subtotal()
+        Dim subtotal As Decimal
+        subtotal = nud.Value * txtharga.Text
+        txtsubtotal.Text = subtotal
+    End Sub
+
+    Sub hitung_total()
+        Dim total As Decimal
+        For i As Integer = 0 To dgvData.Rows.Count - 1
+            total += dgvData.Item(6, i).Value
+        Next
+        txttotal.Text = total
+    End Sub
+
     Sub buat_kode()
         Call koneksi()
         Dim htg As Long
@@ -38,9 +66,9 @@ Public Class FrDataPembelian
         datareader.Read()
         If datareader.HasRows Then
             htg = Strings.Right(datareader("no_pb"), 4) + 1
-            urut = "PBL" + Strings.Right("000" & htg, 4)
+            urut = "NPB" + Strings.Right("000" & htg, 4)
         Else
-            urut = "PBL" & "000" & +1
+            urut = "NPB" & "000" & +1
         End If
         datareader.Close()
         txtnopembelian.Text = urut
@@ -67,6 +95,7 @@ Public Class FrDataPembelian
         txtsubtotal.Enabled = False
         txtnamabarang.Enabled = False
         txttotal.Enabled = False
+        cbbsatuan.Enabled = False
 
     End Sub
 
@@ -92,7 +121,7 @@ Public Class FrDataPembelian
             If MessageBox.Show("Apakah anda yakin mau menghapus Produk " & dgvData.Item(0, baris).Value & "?", "Hapus Pesanan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 dgvData.Rows.RemoveAt(baris)
                 MessageBox.Show("Produk berhasil dihapus", "Hapus Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                'txttotal.Text = dgvData.Rows.Count
+                hitung_total()
             End If
         End If
     End Sub
@@ -118,6 +147,15 @@ Public Class FrDataPembelian
         dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txtharga.Text, txtsubtotal.Text, dtpkadaluarsa.Value)
         Return MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+        hitung_total()
+        txtkodebarang.Clear()
+        txtnamabarang.Clear()
+        nud.Value = "0"
+        cbbsatuan.Items.Clear()
+        txtharga.Clear()
+        txtsubtotal.Clear()
+        dtpkadaluarsa.Value = Date.Today
+
     End Function
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -128,6 +166,22 @@ Public Class FrDataPembelian
     Private Sub txtnopesananpembelian_TextChanged(sender As Object, e As EventArgs) Handles txtnopesananpembelian.TextChanged
         If txtnopesananpembelian.Text <> "" Then
             btncaribarang.Enabled = True
+        End If
+    End Sub
+
+    Private Sub txtharga_TextChanged(sender As Object, e As EventArgs) Handles txtharga.TextChanged
+        If txtharga.Text = "0" Or txtharga.Text = "" Then
+
+        Else
+            hitung_subtotal()
+        End If
+    End Sub
+
+    Private Sub nud_ValueChanged(sender As Object, e As EventArgs) Handles nud.ValueChanged
+        If txtharga.Text = "0" Or txtharga.Text = "" Then
+
+        Else
+            hitung_subtotal()
         End If
     End Sub
 End Class

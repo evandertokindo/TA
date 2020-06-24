@@ -21,12 +21,6 @@ Public Class FrDataBarang
         conn.Close()
     End Sub
 
-    'Sub hitung_jumlah()
-    '    Dim hitung As Integer
-    '    hitung = txtkonversisedang.Text * txtkonversikecil.Text
-    '    txtjumlah.Text = hitung
-    'End Sub
-
     Private Sub FrPersediaan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.MdiParent = FrMainMenu
@@ -77,69 +71,12 @@ Public Class FrDataBarang
 
     'End Sub
 
-    'Private Sub btnsimpan_Click(sender As Object, e As EventArgs) Handles btnsimpandetail.Click
+    Private Sub btnsimpan_Click(sender As Object, e As EventArgs) Handles btnsimpan.Click
 
-    '    load_data_1pk("tbB_H")
-    '    dr = ds.Tables("tbB_H").Rows.Find(txtkodebarang.Text)
-    '    If dr Is Nothing Then
-    '        If String.IsNullOrWhiteSpace(txtnamabarang.Text) Or String.IsNullOrWhiteSpace(txtjumlah.Text) Or cbbbesar.SelectedItem = Nothing Or cbbsedang.SelectedItem = Nothing Or cbbkecil.SelectedItem = Nothing Or String.IsNullOrWhiteSpace(txthargaecer.Text) Or String.IsNullOrWhiteSpace(txthargagrosir.Text) Then
-    '            MessageBox.Show("Data Tidak Boleh Kosong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '        Else
-    '            dr = ds.Tables("tbB_H").NewRow
-    '            dr(0) = txtkodebarang.Text
-    '            dr(1) = txtnamabarang.Text
-    '            dr(2) = cbbbesar.Text
-    '            dr(3) = nudsedang.Value
-    '            dr(4) = cbbsedang.Text
-    '            dr(5) = nudkecil.Value
-    '            dr(6) = cbbkecil.Text
-    '            ds.Tables("tbB_H").Rows.Add(dr)
-    '            update_data("tbB_H")
-
-    '            load_data_2pk("tbB_D")
-    '            dr = ds.Tables("tbB_D").NewRow
-    '            dr(0) = txtkodebarang.Text
-    '            dr(1) = dtpkadaluarsa.Value
-    '            dr(2) = txtjumlah.Text
-    '            dr(3) = lblsatuan.Text
-    '            dr(4) = txthargaecer.Text
-    '            dr(5) = txthargagrosir.Text
-    '            ds.Tables("tbB_D").Rows.Add(dr)
-    '            update_data("tbB_D")
-
-    '            MessageBox.Show("Barang " & txtkodebarang.Text & " berhasil ditambahkan", "Add Barang", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-    '            buat_kode()
-    '            txtnamabarang.Clear()
-    '            txtjumlah.Clear()
-    '            txthargaecer.Clear()
-    '            txthargagrosir.Clear()
-    '            txtnamabarang.Focus()
-    '            cbbbesar.SelectedIndex = -1
-    '            cbbkecil.SelectedIndex = -1
-    '            cbbsedang.SelectedIndex = -1
-    '        End If
-    '    End If
-
-    'End Sub
-
-    Private Sub cbbkecil_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbkecil.SelectedIndexChanged
-
-        lblsatuan.Text = cbbkecil.SelectedItem
-
-    End Sub
-
-    Private Sub nudkecil_TextChanged(sender As Object, e As EventArgs) Handles nudkecil.TextChanged
-        Dim hitung As Integer
-        hitung = nudsedang.Value * nudkecil.Value
-        txtjumlah.Text = hitung
-    End Sub
-
-    Private Sub btnsimpanheader_Click(sender As Object, e As EventArgs) 
         load_data_1pk("tbB_H")
         dr = ds.Tables("tbB_H").Rows.Find(txtkodebarang.Text)
         If dr Is Nothing Then
-            If String.IsNullOrWhiteSpace(txtnamabarang.Text) Or String.IsNullOrWhiteSpace(txtjumlah.Text) Or cbbbesar.SelectedItem = Nothing Or cbbsedang.SelectedItem = Nothing Or cbbkecil.SelectedItem = Nothing Then
+            If String.IsNullOrWhiteSpace(txtnamabarang.Text) Or String.IsNullOrWhiteSpace(txtjumlah.Text) Or cbbbesar.SelectedItem = Nothing Or cbbsedang.SelectedItem = Nothing Or cbbkecil.SelectedItem = Nothing Or String.IsNullOrWhiteSpace(txthargaecer.Text) Or String.IsNullOrWhiteSpace(txthargagrosir.Text) Then
                 MessageBox.Show("Data Tidak Boleh Kosong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 dr = ds.Tables("tbB_H").NewRow
@@ -153,19 +90,7 @@ Public Class FrDataBarang
                 ds.Tables("tbB_H").Rows.Add(dr)
                 update_data("tbB_H")
 
-                MessageBox.Show("Barang Header " & txtkodebarang.Text & " berhasil ditambahkan.", "Add Barang", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        End If
-
-    End Sub
-
-    Private Sub btnsimpandetail_Click(sender As Object, e As EventArgs) Handles btnsimpandetail.Click
-        load_data_2pk("tbB_D")
-        dr = ds.Tables("tbB_D").Rows.Find(txtkodebarang.Text)
-        If dr Is Nothing Then
-            If String.IsNullOrWhiteSpace(txtnamabarang.Text) Or String.IsNullOrWhiteSpace(txtjumlah.Text) Or cbbbesar.SelectedItem = Nothing Or cbbsedang.SelectedItem = Nothing Or cbbkecil.SelectedItem = Nothing Or String.IsNullOrWhiteSpace(txthargaecer.Text) Or String.IsNullOrWhiteSpace(txthargagrosir.Text) Then
-                MessageBox.Show("Data Tidak Boleh Kosong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
+                load_data_2pk("tbB_D")
                 dr = ds.Tables("tbB_D").NewRow
                 dr(0) = txtkodebarang.Text
                 dr(1) = dtpkadaluarsa.Value
@@ -175,7 +100,32 @@ Public Class FrDataBarang
                 dr(5) = txthargagrosir.Text
                 ds.Tables("tbB_D").Rows.Add(dr)
                 update_data("tbB_D")
+
+                MessageBox.Show("Barang " & txtkodebarang.Text & " berhasil ditambahkan", "Add Barang", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                buat_kode()
+                txtnamabarang.Clear()
+                txtjumlah.Clear()
+                txthargaecer.Clear()
+                txthargagrosir.Clear()
+                txtnamabarang.Focus()
+                cbbbesar.SelectedIndex = -1
+                cbbkecil.SelectedIndex = -1
+                cbbsedang.SelectedIndex = -1
             End If
         End If
+
     End Sub
+
+    Private Sub cbbkecil_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbkecil.SelectedIndexChanged
+
+        lblsatuan.Text = cbbkecil.SelectedItem
+
+    End Sub
+
+    Private Sub nudkecil_TextChanged(sender As Object, e As EventArgs) Handles nudkecil.TextChanged
+
+    End Sub
+
+
 End Class

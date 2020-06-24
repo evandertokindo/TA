@@ -15,7 +15,7 @@ Module GlobalAB
 
 
     Sub koneksi()
-        connstr = "Data Source = WIN7-PC\SQLEXPRESS; Initial Catalog = dbtry; Integrated Security = True"
+        connstr = "Data Source = WIN7-PC\SQLEXPRESS; Initial Catalog = dbcobalagi; Integrated Security = True"
         conn = New SqlConnection(connstr)
         conn.Open()
     End Sub

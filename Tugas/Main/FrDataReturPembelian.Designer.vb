@@ -56,6 +56,9 @@ Partial Class FrDataReturPembelian
         Me.nud = New System.Windows.Forms.NumericUpDown()
         Me.txtsubtotal = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.btncaripembelian = New System.Windows.Forms.Button()
+        Me.txtnopembelian = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,7 +86,7 @@ Partial Class FrDataReturPembelian
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(24, 59)
+        Me.Label3.Location = New System.Drawing.Point(24, 84)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(46, 13)
@@ -113,7 +116,7 @@ Partial Class FrDataReturPembelian
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(8, 95)
+        Me.Label6.Location = New System.Drawing.Point(8, 123)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(141, 13)
@@ -123,7 +126,7 @@ Partial Class FrDataReturPembelian
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(24, 123)
+        Me.Label7.Location = New System.Drawing.Point(24, 151)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(69, 13)
@@ -133,7 +136,7 @@ Partial Class FrDataReturPembelian
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(24, 149)
+        Me.Label8.Location = New System.Drawing.Point(24, 177)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(72, 13)
@@ -143,7 +146,7 @@ Partial Class FrDataReturPembelian
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(24, 174)
+        Me.Label9.Location = New System.Drawing.Point(24, 202)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(40, 13)
@@ -153,7 +156,7 @@ Partial Class FrDataReturPembelian
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(24, 232)
+        Me.Label10.Location = New System.Drawing.Point(24, 260)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(56, 13)
@@ -186,7 +189,7 @@ Partial Class FrDataReturPembelian
         '
         'dtpt
         '
-        Me.dtpt.Location = New System.Drawing.Point(131, 56)
+        Me.dtpt.Location = New System.Drawing.Point(131, 81)
         Me.dtpt.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpt.Name = "dtpt"
         Me.dtpt.Size = New System.Drawing.Size(202, 20)
@@ -204,7 +207,7 @@ Partial Class FrDataReturPembelian
         '
         'txtkodebarang
         '
-        Me.txtkodebarang.Location = New System.Drawing.Point(131, 119)
+        Me.txtkodebarang.Location = New System.Drawing.Point(131, 147)
         Me.txtkodebarang.Margin = New System.Windows.Forms.Padding(2)
         Me.txtkodebarang.Name = "txtkodebarang"
         Me.txtkodebarang.Size = New System.Drawing.Size(121, 20)
@@ -212,7 +215,7 @@ Partial Class FrDataReturPembelian
         '
         'txtnamabarang
         '
-        Me.txtnamabarang.Location = New System.Drawing.Point(131, 145)
+        Me.txtnamabarang.Location = New System.Drawing.Point(131, 173)
         Me.txtnamabarang.Margin = New System.Windows.Forms.Padding(2)
         Me.txtnamabarang.Name = "txtnamabarang"
         Me.txtnamabarang.Size = New System.Drawing.Size(203, 20)
@@ -220,7 +223,7 @@ Partial Class FrDataReturPembelian
         '
         'txthargabeli
         '
-        Me.txthargabeli.Location = New System.Drawing.Point(131, 228)
+        Me.txthargabeli.Location = New System.Drawing.Point(131, 256)
         Me.txthargabeli.Margin = New System.Windows.Forms.Padding(2)
         Me.txthargabeli.Name = "txthargabeli"
         Me.txthargabeli.Size = New System.Drawing.Size(203, 20)
@@ -228,7 +231,7 @@ Partial Class FrDataReturPembelian
         '
         'btncaribarang
         '
-        Me.btncaribarang.Location = New System.Drawing.Point(257, 117)
+        Me.btncaribarang.Location = New System.Drawing.Point(257, 145)
         Me.btncaribarang.Margin = New System.Windows.Forms.Padding(2)
         Me.btncaribarang.Name = "btncaribarang"
         Me.btncaribarang.Size = New System.Drawing.Size(76, 24)
@@ -239,7 +242,7 @@ Partial Class FrDataReturPembelian
         'dgvData
         '
         Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvData.Location = New System.Drawing.Point(363, 108)
+        Me.dgvData.Location = New System.Drawing.Point(363, 136)
         Me.dgvData.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvData.Name = "dgvData"
         Me.dgvData.RowTemplate.Height = 28
@@ -248,7 +251,7 @@ Partial Class FrDataReturPembelian
         '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(176, 318)
+        Me.btntambah.Location = New System.Drawing.Point(176, 346)
         Me.btntambah.Margin = New System.Windows.Forms.Padding(2)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(76, 24)
@@ -258,7 +261,7 @@ Partial Class FrDataReturPembelian
         '
         'btnhapus
         '
-        Me.btnhapus.Location = New System.Drawing.Point(257, 318)
+        Me.btnhapus.Location = New System.Drawing.Point(257, 346)
         Me.btnhapus.Margin = New System.Windows.Forms.Padding(2)
         Me.btnhapus.Name = "btnhapus"
         Me.btnhapus.Size = New System.Drawing.Size(76, 24)
@@ -268,7 +271,7 @@ Partial Class FrDataReturPembelian
         '
         'btncetak
         '
-        Me.btncetak.Location = New System.Drawing.Point(579, 330)
+        Me.btncetak.Location = New System.Drawing.Point(579, 358)
         Me.btncetak.Margin = New System.Windows.Forms.Padding(2)
         Me.btncetak.Name = "btncetak"
         Me.btncetak.Size = New System.Drawing.Size(76, 24)
@@ -278,7 +281,7 @@ Partial Class FrDataReturPembelian
         '
         'btnsimpan
         '
-        Me.btnsimpan.Location = New System.Drawing.Point(490, 330)
+        Me.btnsimpan.Location = New System.Drawing.Point(490, 358)
         Me.btnsimpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnsimpan.Name = "btnsimpan"
         Me.btnsimpan.Size = New System.Drawing.Size(76, 24)
@@ -289,7 +292,7 @@ Partial Class FrDataReturPembelian
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(24, 204)
+        Me.Label12.Location = New System.Drawing.Point(24, 232)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(41, 13)
@@ -300,7 +303,7 @@ Partial Class FrDataReturPembelian
         '
         Me.cbbsatuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbbsatuan.FormattingEnabled = True
-        Me.cbbsatuan.Location = New System.Drawing.Point(131, 201)
+        Me.cbbsatuan.Location = New System.Drawing.Point(131, 229)
         Me.cbbsatuan.Name = "cbbsatuan"
         Me.cbbsatuan.Size = New System.Drawing.Size(203, 21)
         Me.cbbsatuan.TabIndex = 49
@@ -317,7 +320,7 @@ Partial Class FrDataReturPembelian
         '
         'dtpkadaluarsa
         '
-        Me.dtpkadaluarsa.Location = New System.Drawing.Point(132, 278)
+        Me.dtpkadaluarsa.Location = New System.Drawing.Point(132, 306)
         Me.dtpkadaluarsa.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpkadaluarsa.Name = "dtpkadaluarsa"
         Me.dtpkadaluarsa.Size = New System.Drawing.Size(203, 20)
@@ -326,7 +329,7 @@ Partial Class FrDataReturPembelian
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(25, 281)
+        Me.Label11.Location = New System.Drawing.Point(25, 309)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(60, 13)
@@ -335,7 +338,7 @@ Partial Class FrDataReturPembelian
         '
         'txttotal
         '
-        Me.txttotal.Location = New System.Drawing.Point(452, 306)
+        Me.txttotal.Location = New System.Drawing.Point(452, 334)
         Me.txttotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txttotal.Name = "txttotal"
         Me.txttotal.Size = New System.Drawing.Size(203, 20)
@@ -344,7 +347,7 @@ Partial Class FrDataReturPembelian
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(377, 309)
+        Me.Label13.Location = New System.Drawing.Point(377, 337)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(31, 13)
@@ -353,14 +356,14 @@ Partial Class FrDataReturPembelian
         '
         'nud
         '
-        Me.nud.Location = New System.Drawing.Point(132, 171)
+        Me.nud.Location = New System.Drawing.Point(132, 199)
         Me.nud.Name = "nud"
         Me.nud.Size = New System.Drawing.Size(201, 20)
         Me.nud.TabIndex = 55
         '
         'txtsubtotal
         '
-        Me.txtsubtotal.Location = New System.Drawing.Point(132, 252)
+        Me.txtsubtotal.Location = New System.Drawing.Point(132, 280)
         Me.txtsubtotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txtsubtotal.Name = "txtsubtotal"
         Me.txtsubtotal.Size = New System.Drawing.Size(203, 20)
@@ -369,18 +372,49 @@ Partial Class FrDataReturPembelian
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(25, 256)
+        Me.Label14.Location = New System.Drawing.Point(25, 284)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(53, 13)
         Me.Label14.TabIndex = 56
         Me.Label14.Text = "Sub Total"
         '
+        'btncaripembelian
+        '
+        Me.btncaripembelian.Location = New System.Drawing.Point(257, 53)
+        Me.btncaripembelian.Margin = New System.Windows.Forms.Padding(2)
+        Me.btncaripembelian.Name = "btncaripembelian"
+        Me.btncaripembelian.Size = New System.Drawing.Size(76, 24)
+        Me.btncaripembelian.TabIndex = 60
+        Me.btncaripembelian.Text = "Search"
+        Me.btncaripembelian.UseVisualStyleBackColor = True
+        '
+        'txtnopembelian
+        '
+        Me.txtnopembelian.Location = New System.Drawing.Point(131, 56)
+        Me.txtnopembelian.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtnopembelian.Name = "txtnopembelian"
+        Me.txtnopembelian.Size = New System.Drawing.Size(121, 20)
+        Me.txtnopembelian.TabIndex = 59
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(24, 59)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(76, 13)
+        Me.Label15.TabIndex = 58
+        Me.Label15.Text = "No. Pembelian"
+        '
         'FrDataReturPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(681, 365)
+        Me.ClientSize = New System.Drawing.Size(681, 396)
+        Me.Controls.Add(Me.btncaripembelian)
+        Me.Controls.Add(Me.txtnopembelian)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtsubtotal)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.nud)
@@ -459,4 +493,7 @@ Partial Class FrDataReturPembelian
     Friend WithEvents nud As NumericUpDown
     Friend WithEvents txtsubtotal As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents btncaripembelian As Button
+    Friend WithEvents txtnopembelian As TextBox
+    Friend WithEvents Label15 As Label
 End Class

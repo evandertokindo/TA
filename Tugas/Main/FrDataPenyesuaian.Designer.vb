@@ -42,7 +42,7 @@ Partial Class FrDataPenyesuaian
         Me.txtnamabarang = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.btncaribarang = New System.Windows.Forms.Button()
-        Me.btnclear = New System.Windows.Forms.Button()
+        Me.btncetak = New System.Windows.Forms.Button()
         Me.btncaripenyesuaian = New System.Windows.Forms.Button()
         Me.btnsimpan = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -50,8 +50,6 @@ Partial Class FrDataPenyesuaian
         Me.nudfisik = New System.Windows.Forms.NumericUpDown()
         Me.dtpkadaluarsa = New System.Windows.Forms.DateTimePicker()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtsatuan = New System.Windows.Forms.TextBox()
         Me.txttotal = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,7 +99,7 @@ Partial Class FrDataPenyesuaian
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(315, 88)
+        Me.Label5.Location = New System.Drawing.Point(315, 59)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(37, 13)
@@ -111,7 +109,7 @@ Partial Class FrDataPenyesuaian
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(313, 116)
+        Me.Label6.Location = New System.Drawing.Point(315, 88)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(62, 13)
@@ -136,7 +134,7 @@ Partial Class FrDataPenyesuaian
         '
         'txtselisih
         '
-        Me.txtselisih.Location = New System.Drawing.Point(395, 86)
+        Me.txtselisih.Location = New System.Drawing.Point(395, 57)
         Me.txtselisih.Margin = New System.Windows.Forms.Padding(2)
         Me.txtselisih.Name = "txtselisih"
         Me.txtselisih.Size = New System.Drawing.Size(182, 20)
@@ -144,11 +142,11 @@ Partial Class FrDataPenyesuaian
         '
         'txtketerangan
         '
-        Me.txtketerangan.Location = New System.Drawing.Point(395, 113)
+        Me.txtketerangan.Location = New System.Drawing.Point(395, 85)
         Me.txtketerangan.Margin = New System.Windows.Forms.Padding(2)
         Me.txtketerangan.Multiline = True
         Me.txtketerangan.Name = "txtketerangan"
-        Me.txtketerangan.Size = New System.Drawing.Size(182, 73)
+        Me.txtketerangan.Size = New System.Drawing.Size(182, 101)
         Me.txtketerangan.TabIndex = 9
         '
         'btnedit
@@ -244,15 +242,15 @@ Partial Class FrDataPenyesuaian
         Me.btncaribarang.Text = "Cari"
         Me.btncaribarang.UseVisualStyleBackColor = True
         '
-        'btnclear
+        'btncetak
         '
-        Me.btnclear.Location = New System.Drawing.Point(442, 456)
-        Me.btnclear.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnclear.Name = "btnclear"
-        Me.btnclear.Size = New System.Drawing.Size(66, 21)
-        Me.btnclear.TabIndex = 21
-        Me.btnclear.Text = "Bersihkan"
-        Me.btnclear.UseVisualStyleBackColor = True
+        Me.btncetak.Location = New System.Drawing.Point(442, 456)
+        Me.btncetak.Margin = New System.Windows.Forms.Padding(2)
+        Me.btncetak.Name = "btncetak"
+        Me.btncetak.Size = New System.Drawing.Size(66, 21)
+        Me.btncetak.TabIndex = 21
+        Me.btncetak.Text = "Cetak"
+        Me.btncetak.UseVisualStyleBackColor = True
         '
         'btncaripenyesuaian
         '
@@ -317,24 +315,6 @@ Partial Class FrDataPenyesuaian
         Me.Label11.TabIndex = 28
         Me.Label11.Text = "Kadaluarsa"
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(315, 60)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(41, 13)
-        Me.Label12.TabIndex = 30
-        Me.Label12.Text = "Satuan"
-        '
-        'txtsatuan
-        '
-        Me.txtsatuan.Location = New System.Drawing.Point(395, 59)
-        Me.txtsatuan.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtsatuan.Name = "txtsatuan"
-        Me.txtsatuan.Size = New System.Drawing.Size(182, 20)
-        Me.txtsatuan.TabIndex = 31
-        '
         'txttotal
         '
         Me.txttotal.Location = New System.Drawing.Point(395, 430)
@@ -360,8 +340,6 @@ Partial Class FrDataPenyesuaian
         Me.ClientSize = New System.Drawing.Size(594, 489)
         Me.Controls.Add(Me.txttotal)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.txtsatuan)
-        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.dtpkadaluarsa)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.nudfisik)
@@ -369,7 +347,7 @@ Partial Class FrDataPenyesuaian
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.btnsimpan)
         Me.Controls.Add(Me.btncaripenyesuaian)
-        Me.Controls.Add(Me.btnclear)
+        Me.Controls.Add(Me.btncetak)
         Me.Controls.Add(Me.btncaribarang)
         Me.Controls.Add(Me.txtnamabarang)
         Me.Controls.Add(Me.Label9)
@@ -420,7 +398,7 @@ Partial Class FrDataPenyesuaian
     Friend WithEvents txtnamabarang As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents btncaribarang As Button
-    Friend WithEvents btnclear As Button
+    Friend WithEvents btncetak As Button
     Friend WithEvents btncaripenyesuaian As Button
     Friend WithEvents btnsimpan As Button
     Friend WithEvents Label10 As Label
@@ -428,8 +406,6 @@ Partial Class FrDataPenyesuaian
     Friend WithEvents nudfisik As NumericUpDown
     Friend WithEvents dtpkadaluarsa As DateTimePicker
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents txtsatuan As TextBox
     Friend WithEvents txttotal As TextBox
     Friend WithEvents Label13 As Label
 End Class

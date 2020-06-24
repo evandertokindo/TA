@@ -39,9 +39,9 @@ Public Class FrDataPenyesuaian
         datareader.Read()
         If datareader.HasRows Then
             htg = Strings.Right(datareader("no_py"), 4) + 1
-            urut = "NFR" + Strings.Right("000" & htg, 4)
+            urut = "PYB" + Strings.Right("000" & htg, 4)
         Else
-            urut = "NFR" & "000" & +1
+            urut = "PYB" & "000" & +1
         End If
         datareader.Close()
         txtnopenyesuaian.Text = urut

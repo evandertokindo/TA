@@ -33,7 +33,7 @@ Partial Class FrDataBarang
         Me.txtkodebarang = New System.Windows.Forms.TextBox()
         Me.txthargaecer = New System.Windows.Forms.TextBox()
         Me.txthargagrosir = New System.Windows.Forms.TextBox()
-        Me.btnsimpandetail = New System.Windows.Forms.Button()
+        Me.btnsimpan = New System.Windows.Forms.Button()
         Me.btncari = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cbbbesar = New System.Windows.Forms.ComboBox()
@@ -156,15 +156,15 @@ Partial Class FrDataBarang
         Me.txthargagrosir.Size = New System.Drawing.Size(169, 20)
         Me.txthargagrosir.TabIndex = 23
         '
-        'btnsimpandetail
+        'btnsimpan
         '
-        Me.btnsimpandetail.Location = New System.Drawing.Point(489, 238)
-        Me.btnsimpandetail.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnsimpandetail.Name = "btnsimpandetail"
-        Me.btnsimpandetail.Size = New System.Drawing.Size(66, 28)
-        Me.btnsimpandetail.TabIndex = 25
-        Me.btnsimpandetail.Text = "Simpan"
-        Me.btnsimpandetail.UseVisualStyleBackColor = True
+        Me.btnsimpan.Location = New System.Drawing.Point(489, 238)
+        Me.btnsimpan.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnsimpan.Name = "btnsimpan"
+        Me.btnsimpan.Size = New System.Drawing.Size(66, 28)
+        Me.btnsimpan.TabIndex = 25
+        Me.btnsimpan.Text = "Simpan"
+        Me.btnsimpan.UseVisualStyleBackColor = True
         '
         'btncari
         '
@@ -337,7 +337,7 @@ Partial Class FrDataBarang
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.btnubah)
         Me.Controls.Add(Me.btncari)
-        Me.Controls.Add(Me.btnsimpandetail)
+        Me.Controls.Add(Me.btnsimpan)
         Me.Controls.Add(Me.txthargagrosir)
         Me.Controls.Add(Me.txthargaecer)
         Me.Controls.Add(Me.txtjumlah)
@@ -372,7 +372,7 @@ Partial Class FrDataBarang
     Friend WithEvents txtkodebarang As TextBox
     Friend WithEvents txthargaecer As TextBox
     Friend WithEvents txthargagrosir As TextBox
-    Friend WithEvents btnsimpandetail As Button
+    Friend WithEvents btnsimpan As Button
     Friend WithEvents btncari As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents cbbbesar As ComboBox
