@@ -18,7 +18,7 @@ Public Class FrCariPesananPembelian
     Private Sub dgvData_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvData.CellDoubleClick
         Dim baris As Integer
         baris = dgvData.CurrentCell.RowIndex
-        If Me.Tag = "Pesanan" Then
+        If Me.Tag = "PesananPembelian" Then
             FrDataPesananPembelian.txtnopesananpembelian.Text = dgvData.Item(0, baris).Value
             'FrDataPesananPembelian.txttotal.Text = dgvData.Item(4, baris).Value
             FrDataPesananPembelian.dtpt.Value = dgvData.Item(1, baris).Value
@@ -51,9 +51,10 @@ Public Class FrCariPesananPembelian
 
     Private Sub FrCariPesananPembelian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
+        txtcari.Focus()
         tampil_pesananpembelian()
         dgvData.Rows.Clear()
-        query = "Select * from tbPPB_H"
+        query = "Select ppbh.no_ppb, ppbh.tanggal, s.nama_s, ppbh.jenis_b, ppbh.status_ppb from tbPPB_H ppbh inner join tbS s on ppbh.kode_s = s.kode_s"
         cmd = New SqlCommand(query, conn)
         datareader = cmd.ExecuteReader
         If datareader.HasRows Then
@@ -64,4 +65,28 @@ Public Class FrCariPesananPembelian
         datareader.Close()
     End Sub
 
+    Private Sub txtcari_TextChanged(sender As Object, e As EventArgs) Handles txtcari.TextChanged
+        dgvData.Rows.Clear()
+        If Me.Tag = "PesananPenjualan" Then
+            If cbbcari.SelectedIndex = 0 Then
+                query = "Select ppbh.no_ppb, ppbh.tanggal, s.nama_s, ppbh.jenis_b, ppbh.status_ppb from tbPPB_H ppbh inner join tbS s on ppbh.kode_s = s.kode_s where ppbh.no_ppb like '%" & txtcari.Text & "%'"
+            Else
+                query = "Select ppbh.no_ppb, ppbh.tanggal, s.nama_s, ppbh.jenis_b, ppbh.status_ppb from tbPPB_H ppbh inner join tbS s on ppbh.kode_s = s.kode_s where s.nama_s like '%" & txtcari.Text & "%'"
+            End If
+        ElseIf Me.Tag = "Penjualan" Then
+            If cbbcari.SelectedIndex = 0 Then
+                query = "Select ppbh.no_ppb, ppbh.tanggal, s.nama_s, ppbh.jenis_b, ppbh.status_ppb from tbPPB_H ppbh inner join tbS s on ppbh.kode_s = s.kode_s where ppbh.no_ppb like '%" & txtcari.Text & "%'"
+            Else
+                query = "Select ppbh.no_ppb, ppbh.tanggal, s.nama_s, ppbh.jenis_b, ppbh.status_ppb from tbPPB_H ppbh inner join tbS s ppbh.kode_s = s.kode_s where s.nama_s like '%" & txtcari.Text & "%'"
+            End If
+        End If
+        cmd = New SqlCommand(query, conn)
+        datareader = cmd.ExecuteReader
+        If datareader.HasRows Then
+            While datareader.Read
+                dgvData.Rows.Add(datareader.Item(0), datareader.Item(1), datareader.Item(2), datareader.Item(3), datareader.Item(4))
+            End While
+        End If
+        datareader.Close()
+    End Sub
 End Class

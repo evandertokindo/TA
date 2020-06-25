@@ -126,39 +126,39 @@ Public Class FrDataPembelian
         End If
     End Sub
 
-    Private Function btntambah_Click(sender As Object, e As EventArgs) As DialogResult Handles btntambah.Click
+    'Private Function btntambah_Click(sender As Object, e As EventArgs) As DialogResult Handles btntambah.Click
 
-        If (String.IsNullOrWhiteSpace(txtkodebarang.Text) = True) Then
-            Return MessageBox.Show("Data Product harus diisi terlebih dahulu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+    '    If (String.IsNullOrWhiteSpace(txtkodebarang.Text) = True) Then
+    '        Return MessageBox.Show("Data Product harus diisi terlebih dahulu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    End If
 
-        If nud.Value = 0 Then
-            Return MessageBox.Show("Qty Tidak Boleh 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+    '    If nud.Value = 0 Then
+    '        Return MessageBox.Show("Qty Tidak Boleh 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    End If
 
-        If (String.IsNullOrWhiteSpace(cbbsatuan.Text) = True) Then
-            Return MessageBox.Show("Isi Satuan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+    '    If (String.IsNullOrWhiteSpace(cbbsatuan.Text) = True) Then
+    '        Return MessageBox.Show("Isi Satuan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    End If
 
-        If belumAdaKodenya() = False Then
-            Return MessageBox.Show("Pesanan Produk" & txtkodebarang.Text & " Sudah ada Di List. Harap Hapus Terlebih Dahulu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+    '    If belumAdaKodenya() = False Then
+    '        Return MessageBox.Show("Pesanan Produk" & txtkodebarang.Text & " Sudah ada Di List. Harap Hapus Terlebih Dahulu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    End If
 
-        dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txtharga.Text, txtsubtotal.Text, dtpkadaluarsa.Value)
-        Return MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txtharga.Text, txtsubtotal.Text, dtpkadaluarsa.Value)
+    '    Return MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-        hitung_total()
-        txtkodebarang.Clear()
-        txtnamabarang.Clear()
-        nud.Value = "0"
-        cbbsatuan.Items.Clear()
-        txtharga.Clear()
-        txtsubtotal.Clear()
-        dtpkadaluarsa.Value = Date.Today
+    '    hitung_total()
+    '    txtkodebarang.Clear()
+    '    txtnamabarang.Clear()
+    '    nud.Value = "0"
+    '    cbbsatuan.Items.Clear()
+    '    txtharga.Clear()
+    '    txtsubtotal.Clear()
+    '    dtpkadaluarsa.Value = Date.Today
 
-    End Function
+    'End Function
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub btnnopesananpembelian_Click(sender As Object, e As EventArgs) Handles btnnopesananpembelian.Click
         FrCariPesananPembelian.Tag = "Pembelian"
         FrCariPesananPembelian.ShowDialog()
     End Sub
@@ -183,5 +183,67 @@ Public Class FrDataPembelian
         Else
             hitung_subtotal()
         End If
+    End Sub
+
+    Private Sub btntambah_Click(sender As Object, e As EventArgs) Handles btntambah.Click
+        If dgvData.Rows.Count = 0 Then
+            If txtkodebarang.Text <> String.Empty Then
+                If nud.Value > CInt(txtdipesan.Text) Then
+                    MessageBox.Show("Jumlah yang dibeli tidak boleh melebihi jumlah yang dipesan", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ElseIf txtharga.Text = "" Then
+                    MessageBox.Show("Isi harga satuan", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Else
+                    dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txtharga.Text, txtsubtotal.Text, dtpkadaluarsa.Value)
+                    'BersihkanDetail()
+                    txtkodebarang.Clear()
+                    txtnamabarang.Clear()
+                    nud.Value = "0"
+                    cbbsatuan.Items.Clear()
+                    txtharga.Text = "0"
+                    txtsubtotal.Text = "0"
+                    dtpkadaluarsa.Value = Date.Today
+
+                End If
+            End If
+        Else
+            If txtkodebarang.Text <> String.Empty Then
+                Dim jlh As Integer = 0
+                For i As Integer = 0 To dgvData.Rows.Count - 1
+                    If txtkodebarang.Text = dgvData.Item(0, i).Value And txtnamabarang.Text = dgvData.Item(1, i).Value And nud.Value = dgvData.Item(2, i).Value And cbbsatuan.Text = dgvData.Item(3, i).Value And txtharga.Text = dgvData.Item(4, i).Value And txtsubtotal.Text = dgvData.Item(5, i).Value And dtpkadaluarsa.Value = dgvData.Item(6, i).Value Then
+                        jlh += 1
+
+
+                    End If
+
+                Next
+                If jlh = 0 Then
+                    dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text, txtharga.Text, txtsubtotal.Text, dtpkadaluarsa.Value)
+                    'BersihkanDetail()
+                    txtkodebarang.Clear()
+                    txtnamabarang.Clear()
+                    nud.Value = "0"
+                    cbbsatuan.Items.Clear()
+                    txtharga.Text = "0"
+                    txtsubtotal.Text = "0"
+                    dtpkadaluarsa.Value = Date.Today
+                Else
+                    MessageBox.Show("Barang Sudah Ada", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'BersihkanDetail()
+                    txtkodebarang.Clear()
+                    txtnamabarang.Clear()
+                    nud.Value = "0"
+                    cbbsatuan.Items.Clear()
+                    txtharga.Text = "0"
+                    txtsubtotal.Text = "0"
+                    dtpkadaluarsa.Value = Date.Today
+                End If
+            End If
+        End If
+        hitung_total()
+    End Sub
+
+    Private Sub btnpembelian_Click(sender As Object, e As EventArgs) Handles btnpembelian.Click
+        FrCariPembelian.Tag = "Pembelian"
+        FrCariPembelian.ShowDialog()
     End Sub
 End Class

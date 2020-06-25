@@ -268,6 +268,48 @@
     <Compile Include="FrDataPesananPenjualan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrLaporanKadaluarsa.Designer.vb">
+      <DependentUpon>FrLaporanKadaluarsa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanKadaluarsa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPembelian.Designer.vb">
+      <DependentUpon>FrLaporanPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPenjualan.Designer.vb">
+      <DependentUpon>FrLaporanPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPenyesuaian.Designer.vb">
+      <DependentUpon>FrLaporanPenyesuaian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPenyesuaian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPersediaan.Designer.vb">
+      <DependentUpon>FrLaporanPersediaan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPersediaan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPesananPembelian.Designer.vb">
+      <DependentUpon>FrLaporanPesananPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPesananPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLaporanPesananPenjualan.Designer.vb">
+      <DependentUpon>FrLaporanPesananPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrLaporanPesananPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrMainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -442,6 +484,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrDataPesananPenjualan.resx">
       <DependentUpon>FrDataPesananPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanKadaluarsa.resx">
+      <DependentUpon>FrLaporanKadaluarsa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPembelian.resx">
+      <DependentUpon>FrLaporanPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPenjualan.resx">
+      <DependentUpon>FrLaporanPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPenyesuaian.resx">
+      <DependentUpon>FrLaporanPenyesuaian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPersediaan.resx">
+      <DependentUpon>FrLaporanPersediaan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPesananPembelian.resx">
+      <DependentUpon>FrLaporanPesananPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLaporanPesananPenjualan.resx">
+      <DependentUpon>FrLaporanPesananPenjualan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrMainMenu.resx">
       <DependentUpon>FrMainMenu.vb</DependentUpon>

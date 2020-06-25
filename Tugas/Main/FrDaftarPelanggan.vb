@@ -22,7 +22,7 @@ Public Class FrDaftarPelanggan
         datareader = cmd.ExecuteReader
         If datareader.HasRows Then
             While datareader.Read
-                dgvData.Rows.Add(datareader.Item(1), datareader.Item(2), datareader.Item(3), datareader.Item(4))
+                dgvData.Rows.Add(datareader.Item(0), datareader.Item(1), datareader.Item(2), datareader.Item(3))
             End While
         End If
         datareader.Close()

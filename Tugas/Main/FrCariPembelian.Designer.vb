@@ -23,10 +23,9 @@ Partial Class FrCariPembelian
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbbcari = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.btncari = New System.Windows.Forms.Button()
+        Me.txtcari = New System.Windows.Forms.TextBox()
         Me.dgvData = New System.Windows.Forms.DataGridView()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,13 +39,15 @@ Partial Class FrCariPembelian
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Cari Pembelian"
         '
-        'ComboBox1
+        'cbbcari
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(15, 57)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 1
+        Me.cbbcari.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbbcari.FormattingEnabled = True
+        Me.cbbcari.Items.AddRange(New Object() {"No Pembelian", "Nama Supplier"})
+        Me.cbbcari.Location = New System.Drawing.Point(15, 57)
+        Me.cbbcari.Name = "cbbcari"
+        Me.cbbcari.Size = New System.Drawing.Size(121, 21)
+        Me.cbbcari.TabIndex = 1
         '
         'Label2
         '
@@ -57,21 +58,12 @@ Partial Class FrCariPembelian
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Cari dengan"
         '
-        'TextBox1
+        'txtcari
         '
-        Me.TextBox1.Location = New System.Drawing.Point(142, 58)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(243, 20)
-        Me.TextBox1.TabIndex = 3
-        '
-        'btncari
-        '
-        Me.btncari.Location = New System.Drawing.Point(401, 57)
-        Me.btncari.Name = "btncari"
-        Me.btncari.Size = New System.Drawing.Size(65, 23)
-        Me.btncari.TabIndex = 4
-        Me.btncari.Text = "Cari"
-        Me.btncari.UseVisualStyleBackColor = True
+        Me.txtcari.Location = New System.Drawing.Point(142, 58)
+        Me.txtcari.Name = "txtcari"
+        Me.txtcari.Size = New System.Drawing.Size(323, 20)
+        Me.txtcari.TabIndex = 3
         '
         'dgvData
         '
@@ -87,10 +79,9 @@ Partial Class FrCariPembelian
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(477, 262)
         Me.Controls.Add(Me.dgvData)
-        Me.Controls.Add(Me.btncari)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtcari)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cbbcari)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FrCariPembelian"
         Me.Text = "FrDaftarPembelian"
@@ -101,9 +92,8 @@ Partial Class FrCariPembelian
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbbcari As ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents btncari As Button
+    Friend WithEvents txtcari As TextBox
     Friend WithEvents dgvData As DataGridView
 End Class

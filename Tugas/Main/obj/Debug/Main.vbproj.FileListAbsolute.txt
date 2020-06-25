@@ -220,3 +220,10 @@ D:\evander\TA_\Tugas\Main\bin\Debug\CrystalDecisions.Windows.Forms.dll
 D:\evander\TA_\Tugas\Main\bin\Debug\ShockwaveFlashObjects.dll
 D:\evander\TA_\Tugas\Main\obj\Debug\Main.vbproj.Main.exe.config
 D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrCr.resources
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrLaporanPembelian.resources
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrLaporanPesananPembelian.resources
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrLaporanPesananPenjualan.resources
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrLaporanPenjualan.resources
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrLaporanPenyesuaian.resources
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrLaporanKadaluarsa.resources
+D:\evander\TA_\Tugas\Main\obj\Debug\Main.FrLaporanPersediaan.resources

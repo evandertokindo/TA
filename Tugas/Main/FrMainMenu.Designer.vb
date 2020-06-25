@@ -37,6 +37,8 @@ Partial Class FrMainMenu
         Me.GPersediaan = New System.Windows.Forms.ToolStripMenuItem()
         Me.LAPORANToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LPembelian = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PesananPembelianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PembelianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LPenjualan = New System.Windows.Forms.ToolStripMenuItem()
         Me.LKadaluarsa = New System.Windows.Forms.ToolStripMenuItem()
         Me.LPenyesuaian = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,6 +49,8 @@ Partial Class FrMainMenu
         Me.SupplierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PesananPenjualanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PenjualanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -145,12 +149,26 @@ Partial Class FrMainMenu
         '
         'LPembelian
         '
+        Me.LPembelian.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PesananPembelianToolStripMenuItem1, Me.PembelianToolStripMenuItem1})
         Me.LPembelian.Name = "LPembelian"
         Me.LPembelian.Size = New System.Drawing.Size(152, 22)
         Me.LPembelian.Text = "Pembelian"
         '
+        'PesananPembelianToolStripMenuItem1
+        '
+        Me.PesananPembelianToolStripMenuItem1.Name = "PesananPembelianToolStripMenuItem1"
+        Me.PesananPembelianToolStripMenuItem1.Size = New System.Drawing.Size(177, 22)
+        Me.PesananPembelianToolStripMenuItem1.Text = "Pesanan Pembelian"
+        '
+        'PembelianToolStripMenuItem1
+        '
+        Me.PembelianToolStripMenuItem1.Name = "PembelianToolStripMenuItem1"
+        Me.PembelianToolStripMenuItem1.Size = New System.Drawing.Size(177, 22)
+        Me.PembelianToolStripMenuItem1.Text = "Pembelian"
+        '
         'LPenjualan
         '
+        Me.LPenjualan.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PesananPenjualanToolStripMenuItem1, Me.PenjualanToolStripMenuItem1})
         Me.LPenjualan.Name = "LPenjualan"
         Me.LPenjualan.Size = New System.Drawing.Size(152, 22)
         Me.LPenjualan.Text = "Penjualan"
@@ -195,20 +213,32 @@ Partial Class FrMainMenu
         'SupplierToolStripMenuItem
         '
         Me.SupplierToolStripMenuItem.Name = "SupplierToolStripMenuItem"
-        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
         Me.SupplierToolStripMenuItem.Text = "Supplier"
         '
         'PelangganToolStripMenuItem
         '
         Me.PelangganToolStripMenuItem.Name = "PelangganToolStripMenuItem"
-        Me.PelangganToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PelangganToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
         Me.PelangganToolStripMenuItem.Text = "Pelanggan"
         '
         'BarangToolStripMenuItem
         '
         Me.BarangToolStripMenuItem.Name = "BarangToolStripMenuItem"
-        Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
         Me.BarangToolStripMenuItem.Text = "Barang"
+        '
+        'PesananPenjualanToolStripMenuItem1
+        '
+        Me.PesananPenjualanToolStripMenuItem1.Name = "PesananPenjualanToolStripMenuItem1"
+        Me.PesananPenjualanToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
+        Me.PesananPenjualanToolStripMenuItem1.Text = "Pesanan Penjualan"
+        '
+        'PenjualanToolStripMenuItem1
+        '
+        Me.PenjualanToolStripMenuItem1.Name = "PenjualanToolStripMenuItem1"
+        Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(173, 22)
+        Me.PenjualanToolStripMenuItem1.Text = "Penjualan"
         '
         'FrMainMenu
         '
@@ -254,4 +284,8 @@ Partial Class FrMainMenu
     Friend WithEvents SupplierToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PelangganToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BarangToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PesananPembelianToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents PembelianToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents PesananPenjualanToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents PenjualanToolStripMenuItem1 As ToolStripMenuItem
 End Class

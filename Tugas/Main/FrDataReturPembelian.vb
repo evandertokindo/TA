@@ -192,4 +192,9 @@ Public Class FrDataReturPembelian
     Private Sub txtnoreturpembelian_TextChanged(sender As Object, e As EventArgs) Handles txtnoreturpembelian.TextChanged
 
     End Sub
+
+    Private Sub btncaripembelian_Click(sender As Object, e As EventArgs) Handles btncaripembelian.Click
+        FrCariPembelian.Tag = "Retur"
+        FrCariPembelian.ShowDialog()
+    End Sub
 End Class

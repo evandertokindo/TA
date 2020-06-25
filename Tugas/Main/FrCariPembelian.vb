@@ -35,13 +35,39 @@ Public Class FrCariPembelian
 
     Private Sub FrCariPembelian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
+        txtcari.Focus()
         tampil_pembelian()
-        query = "Select * from tbPB_H"
+        query = "Select pbh.no_pb, ppbh.no_ppb, pbh.tanggal, s.nama_s, pbh.total from tbPB_H pbh inner join tbPPB_H ppbh on ppbh.no_ppb = pbh.no_ppb inner join tbS s on pbh.kode_s = s.kode_s"
         cmd = New SqlCommand(query, conn)
         datareader = cmd.ExecuteReader
         If datareader.HasRows Then
             While datareader.Read()
                 dgvData.Rows.Add(datareader(0), datareader(1), datareader(2), datareader(3), datareader(4), datareader(5))
+            End While
+        End If
+        datareader.Close()
+    End Sub
+
+    Private Sub txtcari_TextChanged(sender As Object, e As EventArgs) Handles txtcari.TextChanged
+        dgvData.Rows.Clear()
+        If Me.Tag = "Pembelian" Then
+            If cbbcari.SelectedIndex = 0 Then
+                query = "Select pbh.no_pb, ppbh.no_ppb, pbh.tanggal, s.nama_s, pbh.total from tbPB_H pbh inner join tbPPB_H ppbh on ppbh.no_ppb = pbh.no_ppb inner join tbS s on pbh.kode_s = s.kode_s where pbh.no_pb like '%" & txtcari.Text & "%'"
+            Else
+                query = "Select pbh.no_pb, ppbh.no_ppb, pbh.tanggal, s.nama_s, pbh.total from tbPB_H pbh inner join tbPPB_H ppbh on ppbh.no_ppb = pbh.no_ppb inner join tbS s on pbh.kode_s = s.kode_s where s.nama_s like '%" & txtcari.Text & "%'"
+            End If
+        ElseIf Me.Tag = "Retur" Then
+            If cbbcari.SelectedIndex = 0 Then
+                query = "Select pbh.no_pb, ppbh.no_ppb, pbh.tanggal, s.nama_s, pbh.total from tbPB_H pbh inner join tbPPB_H ppbh on ppbh.no_ppb = pbh.no_ppb inner join tbS s on pbh.kode_s = s.kode_s where pbh.no_pb like '%" & txtcari.Text & "%'"
+            Else
+                query = "Select pbh.no_pb, ppbh.no_ppb, pbh.tanggal, s.nama_s, pbh.total from tbPB_H pbh inner join tbPPB_H ppbh on ppbh.no_ppb = pbh.no_ppb inner join tbS s on pbh.kode_s = s.kode_s where s.nama_s like '%" & txtcari.Text & "%'"
+            End If
+        End If
+        cmd = New SqlCommand(query, conn)
+        datareader = cmd.ExecuteReader
+        If datareader.HasRows Then
+            While datareader.Read
+                dgvData.Rows.Add(datareader.Item(0), datareader.Item(1), datareader.Item(2), datareader.Item(3), datareader.Item(4))
             End While
         End If
         datareader.Close()

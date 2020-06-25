@@ -91,18 +91,18 @@ Public Class FrDataPesananPembelian
     End Sub
 
     Private Sub btnhapus_Click(sender As Object, e As EventArgs) Handles btnhapus.Click
+        Dim baris As Integer
         If dgvData.Rows.Count = 0 Then
-            MessageBox.Show("Anda belum memasukkan Data Pesanan Product", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Tidak ada barang yang diinput", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ElseIf dgvData.SelectedCells.Count < 0 Then
+            MessageBox.Show("Tidak ada barang yang dipilih", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            Dim baris As Integer = dgvData.CurrentCell.RowIndex
-            If MessageBox.Show("Apakah anda yakin mau menghapus Produk " & dgvData.Item(0, baris).Value & "?", "Hapus Pesanan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            baris = dgvData.CurrentCell.RowIndex
+            If dgvData.Item(8, baris).Value.ToString = "Sudah Selesai" Or dgvData.Item(8, baris).Value.ToString = "Sebagian Selesai" Then
+                MsgBox("Barang dengan status ""Belum Selesai"" yang hanya dapat dihapus", MsgBoxStyle.Exclamation, "Warning") 'jika ada yang belum diisi maka tampilkan warning
+            Else
+                sementara.Rows.Add(dgvData.Item(0, baris).Value, dgvData.Item(1, baris).Value, dgvData.Item(2, baris).Value, dgvData.Item(3, baris).Value, dgvData.Item(4, baris).Value, dgvData.Item(5, baris).Value, dgvData.Item(6, baris).Value, dgvData.Item(7, baris).Value, dgvData.Item(8, baris).Value)
                 dgvData.Rows.RemoveAt(baris)
-                MessageBox.Show("Produk berhasil dihapus", "Hapus Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                txttotal.Text = dgvData.Rows.Count
-                txtkodebarang.Clear()
-                txtnamabarang.Clear()
-                nud.Value = 0
-                cbbsatuan.Items.Clear()
             End If
         End If
     End Sub
@@ -202,33 +202,6 @@ Public Class FrDataPesananPembelian
 
     End Sub
 
-
-
-    'Private Function btntambah_Click(sender As Object, e As EventArgs) As DialogResult Handles btntambah.Click
-
-    '    If (String.IsNullOrWhiteSpace(txtkodebarang.Text) = True) Then
-    '        Return MessageBox.Show("Data Product harus diisi terlebih dahulu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End If
-
-    '    If nud.Value = 0 Then
-    '        Return MessageBox.Show("Qty Tidak Boleh 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End If
-
-    '    If (String.IsNullOrWhiteSpace(cbbsatuan.Text) = True) Then
-    '        Return MessageBox.Show("Isi Satuan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End If
-
-    '    If belumAdaKodenya() = False Then
-    '        Return MessageBox.Show("Pesanan Produk" & txtkodebarang.Text & " Sudah ada Di List. Harap Hapus Terlebih Dahulu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End If
-
-    '    dgvData.Rows.Add(txtkodebarang.Text, txtnamabarang.Text, nud.Value, cbbsatuan.Text)
-    '    Return MessageBox.Show("Pesanan produk " & txtkodebarang.Text & " berhasil ditambahkan", "Tambah Pesanan", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-    '    txttotal.Text = dgvData.RowCount
-
-    'End Function
-
     Private Sub txttotal_TextChanged(sender As Object, e As EventArgs) Handles txttotal.TextChanged
 
     End Sub
@@ -261,7 +234,7 @@ Public Class FrDataPesananPembelian
 
     Private Sub txtnopesananpembelian_TextChanged(sender As Object, e As EventArgs) Handles txtnopesananpembelian.TextChanged
         dgvData.Rows.Clear()
-        query = $"Select kode_b, nama_b, jumlah, satuan from tbPPB_D Where no_ppb = '{txtnopesananpembelian.Text}'"
+        query = $"Select ppbd.kode_b, bh.nama_b, ppbd.jumlah, ppbd.satuan from tbPPB_D ppbd inner join tbB_H bh on ppbd.kode_b = bh.kode_b Where no_ppb = '{txtnopesananpembelian.Text}'"
         cmd = New SqlCommand(query, conn)
         datareader = cmd.ExecuteReader
         If datareader.HasRows Then

@@ -54,8 +54,10 @@ Partial Class FrDataPesananPembelian
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ckbproses = New System.Windows.Forms.CheckBox()
         Me.txtstatus = New System.Windows.Forms.TextBox()
+        Me.sementara = New System.Windows.Forms.DataGridView()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.sementara, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Labeldatasupp
@@ -355,11 +357,21 @@ Partial Class FrDataPesananPembelian
         Me.txtstatus.Size = New System.Drawing.Size(158, 20)
         Me.txtstatus.TabIndex = 37
         '
+        'sementara
+        '
+        Me.sementara.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.sementara.Location = New System.Drawing.Point(11, 384)
+        Me.sementara.Name = "sementara"
+        Me.sementara.Size = New System.Drawing.Size(10, 10)
+        Me.sementara.TabIndex = 38
+        Me.sementara.Visible = False
+        '
         'FrDataPesananPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(744, 404)
+        Me.Controls.Add(Me.sementara)
         Me.Controls.Add(Me.txtstatus)
         Me.Controls.Add(Me.ckbproses)
         Me.Controls.Add(Me.Label4)
@@ -396,6 +408,7 @@ Partial Class FrDataPesananPembelian
         Me.Text = "FrDataPesananPembelian"
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.sementara, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -433,4 +446,5 @@ Partial Class FrDataPesananPembelian
     Friend WithEvents Label4 As Label
     Friend WithEvents ckbproses As CheckBox
     Public WithEvents txtstatus As TextBox
+    Friend WithEvents sementara As DataGridView
 End Class

@@ -11,19 +11,19 @@ Public Class FrMainMenu
     End Sub
 
     Private Sub LPembelian_Click(sender As Object, e As EventArgs) Handles LPembelian.Click
-        FrDaftarPembelian.Show()
+
     End Sub
 
     Private Sub LPenjualan_Click(sender As Object, e As EventArgs) Handles LPenjualan.Click
-        FrDaftarPenjualan.Show()
+
     End Sub
 
     Private Sub LPenyesuaian_Click(sender As Object, e As EventArgs) Handles LPenyesuaian.Click
-        FrDaftarPenyesuaian.Show()
+        FrLaporanPenyesuaian.Show()
     End Sub
 
     Private Sub LPersediaan_Click(sender As Object, e As EventArgs) Handles LPersediaan.Click
-        FrDaftarBarang.Show()
+        FrLaporanPersediaan.Show()
     End Sub
 
     Private Sub Supplier_Click(sender As Object, e As EventArgs) Handles Supplier.Click
@@ -62,7 +62,55 @@ Public Class FrMainMenu
         FrDaftarPelanggan.Show()
     End Sub
 
+    Private Sub BarangToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PesananPembelianToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PembelianToolStripMenuItem2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ReturPembelianToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PesananPenjualanToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PenjualanToolStripMenuItem2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PenyesuaianToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LKadaluarsa_Click(sender As Object, e As EventArgs) Handles LKadaluarsa.Click
+        FrLaporanKadaluarsa.Show()
+    End Sub
+
     Private Sub BarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BarangToolStripMenuItem.Click
         FrDaftarBarang.Show()
+    End Sub
+
+    Private Sub PembelianToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PembelianToolStripMenuItem1.Click
+        FrLaporanPembelian.Show()
+    End Sub
+
+    Private Sub PesananPembelianToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles PesananPembelianToolStripMenuItem1.Click
+        FrLaporanPesananPembelian.Show()
+    End Sub
+
+    Private Sub PesananPenjualanToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles PesananPenjualanToolStripMenuItem1.Click
+        FrLaporanPesananPenjualan.Show()
+    End Sub
+
+    Private Sub PenjualanToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PenjualanToolStripMenuItem1.Click
+        FrLaporanPenjualan.Show()
     End Sub
 End Class

@@ -114,6 +114,7 @@ Public Class FrCariBarang
 
     Private Sub FrCariBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
+        TextBox1.Focus()
         dgvData.Rows.Clear()
 
         If Me.Tag = "PesananPembelian" Then
@@ -234,4 +235,29 @@ Public Class FrCariBarang
 
     End Sub
 
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        dgvData.Rows.Clear()
+        If Me.Tag = "PesananPembelian" Then
+            If cbbcari.SelectedIndex = 0 Then
+                query = "Select bd.kode_b, bh.nama_b, bd.jumlah, bd.satuan, bd.kadaluarsa from tbB_H bh inner join tbB_D bd on bh.kode_b = bd.kode_b where bd.kode_b like '%" & TextBox1.Text & "%'"
+            Else
+                query = "Select bd.kode_b, bh.nama_b, bd.jumlah, bd.satuan, bd.kadaluarsa from tbB_H bh inner join tbB_D bd on bh.kode_b = bd.kode_b where bh.nama_b like '%" & TextBox1.Text & "%'"
+            End If
+        ElseIf Me.Tag = "PesananPenjualan" Then
+            If cbbcari.SelectedIndex = 0 Then
+                query = "Select bd.kode_b, bh.nama_b, bd.jumlah, bd.satuan, bd.kadaluarsa from tbB_H bh inner join tbB_D bd on bh.kode_b = bd.kode_b where bd.kode_b like '%" & TextBox1.Text & "%'"
+            Else
+                query = "Select bd.kode_b, bh.nama_b, bd.jumlah, bd.satuan, bd.kadaluarsa from tbB_H bh inner join tbB_D bd on bh.kode_b = bd.kode_b where bh.nama_b like '%" & TextBox1.Text & "%'"
+            End If
+        End If
+        cmd = New SqlCommand(query, conn)
+        datareader = cmd.ExecuteReader
+        If datareader.HasRows Then
+            While datareader.Read
+                dgvData.Rows.Add(datareader.Item(0), datareader.Item(1), datareader.Item(2), datareader.Item(3), datareader.Item(4))
+            End While
+        End If
+        datareader.Close()
+
+    End Sub
 End Class

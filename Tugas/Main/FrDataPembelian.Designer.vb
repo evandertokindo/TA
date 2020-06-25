@@ -54,10 +54,12 @@ Partial Class FrDataPembelian
         Me.cbbsatuan = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnpembelian = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnnopesananpembelian = New System.Windows.Forms.Button()
         Me.dtpkadaluarsa = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.nud = New System.Windows.Forms.NumericUpDown()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtdipesan = New System.Windows.Forms.TextBox()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -365,15 +367,15 @@ Partial Class FrDataPembelian
         Me.btnpembelian.Text = "Search"
         Me.btnpembelian.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnnopesananpembelian
         '
-        Me.Button3.Location = New System.Drawing.Point(299, 63)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(50, 22)
-        Me.Button3.TabIndex = 61
-        Me.Button3.Text = "Search"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnnopesananpembelian.Location = New System.Drawing.Point(299, 63)
+        Me.btnnopesananpembelian.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnnopesananpembelian.Name = "btnnopesananpembelian"
+        Me.btnnopesananpembelian.Size = New System.Drawing.Size(50, 22)
+        Me.btnnopesananpembelian.TabIndex = 61
+        Me.btnnopesananpembelian.Text = "Search"
+        Me.btnnopesananpembelian.UseVisualStyleBackColor = True
         '
         'dtpkadaluarsa
         '
@@ -397,18 +399,38 @@ Partial Class FrDataPembelian
         '
         Me.nud.Location = New System.Drawing.Point(121, 191)
         Me.nud.Name = "nud"
-        Me.nud.Size = New System.Drawing.Size(228, 20)
+        Me.nud.Size = New System.Drawing.Size(74, 20)
         Me.nud.TabIndex = 65
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(218, 195)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(46, 13)
+        Me.Label6.TabIndex = 67
+        Me.Label6.Text = "Dipesan"
+        '
+        'txtdipesan
+        '
+        Me.txtdipesan.Location = New System.Drawing.Point(268, 190)
+        Me.txtdipesan.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtdipesan.Name = "txtdipesan"
+        Me.txtdipesan.Size = New System.Drawing.Size(81, 20)
+        Me.txtdipesan.TabIndex = 68
         '
         'FrDataPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(730, 421)
+        Me.Controls.Add(Me.txtdipesan)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.nud)
         Me.Controls.Add(Me.dtpkadaluarsa)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnnopesananpembelian)
         Me.Controls.Add(Me.btnpembelian)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cbbsatuan)
@@ -474,7 +496,7 @@ Partial Class FrDataPembelian
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents btnpembelian As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnnopesananpembelian As Button
     Public WithEvents txtnamabarang As TextBox
     Public WithEvents txtkodebarang As TextBox
     Public WithEvents txtnamasupplier As TextBox
@@ -487,4 +509,6 @@ Partial Class FrDataPembelian
     Friend WithEvents nud As NumericUpDown
     Friend WithEvents cbbsatuan As ComboBox
     Friend WithEvents dtpkadaluarsa As DateTimePicker
+    Friend WithEvents Label6 As Label
+    Public WithEvents txtdipesan As TextBox
 End Class

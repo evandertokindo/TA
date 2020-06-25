@@ -50,9 +50,10 @@ Public Class FrCariPesananPenjualan
 
     Private Sub FrCariPesananPenjualan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
+        txtcari.Focus()
         tampil_pesananpenjualan()
         dgvData.Rows.Clear()
-        query = "Select * from tbPPJ_H"
+        query = "Select ppjh.no_ppj, ppjh.tanggal, p.nama_p, ppjh.jenis_b, ppjh.status_ppj from tbPPJ_H ppjh inner join tbP p on ppjh.kode_p = p.kode_p"
         cmd = New SqlCommand(query, conn)
         datareader = cmd.ExecuteReader
         If datareader.HasRows Then
@@ -63,5 +64,28 @@ Public Class FrCariPesananPenjualan
         datareader.Close()
     End Sub
 
-
+    Private Sub txtcari_TextChanged(sender As Object, e As EventArgs) Handles txtcari.TextChanged
+        dgvData.Rows.Clear()
+        If Me.Tag = "PesananPenjualan" Then
+            If cbbcari.SelectedIndex = 0 Then
+                query = "Select ppjh.no_ppj, ppjh.tanggal, p.nama_p, ppjh.jenis_b, ppjh.status_ppj from tbPPJ_H ppjh inner join tbP p on ppjh.kode_p = p.kode_p where ppjh.no_ppj like '%" & txtcari.Text & "%'"
+            Else
+                query = "Select ppjh.no_ppj, ppjh.tanggal, p.nama_p, ppjh.jenis_b, ppjh.status_ppj from tbPPJ_H ppjh inner join tbP p on ppjh.kode_p = p.kode_p where p.nama_p like '%" & txtcari.Text & "%'"
+            End If
+        ElseIf Me.Tag = "Penjualan" Then
+            If cbbcari.SelectedIndex = 0 Then
+                query = "Select ppjh.no_ppj, ppjh.tanggal, p.nama_p, ppjh.jenis_b, ppjh.status_ppj from tbPPJ_H ppjh inner join tbP p on ppjh.kode_p = p.kode_p where ppjh.no_ppj like '%" & txtcari.Text & "%'"
+            Else
+                query = "Select ppjh.no_ppj, ppjh.tanggal, p.nama_p, ppjh.jenis_b, ppjh.status_ppj from tbPPJ_H ppjh inner join tbP p on ppjh.kode_p = p.kode_p where p.nama_p like '%" & txtcari.Text & "%'"
+            End If
+        End If
+        cmd = New SqlCommand(query, conn)
+        datareader = cmd.ExecuteReader
+        If datareader.HasRows Then
+            While datareader.Read
+                dgvData.Rows.Add(datareader.Item(0), datareader.Item(1), datareader.Item(2), datareader.Item(3), datareader.Item(4))
+            End While
+        End If
+        datareader.Close()
+    End Sub
 End Class
